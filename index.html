@@ -149,6 +149,7 @@
         <input id="global-search" type="search" placeholder="카드번호·이름·내용을 입력하세요" autofocus />
       </div>
     </div>
+    <div id="global-empty" class="empty hide" style="text-align:center;">검색 결과가 없습니다.</div>
 
     <section class="card" data-section="guest">
       <div class="card-header"><h2>손님카드</h2><span class="count-tag">본판 58장 · 왈츠 35장 · 총 93장</span></div>
@@ -479,6 +480,7 @@
     const input = document.getElementById('global-search');
     const sections = document.querySelectorAll('[data-section]');
     const tabs = document.querySelectorAll('#section-tabs button');
+    const globalEmpty = document.getElementById('global-empty');
     const btnTop = document.createElement('button');
     btnTop.className = 'btn-top';
     btnTop.innerHTML = 'Top';
@@ -487,6 +489,7 @@
 
     function applyFilter(term) {
       const query = term.trim().toLowerCase();
+      let anyVisibleSection = false;
       sections.forEach(section => {
         const rows = section.querySelectorAll('tbody tr');
         let visible = 0;
@@ -497,8 +500,14 @@
           if (match) visible++;
         });
         const empty = section.querySelector('.empty');
-        if (empty) empty.classList.toggle('hide', visible !== 0);
+        const table = section.querySelector('table');
+        const noResult = visible === 0;
+        if (empty) empty.classList.toggle('hide', !noResult);
+        if (table) table.classList.toggle('hide', noResult);
+        section.style.display = noResult ? 'none' : '';
+        if (!noResult) anyVisibleSection = true;
       });
+      if (globalEmpty) globalEmpty.classList.toggle('hide', anyVisibleSection);
     }
 
     function showSection(name) {
