@@ -42,6 +42,14 @@
     }
     .filter-tabs button:hover { border-color: var(--accent); transform: translateY(-1px); }
     .filter-tabs button.is-active { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(34,211,238,0.3); }
+    .page-top {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 4px 0 12px;
+      background: linear-gradient(180deg, rgba(11,18,36,0.96) 0%, rgba(11,18,36,0.78) 60%, rgba(11,18,36,0) 100%);
+      backdrop-filter: blur(6px);
+    }
     .card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 20px 20px 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
@@ -74,17 +82,29 @@
     .empty { color: var(--muted); padding: 12px 4px; font-size: 14px; }
     .empty.hide { display: none; }
     .hide-section { display: none; }
-    @media (max-width: 720px) {
-      body { padding: 28px 14px; }
+    .table-wrap { overflow-x: auto; }
+    @media (max-width: 900px) {
+      .layout { gap: 18px; }
+      body { padding: 28px 16px; }
       .card { padding: 16px 14px; }
+      .search-bar input { font-size: 15px; }
+      .page-title { font-size: 22px; }
+      .count-tag { font-size: 11px; }
+    }
+    @media (max-width: 720px) {
+      .layout { gap: 14px; }
+      .card { padding: 14px 12px; }
       th:last-child, td:last-child { display: none; }
+      .col-img { width: 110px; }
+      .obj-main { width: 110px; }
+      .obj-img { width: 110px; }
     }
   </style>
 </head>
 <body>
   <div class="layout">
-    <div>
-      <h1 class="page-title">통합 검색 테이블</h1>
+    <div class="page-top">
+      <h1 class="page-title">GAH 카드/타일 설명</h1>
       <div class="filter-tabs" id="section-tabs">
         <button type="button" data-show="all" class="is-active">전체</button>
         <button type="button" data-show="guest">손님카드</button>
