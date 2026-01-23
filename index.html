@@ -23,10 +23,10 @@
       margin: 0; min-height: 100vh;
       font-family: 'Space Grotesk','Noto Sans KR','Malgun Gothic',sans-serif;
       background: radial-gradient(circle at 20% 20%, #132347 0, #0b1224 40%), #0b1224;
-      color: var(--text); padding: 40px 20px;
+      color: var(--text); padding: 20px 20px;
     }
     .layout { max-width: 1200px; margin: 0 auto; display: grid; gap: 24px; }
-    .page-title { margin: 0 0 12px; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
+    .page-title { margin: 0 0 12px; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; text-align: center;}
     .search-bar { position: relative; margin-bottom: 8px; }
     .search-bar input {
       width: 100%; padding: 12px 14px;
@@ -105,7 +105,7 @@
     .btn-top.show { display: inline-flex; align-items: center; gap: 6px; }
     @media (max-width: 900px) {
       .layout { gap: 18px; }
-      body { padding: 28px 16px; }
+      body { padding: 5px 16px 30px; }
       .card { padding: 16px 14px; }
       .search-bar input { font-size: 15px; }
       .page-title { font-size: 22px; }
@@ -123,6 +123,7 @@
       [data-section="staff"] th:nth-child(2), [data-section="staff"] td:nth-child(2),
       [data-section="staff"] th:nth-child(3), [data-section="staff"] td:nth-child(3) { display: none; }
       /* 황제 타일: 버전 숨김 */
+      [data-section="emperor"] col:nth-child(1), [data-section="emperor"] col:nth-child(1),
       [data-section="emperor"] th:nth-child(1), [data-section="emperor"] td:nth-child(1) { display: none; }
       /* 다른 테이블은 컬럼 유지 */
       .col-img { width: 96px; }
@@ -158,7 +159,7 @@
             <col>
             <col>
         </colgroup>
-        <thead><tr><th>카드번호</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
+        <thead><tr><th>카드</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
         <tbody>
           <tr><td>49</td><td>본판</td><td>Sculptor</td><td>황제 트랙 1칸 전진할 수 있습니다. 또한 객실 1개를 비용 없이 준비할 수 있습니다.</td></tr>
           <tr><td>50</td><td>본판</td><td>Prison Guard</td><td>직원 카드 2장을 뽑아 손에 추가합니다. 또한 손에서 직원 카드 1장을 비용을 지불하고 플레이할 수 있습니다.</td></tr>
@@ -267,7 +268,7 @@
           <col>
           <col>
         </colgroup>
-        <thead><tr><th>카드번호</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
+        <thead><tr><th>카드</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>본판</td><td>Breakfast Server</td><td>라운드당 1번, 공급처에서 슈트루델 1개 또는 케이크 1개를 손님 1명 위에 놓을 수 있습니다.</td></tr>
           <tr><td>2</td><td>본판</td><td>Dish Washer</td><td>라운드당 1번, 서빙 아이템 추가 행동을 무료로 사용할 수 있습니다.</td></tr>
@@ -382,24 +383,24 @@
       <div class="card-header"><h2>목표카드</h2><span class="count-tag">본판 12장 · 왈츠 6장 · 총 18장</span></div>
       <table class="data-table">
         <colgroup>
-          <col class="col-version">
+          <col>
           <col class="col-img">
           <col>
         </colgroup>
-        <thead><tr><th>카드번호</th><th>이미지</th><th>내용</th></tr></thead>
+        <thead><tr><th>카드</th><th>이미지</th><th>내용</th></tr></thead>
         <tbody>
-          <tr><td>105</td><td><img src="img/objective_1.png" alt="Objective 105" width="120"></td><td>크로네 20개 보유</td></tr>
-          <tr><td>106</td><td><img src="img/objective_2.png" alt="Objective 106" width="120"></td><td>황제 트랙 10칸 이상</td></tr>
-          <tr><td>107</td><td><img src="img/objective_3.png" alt="Objective 107" width="120"></td><td>직원 카드 6장 이상 플레이</td></tr>
-          <tr><td>108</td><td><img src="img/objective_4.png" alt="Objective 108" width="120"></td><td>호텔 보드에 방 타일 12개 이상(빈/점유 무관)</td></tr>
-          <tr><td>109</td><td><img src="img/objective_5.png" alt="Objective 109" width="120"></td><td>호텔의 층 2개 이상이 완전 점유(인접 불필요)</td></tr>
-          <tr><td>110</td><td><img src="img/objective_6.png" alt="Objective 110" width="120"></td><td>호텔의 열 2개 이상이 완전 점유(인접 불필요)</td></tr>
-          <tr><td>111</td><td><img src="img/objective_7.png" alt="Objective 111" width="120"></td><td>완전 점유된 방 그룹 6개 이상(그룹끼리 이어질 필요 없음)</td></tr>
-          <tr><td>112</td><td><img src="img/objective_8.png" alt="Objective 112" width="120"></td><td>어느 한 색의 방을 전부 점유</td></tr>
-          <tr><td>113</td><td><img src="img/objective_9.png" alt="Objective 113" width="120"></td><td>점유 방이 빨강 3+ / 파랑 3+ / 노랑 3+</td></tr>
-          <tr><td>114</td><td><img src="img/objective_10.png" alt="Objective 114" width="120"></td><td>점유 방이 빨강 4+ / 노랑 3+</td></tr>
-          <tr><td>115</td><td><img src="img/objective_11.png" alt="Objective 115" width="120"></td><td>점유 방이 노랑 4+ / 파랑 3+</td></tr>
-          <tr><td>116</td><td><img src="img/objective_12.png" alt="Objective 116" width="120"></td><td>점유 방이 파랑 4+ / 빨강 3+</td></tr>
+          <tr><td>105</td><td><div class="obj-img"><img class="obj-main" src="img/objective_1.png" alt="Objective 105" width="120"></div></td><td>크로네 20개 보유</td></tr>
+          <tr><td>106</td><td><div class="obj-img"><img class="obj-main" src="img/objective_2.png" alt="Objective 106" width="120"></div></td><td>황제 트랙 10칸 이상</td></tr>
+          <tr><td>107</td><td><div class="obj-img"><img class="obj-main" src="img/objective_3.png" alt="Objective 107" width="120"></div></td><td>직원 카드 6장 이상 플레이</td></tr>
+          <tr><td>108</td><td><div class="obj-img"><img class="obj-main" src="img/objective_4.png" alt="Objective 108" width="120"></div></td><td>호텔 보드에 방 타일 12개 이상(빈/점유 무관)</td></tr>
+          <tr><td>109</td><td><div class="obj-img"><img class="obj-main" src="img/objective_5.png" alt="Objective 109" width="120"></div></td><td>호텔의 층 2개 이상이 완전 점유(인접 불필요)</td></tr>
+          <tr><td>110</td><td><div class="obj-img"><img class="obj-main" src="img/objective_6.png" alt="Objective 110" width="120"></div></td><td>호텔의 열 2개 이상이 완전 점유(인접 불필요)</td></tr>
+          <tr><td>111</td><td><div class="obj-img"><img class="obj-main" src="img/objective_7.png" alt="Objective 111" width="120"></div></td><td>완전 점유된 방 그룹 6개 이상(그룹끼리 이어질 필요 없음)</td></tr>
+          <tr><td>112</td><td><div class="obj-img"><img class="obj-main" src="img/objective_8.png" alt="Objective 112" width="120"></div></td><td>어느 한 색의 방을 전부 점유</td></tr>
+          <tr><td>113</td><td><div class="obj-img"><img class="obj-main" src="img/objective_9.png" alt="Objective 113" width="120"></div></td><td>점유 방이 빨강 3+ / 파랑 3+ / 노랑 3+</td></tr>
+          <tr><td>114</td><td><div class="obj-img"><img class="obj-main" src="img/objective_10.png" alt="Objective 114" width="120"></div></td><td>점유 방이 빨강 4+ / 노랑 3+</td></tr>
+          <tr><td>115</td><td><div class="obj-img"><img class="obj-main" src="img/objective_11.png" alt="Objective 115" width="120"></div></td><td>점유 방이 노랑 4+ / 파랑 3+</td></tr>
+          <tr><td>116</td><td><div class="obj-img"><img class="obj-main" src="img/objective_12.png" alt="Objective 116" width="120"></div></td><td>점유 방이 파랑 4+ / 빨강 3+</td></tr>
           <tr><td>163</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_1.png" alt="Objective 163" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>주방에 샴페인 7개 이상</td></tr>
           <tr><td>164</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_2.png" alt="Objective 164" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>무도회장 전체(발코니 포함) 내 무용수 합계 7개 이상</td></tr>
           <tr><td>165</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_3.png" alt="Objective 165" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>초록 손님 4명 이상 주문 완료.</td></tr>
@@ -525,5 +526,9 @@
     window.addEventListener('scroll', toggleTop, { passive: true });
     toggleTop();
   </script>
+  <footer style="text-align:center; margin:16px 0 12px; font-size:11px; color:#94a3b8;">
+    © ossonida@gamil.com
+  </footer>
 </body>
+
 </html>
