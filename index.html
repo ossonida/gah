@@ -2,6 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <meta name="Referrer" content="origin"> 
+  <meta name="referrer" contents="always"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,interactive-widget=resizes-content">
   <title>통합 검색 테이블</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,12 +95,20 @@
       .count-tag { font-size: 11px; }
     }
     @media (max-width: 720px) {
-      .layout { gap: 14px; }
-      .card { padding: 14px 12px; }
-      th:last-child, td:last-child { display: none; }
-      .col-img { width: 110px; }
-      .obj-main { width: 110px; }
-      .obj-img { width: 110px; }
+      .layout { gap: 12px; }
+      .card { padding: 12px 10px; }
+      /* 손님카드: 버전, 이름 숨김 (카드번호·내용 표시) */
+      [data-section="guest"] th:nth-child(2), [data-section="guest"] td:nth-child(2),
+      [data-section="guest"] th:nth-child(3), [data-section="guest"] td:nth-child(3) { display: none; }
+      /* 직원카드: 버전, 이름 숨김 */
+      [data-section="staff"] th:nth-child(2), [data-section="staff"] td:nth-child(2),
+      [data-section="staff"] th:nth-child(3), [data-section="staff"] td:nth-child(3) { display: none; }
+      /* 황제 타일: 버전 숨김 */
+      [data-section="emperor"] th:nth-child(1), [data-section="emperor"] td:nth-child(1) { display: none; }
+      /* 다른 테이블은 컬럼 유지 */
+      .col-img { width: 96px; }
+      .obj-main { width: 96px; }
+      .obj-img { width: 96px; }
     }
   </style>
 </head>
@@ -122,12 +133,12 @@
 
     <section class="card" data-section="guest">
       <div class="card-header"><h2>손님카드</h2><span class="count-tag">본판 58장 · 왈츠 35장 · 총 93장</span></div>
-      <table class="data-table">
-        <colgroup>
-          <col>
-          <col class="col-version">
-          <col>
-          <col>
+        <div class="table-wrap"><table class="data-table hide-version-mobile hide-name-version keep-content">
+          <colgroup>
+            <col>
+            <col class="col-version">
+            <col>
+            <col>
         </colgroup>
         <thead><tr><th>카드번호</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
         <tbody>
