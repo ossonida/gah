@@ -86,6 +86,23 @@
     .empty.hide { display: none; }
     .hide-section { display: none; }
     .table-wrap { overflow-x: auto; }
+    .btn-top {
+      position: fixed;
+      right: 14px;
+      bottom: 16px;
+      z-index: 80;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      display: none;
+      backdrop-filter: blur(6px);
+    }
+    .btn-top.show { display: inline-flex; align-items: center; gap: 6px; }
     @media (max-width: 900px) {
       .layout { gap: 18px; }
       body { padding: 28px 16px; }
@@ -128,9 +145,8 @@
         <button type="button" data-show="entrance">호텔입구(왈츠)</button>
       </div>
       <div class="search-bar">
-        <input id="global-search" type="search" placeholder="번호·이름·내용 통합 검색" autofocus />
+        <input id="global-search" type="search" placeholder="카드번호·이름·내용을 입력하세요" autofocus />
       </div>
-      <p class="hint">버튼으로 섹션을 전환하고, 검색창에 키워드를 입력하면 해당 섹션 내용이 필터링됩니다.</p>
     </div>
 
     <section class="card" data-section="guest">
@@ -462,6 +478,11 @@
     const input = document.getElementById('global-search');
     const sections = document.querySelectorAll('[data-section]');
     const tabs = document.querySelectorAll('#section-tabs button');
+    const btnTop = document.createElement('button');
+    btnTop.className = 'btn-top';
+    btnTop.innerHTML = 'Top';
+    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.appendChild(btnTop);
 
     function applyFilter(term) {
       const query = term.trim().toLowerCase();
@@ -487,10 +508,22 @@
       tabs.forEach(btn => btn.classList.toggle('is-active', btn.dataset.show === name));
     }
 
-    input.addEventListener('input', () => applyFilter(input.value));
+    input.addEventListener('input', () => {
+      applyFilter(input.value);
+      if (window.scrollY > 120) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
     tabs.forEach(btn => btn.addEventListener('click', () => showSection(btn.dataset.show)));
     showSection('all'); // 기본으로 전체 표시
     applyFilter(''); // 초기 표시
+
+    const toggleTop = () => {
+      if (window.scrollY > 180) btnTop.classList.add('show');
+      else btnTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', toggleTop, { passive: true });
+    toggleTop();
   </script>
 </body>
 </html>
