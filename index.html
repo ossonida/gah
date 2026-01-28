@@ -1,11 +1,19 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="Referrer" content="origin"> 
   <meta name="referrer" contents="always"> 
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,interactive-widget=resizes-content">
-  <title>GAH Cards, Tiles Reference KR</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2SXMSZW15"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2SXMSZW15');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
@@ -114,18 +122,18 @@
     @media (max-width: 720px) {
       .layout { gap: 12px; }
       .card { padding: 12px 10px; }
-      /* ì†ë‹˜ì¹´ë“œ: ë²„ì „, ì´ë¦„ ìˆ¨ê¹€ (ì¹´ë“œë²ˆí˜¸Â·ë‚´ìš© í‘œì‹œ) */
+      /* ¼Õ´ÔÄ«µå: ¹öÀü, ÀÌ¸§ ¼û±è (Ä«µå¹øÈ£¡¤³»¿ë Ç¥½Ã) */
       [data-section="guest"] col:nth-child(2), [data-section="guest"] col:nth-child(2),
       [data-section="guest"] th:nth-child(2), [data-section="guest"] td:nth-child(2),
       [data-section="guest"] th:nth-child(3), [data-section="guest"] td:nth-child(3) { display: none; }
-      /* ì§ì›ì¹´ë“œ: ë²„ì „, ì´ë¦„ ìˆ¨ê¹€ */
+      /* Á÷¿øÄ«µå: ¹öÀü, ÀÌ¸§ ¼û±è */
       [data-section="staff"] col:nth-child(2), [data-section="staff"] col:nth-child(2),
       [data-section="staff"] th:nth-child(2), [data-section="staff"] td:nth-child(2),
       [data-section="staff"] th:nth-child(3), [data-section="staff"] td:nth-child(3) { display: none; }
-      /* í™©ì œ íƒ€ì¼: ë²„ì „ ìˆ¨ê¹€ */
+      /* È²Á¦ Å¸ÀÏ: ¹öÀü ¼û±è */
       [data-section="emperor"] col:nth-child(1), [data-section="emperor"] col:nth-child(1),
       [data-section="emperor"] th:nth-child(1), [data-section="emperor"] td:nth-child(1) { display: none; }
-      /* ë‹¤ë¥¸ í…Œì´ë¸”ì€ ì»¬ëŸ¼ ìœ ì§€ */
+      /* ´Ù¸¥ Å×ÀÌºíÀº ÄÃ·³ À¯Áö */
       .col-img { width: 96px; }
       .obj-main { width: 96px; }
       .obj-img { width: 96px; }
@@ -135,24 +143,24 @@
 <body>
   <div class="layout">
     <div class="page-top">
-      <h1 class="page-title">GAH ì¹´ë“œ/íƒ€ì¼ ì„¤ëª…</h1>
+      <h1 class="page-title">GAH Ä«µå/Å¸ÀÏ ¼³¸í</h1>
       <div class="filter-tabs" id="section-tabs">
-        <button type="button" data-show="all" class="is-active">ì „ì²´</button>
-        <button type="button" data-show="guest">ì†ë‹˜ì¹´ë“œ</button>
-        <button type="button" data-show="staff">ì§ì›ì¹´ë“œ</button>
-        <button type="button" data-show="objective">ëª©í‘œì¹´ë“œ</button>
-        <button type="button" data-show="emperor">í™©ì œ íƒ€ì¼</button>
-        <button type="button" data-show="tile">ìœ ëª…ì¸ì‚¬(ì™ˆì¸ )</button>
-        <button type="button" data-show="entrance">í˜¸í…”ìž…êµ¬(ì™ˆì¸ )</button>
+        <button type="button" data-show="all" class="is-active">ÀüÃ¼</button>
+        <button type="button" data-show="guest">¼Õ´ÔÄ«µå</button>
+        <button type="button" data-show="staff">Á÷¿øÄ«µå</button>
+        <button type="button" data-show="objective">¸ñÇ¥Ä«µå</button>
+        <button type="button" data-show="emperor">È²Á¦ Å¸ÀÏ</button>
+        <button type="button" data-show="tile">À¯¸íÀÎ»ç(¿ÐÃ÷)</button>
+        <button type="button" data-show="entrance">È£ÅÚÀÔ±¸(¿ÐÃ÷)</button>
       </div>
       <div class="search-bar">
-        <input id="global-search" type="search" placeholder="ì¹´ë“œë²ˆí˜¸Â·ì´ë¦„Â·ë‚´ìš©ì„ ìž…ë ¥í•˜ì„¸ìš”" autofocus />
+        <input id="global-search" type="search" placeholder="Ä«µå¹øÈ£¡¤ÀÌ¸§¡¤³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä" autofocus />
       </div>
     </div>
-    <div id="global-empty" class="empty hide" style="text-align:center;">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+    <div id="global-empty" class="empty hide" style="text-align:center;">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
 
     <section class="card" data-section="guest">
-      <div class="card-header"><h2>ì†ë‹˜ì¹´ë“œ</h2><span class="count-tag">ë³¸íŒ 58ìž¥ Â· ì™ˆì¸  35ìž¥ Â· ì´ 93ìž¥</span></div>
+      <div class="card-header"><h2>¼Õ´ÔÄ«µå</h2><span class="count-tag">º»ÆÇ 58Àå ¡¤ ¿ÐÃ÷ 35Àå ¡¤ ÃÑ 93Àå</span></div>
         <div class="table-wrap"><table class="data-table hide-version-mobile hide-name-version keep-content">
           <colgroup>
             <col>
@@ -160,108 +168,108 @@
             <col>
             <col>
         </colgroup>
-        <thead><tr><th>ì¹´ë“œ</th><th>ë²„ì „</th><th>ì´ë¦„</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>Ä«µå</th><th>¹öÀü</th><th>ÀÌ¸§</th><th>³»¿ë</th></tr></thead>
         <tbody>
-          <tr><td>49</td><td>ë³¸íŒ</td><td>Sculptor</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>50</td><td>ë³¸íŒ</td><td>Prison Guard</td><td>ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ì•„ ì†ì— ë„£ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ì§€ë¶ˆí•˜ê³  ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>51</td><td>ë³¸íŒ</td><td>Professor</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>52</td><td>ë³¸íŒ</td><td>Doctor</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>53</td><td>ë³¸íŒ</td><td>Musician</td><td>VP 5ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>54</td><td>ë³¸íŒ</td><td>Actress</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 2í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>55</td><td>ë³¸íŒ</td><td>General</td><td>VP 5ì ì„ ì–»ìŠµë‹ˆë‹¤. 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>56</td><td>ë³¸íŒ</td><td>Businessman</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>57</td><td>ë³¸íŒ</td><td>Baroness</td><td>í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>58</td><td>ë³¸íŒ</td><td>Count</td><td>í™©ì œ íŠ¸ëž™ì„ 3ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>59</td><td>ë³¸íŒ</td><td>Noblewoman</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>60</td><td>ë³¸íŒ</td><td>Nobleman</td><td>í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>61</td><td>ë³¸íŒ</td><td>Magistrate</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤. 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>62</td><td>ë³¸íŒ</td><td>Consul</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>63</td><td>ë³¸íŒ</td><td>Mayor</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>64</td><td>ë³¸íŒ</td><td>Judge</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>65</td><td>ë³¸íŒ</td><td>Doctorâ€™s Wife</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>66</td><td>ë³¸íŒ</td><td>Chef</td><td>ìŠˆíŠ¸ë£¨ë¸ 1ê°œì™€ ì¼€ì´í¬ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>67</td><td>ë³¸íŒ</td><td>Writer</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>68</td><td>ë³¸íŒ</td><td>Officer</td><td>1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>69</td><td>ë³¸íŒ</td><td>Colonel</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>70</td><td>ë³¸íŒ</td><td>Corporal</td><td>1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>71</td><td>ë³¸íŒ</td><td>Citizen</td><td>ìŠˆíŠ¸ë£¨ë¸ 1ê°œì™€ ì™€ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>72</td><td>ë³¸íŒ</td><td>Citizen</td><td>ì¼€ì´í¬ 1ê°œì™€ ì»¤í”¼ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>73</td><td>ë³¸íŒ</td><td>Citizen</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>74</td><td>ë³¸íŒ</td><td>Citizen</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>75</td><td>ë³¸íŒ</td><td>Citizen</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>76</td><td>ë³¸íŒ</td><td>Citizen</td><td>ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>77</td><td>ë³¸íŒ</td><td>Citizen</td><td>ê°ì‹¤ 1ê°œë¥¼ ì¤€ë¹„í•  ë•Œ ë¹„ìš©ì´ 1í¬ë¡œë„¤ ê°ì†Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>78</td><td>ë³¸íŒ</td><td>Artist</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>79</td><td>ë³¸íŒ</td><td>Painter</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>80</td><td>ë³¸íŒ</td><td>Composer</td><td>í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>81</td><td>ë³¸íŒ</td><td>Sculptor</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>82</td><td>ë³¸íŒ</td><td>Architect</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>83</td><td>ë³¸íŒ</td><td>Actress</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 2í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>84</td><td>ë³¸íŒ</td><td>Tourist</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>85</td><td>ë³¸íŒ</td><td>Tourist</td><td>1í¬ë¡œë„¤ì™€ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>86</td><td>ë³¸íŒ</td><td>Tourist</td><td>VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>87</td><td>ë³¸íŒ</td><td>Tourist</td><td>í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>88</td><td>ë³¸íŒ</td><td>Tourist</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>89</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>90</td><td>ë³¸íŒ</td><td>Tourist</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>91</td><td>ë³¸íŒ</td><td>Tourist</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>92</td><td>ë³¸íŒ</td><td>Tourist</td><td>ìŠˆíŠ¸ë£¨ë¸ 1ê°œ, ì¼€ì´í¬ 1ê°œ, ì™€ì¸ 1ê°œ, ì»¤í”¼ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>93</td><td>ë³¸íŒ</td><td>Tourist</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>94</td><td>ë³¸íŒ</td><td>Tourist</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>95</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>96</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 3í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>97</td><td>ë³¸íŒ</td><td>Tourist</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>98</td><td>ë³¸íŒ</td><td>Tourist</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>99</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤. ê·¸ì¤‘ 1ìž¥ì„ ì¦‰ì‹œ ê³ ìš©í•˜ë˜, ë¹„ìš©ì„ ìµœëŒ€ 3í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ì§€ë¶ˆí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>100</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤. ê·¸ì¤‘ 1ìž¥ì„ ì¦‰ì‹œ ê³ ìš©í•˜ë˜, ë¹„ìš©ì„ ìµœëŒ€ 2í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ì§€ë¶ˆí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>101</td><td>ë³¸íŒ</td><td>Tourist</td><td>ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤. ê·¸ ì¹´ë“œë¥¼ ì¦‰ì‹œ ê³ ìš©í•˜ë˜, ë¹„ìš©ì„ ìµœëŒ€ 1í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ì§€ë¶ˆí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>102</td><td>ë³¸íŒ</td><td>Tourist</td><td>VP 6ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>103</td><td>ë³¸íŒ</td><td>Tourist</td><td>VP 4ì ì„ ì–»ìŠµë‹ˆë‹¤. 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>104</td><td>ë³¸íŒ</td><td>Tourist</td><td>VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>117*</td><td>ë³¸íŒ</td><td>Mag. Dr. Bloedel</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>118*</td><td>ë³¸íŒ</td><td>Alois & Leopold</td><td>ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>134</td><td>ì™ˆì¸ </td><td>Debutante</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>135</td><td>ì™ˆì¸ </td><td>Lady Companion</td><td>í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>136</td><td>ì™ˆì¸ </td><td>Governess</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>137</td><td>ì™ˆì¸ </td><td>Prima Ballerina</td><td>2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. ë¬´ìš©ìˆ˜ë¥¼ ìµœëŒ€ 2ê°œê¹Œì§€ ë¬´ë„ìž¥ìœ¼ë¡œ ë³´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸). í”„ë¦¬ë§ˆ ë°œë ˆë¦¬ë‚˜ëŠ” ê°ì‹¤ ë˜ëŠ” ë¬´ë„ìž¥ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>138</td><td>ì™ˆì¸ </td><td>Mannequin</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 3í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>139</td><td>ì™ˆì¸ </td><td>Fashion Designer</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>140</td><td>ì™ˆì¸ </td><td>Diplomat</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ëª©í‘œ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ë†“ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>141</td><td>ì™ˆì¸ </td><td>Composer</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. VP 4ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>142</td><td>ì™ˆì¸ </td><td>Dancer</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ë¬´ìš©ìˆ˜ 1ê°œë¥¼ ë¬´ë„ìž¥ìœ¼ë¡œ ë³´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>143</td><td>ì™ˆì¸ </td><td>Opera Singer</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>144</td><td>ì™ˆì¸ </td><td>Stage Star</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>145</td><td>ì™ˆì¸ </td><td>Patron</td><td>ìƒ´íŽ˜ì¸ 1ê°œì™€ 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>146</td><td>ì™ˆì¸ </td><td>Investor</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>147</td><td>ì™ˆì¸ </td><td>Celebrity</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>148</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>149</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>150</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>151</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>152</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ìƒ´íŽ˜ì¸ì„ ì œì™¸í•œ ìš”ë¦¬/ìŒë£Œ 1ê°œë¥¼ ì„ íƒí•´ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>153</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>154</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>155</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œì™€ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>156</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ì¤€ë¹„í•  ë•Œ ë¹„ìš©ì´ 1í¬ë¡œë„¤ ê°ì†Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>157</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>158</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ëŠ” ë“±(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>159</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 2í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>160</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 3í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>161</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>162</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. í™©ì œ íŠ¸ëž™ì„ 2ì¹¸ ì „ì§„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>163</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>164</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì ìœ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>165</td><td>ì™ˆì¸ </td><td>Tourist</td><td>ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤. ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>190**</td><td>ì™ˆì¸ </td><td>Mr. Schulze</td><td>ë¬´ë„ìž¥ì—ë„ ê°ì‹¤ì—ë„ ì´ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ëŒ€ì‹  ë¹„ìš© ì—†ì´ í…Œì´ë¸”ì— ë‚¨ìŠµë‹ˆë‹¤. ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì•„ì´í…œ 1ê°œë¥¼ ì‚¬ìš©í•´ ì´ ì†ë‹˜ì„ "ì§ì› ì¹´ë“œì²˜ëŸ¼" ì²˜ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ ì²˜ë¦¬í•˜ë©´ ì¦‰ì‹œ ë¹„ìš©ì„ ì§€ë¶ˆí•˜ê³  ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ê³ ìš©í•©ë‹ˆë‹¤. ê·¸ë‹¤ìŒ VP 1ì ì„ ì–»ê³ , í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•©ë‹ˆë‹¤. ìµœì¢… ì ìˆ˜ ê³„ì‚°ì—ì„œ, ì´ ì†ë‹˜ì´ í…Œì´ë¸”ì— ë‚¨ì•„ ìžˆì–´ë„ -5VP íŽ˜ë„í‹°ë¥¼ ë°›ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>191**</td><td>ì™ˆì¸ </td><td>J. Kesselhut</td><td>ì•„ì§ í…Œì´ë¸”ì— ë‚¨ì•„ ìžˆëŠ” ì†ë‹˜ë“¤ì˜ ì™€ì¸ ì£¼ë¬¸ì„ ê³µìš© ê³µê¸‰ì²˜ì˜ ì™€ì¸ìœ¼ë¡œ ì¦‰ì‹œ ì¶©ì¡±í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>192**</td><td>ì™ˆì¸ </td><td>Mrs. Kunkel</td><td>ë§¨ ì•„ëž˜ì¸µ ê°ì‹¤ì„ ë°˜ë“œì‹œ ì ìœ í•´ì•¼ í•©ë‹ˆë‹¤. ë¹ˆ ê°ì‹¤ì´ ì—†ìœ¼ë©´ í…Œì´ë¸”ì„ 1ê°œ ì¤„ì´ê³ , ìµœì¢… ì ìˆ˜ ê³„ì‚°ì—ì„œ -5VP íŽ˜ë„í‹°ë¥¼ ë°›ìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
+          <tr><td>49</td><td>º»ÆÇ</td><td>Sculptor</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>50</td><td>º»ÆÇ</td><td>Prison Guard</td><td>Á÷¿ø Ä«µå 2ÀåÀ» »Ì¾Æ ¼Õ¿¡ ³Ö½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÁöºÒÇÏ°í °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>51</td><td>º»ÆÇ</td><td>Professor</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>52</td><td>º»ÆÇ</td><td>Doctor</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>53</td><td>º»ÆÇ</td><td>Musician</td><td>VP 5Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>54</td><td>º»ÆÇ</td><td>Actress</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 2Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>55</td><td>º»ÆÇ</td><td>General</td><td>VP 5Á¡À» ¾ò½À´Ï´Ù. 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>56</td><td>º»ÆÇ</td><td>Businessman</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 2ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>57</td><td>º»ÆÇ</td><td>Baroness</td><td>È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>58</td><td>º»ÆÇ</td><td>Count</td><td>È²Á¦ Æ®·¢À» 3Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>59</td><td>º»ÆÇ</td><td>Noblewoman</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>60</td><td>º»ÆÇ</td><td>Nobleman</td><td>È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù. VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>61</td><td>º»ÆÇ</td><td>Magistrate</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù. 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>62</td><td>º»ÆÇ</td><td>Consul</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>63</td><td>º»ÆÇ</td><td>Mayor</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>64</td><td>º»ÆÇ</td><td>Judge</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>65</td><td>º»ÆÇ</td><td>Doctor¡¯s Wife</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù. 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>66</td><td>º»ÆÇ</td><td>Chef</td><td>½´Æ®·çµ¨ 1°³¿Í ÄÉÀÌÅ© 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>67</td><td>º»ÆÇ</td><td>Writer</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>68</td><td>º»ÆÇ</td><td>Officer</td><td>1Å©·Î³×¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>69</td><td>º»ÆÇ</td><td>Colonel</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>70</td><td>º»ÆÇ</td><td>Corporal</td><td>1Å©·Î³×¸¦ ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>71</td><td>º»ÆÇ</td><td>Citizen</td><td>½´Æ®·çµ¨ 1°³¿Í ¿ÍÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>72</td><td>º»ÆÇ</td><td>Citizen</td><td>ÄÉÀÌÅ© 1°³¿Í Ä¿ÇÇ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>73</td><td>º»ÆÇ</td><td>Citizen</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>74</td><td>º»ÆÇ</td><td>Citizen</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>75</td><td>º»ÆÇ</td><td>Citizen</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>76</td><td>º»ÆÇ</td><td>Citizen</td><td>Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>77</td><td>º»ÆÇ</td><td>Citizen</td><td>°´½Ç 1°³¸¦ ÁØºñÇÒ ¶§ ºñ¿ëÀÌ 1Å©·Î³× °¨¼ÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>78</td><td>º»ÆÇ</td><td>Artist</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>79</td><td>º»ÆÇ</td><td>Painter</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>80</td><td>º»ÆÇ</td><td>Composer</td><td>È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>81</td><td>º»ÆÇ</td><td>Sculptor</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>82</td><td>º»ÆÇ</td><td>Architect</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>83</td><td>º»ÆÇ</td><td>Actress</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 2Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>84</td><td>º»ÆÇ</td><td>Tourist</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>85</td><td>º»ÆÇ</td><td>Tourist</td><td>1Å©·Î³×¿Í VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>86</td><td>º»ÆÇ</td><td>Tourist</td><td>VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>87</td><td>º»ÆÇ</td><td>Tourist</td><td>È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>88</td><td>º»ÆÇ</td><td>Tourist</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>89</td><td>º»ÆÇ</td><td>Tourist</td><td>Á÷¿ø Ä«µå 2ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>90</td><td>º»ÆÇ</td><td>Tourist</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>91</td><td>º»ÆÇ</td><td>Tourist</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>92</td><td>º»ÆÇ</td><td>Tourist</td><td>½´Æ®·çµ¨ 1°³, ÄÉÀÌÅ© 1°³, ¿ÍÀÎ 1°³, Ä¿ÇÇ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>93</td><td>º»ÆÇ</td><td>Tourist</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>94</td><td>º»ÆÇ</td><td>Tourist</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>95</td><td>º»ÆÇ</td><td>Tourist</td><td>¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>96</td><td>º»ÆÇ</td><td>Tourist</td><td>¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 3Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>97</td><td>º»ÆÇ</td><td>Tourist</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù. VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>98</td><td>º»ÆÇ</td><td>Tourist</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù. È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>99</td><td>º»ÆÇ</td><td>Tourist</td><td>Á÷¿ø Ä«µå 3ÀåÀ» »Ì½À´Ï´Ù. ±×Áß 1ÀåÀ» Áï½Ã °í¿ëÇÏµÇ, ºñ¿ëÀ» ÃÖ´ë 3Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© ÁöºÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>100</td><td>º»ÆÇ</td><td>Tourist</td><td>Á÷¿ø Ä«µå 2ÀåÀ» »Ì½À´Ï´Ù. ±×Áß 1ÀåÀ» Áï½Ã °í¿ëÇÏµÇ, ºñ¿ëÀ» ÃÖ´ë 2Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© ÁöºÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>101</td><td>º»ÆÇ</td><td>Tourist</td><td>Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù. ±× Ä«µå¸¦ Áï½Ã °í¿ëÇÏµÇ, ºñ¿ëÀ» ÃÖ´ë 1Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© ÁöºÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>102</td><td>º»ÆÇ</td><td>Tourist</td><td>VP 6Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>103</td><td>º»ÆÇ</td><td>Tourist</td><td>VP 4Á¡À» ¾ò½À´Ï´Ù. 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>104</td><td>º»ÆÇ</td><td>Tourist</td><td>VP 2Á¡À» ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>117*</td><td>º»ÆÇ</td><td>Mag. Dr. Bloedel</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>118*</td><td>º»ÆÇ</td><td>Alois & Leopold</td><td>°´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>134</td><td>¿ÐÃ÷</td><td>Debutante</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>135</td><td>¿ÐÃ÷</td><td>Lady Companion</td><td>È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>136</td><td>¿ÐÃ÷</td><td>Governess</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>137</td><td>¿ÐÃ÷</td><td>Prima Ballerina</td><td>2Å©·Î³×¸¦ ¾ò½À´Ï´Ù. ¹«¿ë¼ö¸¦ ÃÖ´ë 2°³±îÁö ¹«µµÀåÀ¸·Î º¸³¾ ¼ö ÀÖ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®). ÇÁ¸®¸¶ ¹ß·¹¸®³ª´Â °´½Ç ¶Ç´Â ¹«µµÀå Áß ÇÏ³ª¸¦ ¼±ÅÃÇÕ´Ï´Ù.</td></tr>
+          <tr><td>138</td><td>¿ÐÃ÷</td><td>Mannequin</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 3Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>139</td><td>¿ÐÃ÷</td><td>Fashion Designer</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>140</td><td>¿ÐÃ÷</td><td>Diplomat</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¸ñÇ¥ Ä«µå¿¡ ¸¶Ä¿¸¦ ³õÀ» ¼ö ÀÖ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>141</td><td>¿ÐÃ÷</td><td>Composer</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. VP 4Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>142</td><td>¿ÐÃ÷</td><td>Dancer</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¹«¿ë¼ö 1°³¸¦ ¹«µµÀåÀ¸·Î º¸³¾ ¼ö ÀÖ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>143</td><td>¿ÐÃ÷</td><td>Opera Singer</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>144</td><td>¿ÐÃ÷</td><td>Stage Star</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>145</td><td>¿ÐÃ÷</td><td>Patron</td><td>¼¤ÆäÀÎ 1°³¿Í 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>146</td><td>¿ÐÃ÷</td><td>Investor</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 2ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>147</td><td>¿ÐÃ÷</td><td>Celebrity</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>148</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>149</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>150</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>151</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>152</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¼¤ÆäÀÎÀ» Á¦¿ÜÇÑ ¿ä¸®/À½·á 1°³¸¦ ¼±ÅÃÇØ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>153</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>154</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>155</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¿Í 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>156</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ÁØºñÇÒ ¶§ ºñ¿ëÀÌ 1Å©·Î³× °¨¼ÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>157</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù. VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>158</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. Á÷¿ø Ä«µå 3ÀåÀ» »Ì´Â µî(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>159</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 2Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>160</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù. ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 3Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>161</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù. VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>162</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù. È²Á¦ Æ®·¢À» 2Ä­ ÀüÁøÇÕ´Ï´Ù.</td></tr>
+          <tr><td>163</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù. 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>164</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ Á¡À¯ÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>165</td><td>¿ÐÃ÷</td><td>Tourist</td><td>¼¤ÆäÀÎ 2°³¸¦ ¾ò½À´Ï´Ù. °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>190**</td><td>¿ÐÃ÷</td><td>Mr. Schulze</td><td>¹«µµÀå¿¡µµ °´½Ç¿¡µµ ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù. ´ë½Å ºñ¿ë ¾øÀÌ Å×ÀÌºí¿¡ ³²½À´Ï´Ù. ¶ó¿îµå´ç 1¹ø, ¾ÆÀÌÅÛ 1°³¸¦ »ç¿ëÇØ ÀÌ ¼Õ´ÔÀ» "Á÷¿ø Ä«µåÃ³·³" Ã³¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô Ã³¸®ÇÏ¸é Áï½Ã ºñ¿ëÀ» ÁöºÒÇÏ°í ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» °í¿ëÇÕ´Ï´Ù. ±×´ÙÀ½ VP 1Á¡À» ¾ò°í, È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÕ´Ï´Ù. ÃÖÁ¾ Á¡¼ö °è»ê¿¡¼­, ÀÌ ¼Õ´ÔÀÌ Å×ÀÌºí¿¡ ³²¾Æ ÀÖ¾îµµ -5VP Æä³ÎÆ¼¸¦ ¹ÞÁö ¾Ê½À´Ï´Ù.</td></tr>
+          <tr><td>191**</td><td>¿ÐÃ÷</td><td>J. Kesselhut</td><td>¾ÆÁ÷ Å×ÀÌºí¿¡ ³²¾Æ ÀÖ´Â ¼Õ´ÔµéÀÇ ¿ÍÀÎ ÁÖ¹®À» °ø¿ë °ø±ÞÃ³ÀÇ ¿ÍÀÎÀ¸·Î Áï½Ã ÃæÁ·ÇÕ´Ï´Ù.</td></tr>
+          <tr><td>192**</td><td>¿ÐÃ÷</td><td>Mrs. Kunkel</td><td>¸Ç ¾Æ·¡Ãþ °´½ÇÀ» ¹Ýµå½Ã Á¡À¯ÇØ¾ß ÇÕ´Ï´Ù. ºó °´½ÇÀÌ ¾øÀ¸¸é Å×ÀÌºíÀ» 1°³ ÁÙÀÌ°í, ÃÖÁ¾ Á¡¼ö °è»ê¿¡¼­ -5VP Æä³ÎÆ¼¸¦ ¹Þ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
     </section>
 
     <section class="card" data-section="staff">
-      <div class="card-header"><h2>ì§ì›ì¹´ë“œ</h2><span class="count-tag">ë³¸íŒ 48ìž¥ Â· ì™ˆì¸  30ìž¥ Â· ì´ 78ìž¥</span></div>
+      <div class="card-header"><h2>Á÷¿øÄ«µå</h2><span class="count-tag">º»ÆÇ 48Àå ¡¤ ¿ÐÃ÷ 30Àå ¡¤ ÃÑ 78Àå</span></div>
       <table class="data-table">
         <colgroup>
           <col>
@@ -269,210 +277,210 @@
           <col>
           <col>
         </colgroup>
-        <thead><tr><th>ì¹´ë“œ</th><th>ë²„ì „</th><th>ì´ë¦„</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>Ä«µå</th><th>¹öÀü</th><th>ÀÌ¸§</th><th>³»¿ë</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>ë³¸íŒ</td><td>Breakfast Server</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ìŠˆíŠ¸ë£¨ë¸ 1ê°œ ë˜ëŠ” ì¼€ì´í¬ 1ê°œë¥¼ ê°€ì ¸ì™€ ì†ë‹˜ 1ëª… ìœ„ì— ë†“ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>2</td><td>ë³¸íŒ</td><td>Dish Washer</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì„œë¹™ ì•„ì´í…œ ì¶”ê°€ í–‰ë™ì„ ë¹„ìš© ì—†ì´ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>3</td><td>ë³¸íŒ</td><td>Head Chef</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ìŠˆíŠ¸ë£¨ë¸ 1ê°œì™€ ì¼€ì´í¬ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>4</td><td>ë³¸íŒ</td><td>Pastry Chef</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ì¼€ì´í¬ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>5</td><td>ë³¸íŒ</td><td>Candy Boy</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ìŠˆíŠ¸ë£¨ë¸ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>6</td><td>ë³¸íŒ</td><td>Wine Butler</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ì™€ì¸ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>7</td><td>ë³¸íŒ</td><td>Coffee Brewer</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ì»¤í”¼ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>8</td><td>ë³¸íŒ</td><td>Barista</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ì™€ì¸ 1ê°œì™€ ì»¤í”¼ 1ê°œë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>9</td><td>ë³¸íŒ</td><td>Head Waiter</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ì™€ì¸ê³¼ ì»¤í”¼ë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë•Œ ê°€ì ¸ì˜¤ëŠ” ì™€ì¸ì˜ ê°œìˆ˜ëŠ” ì»¤í”¼ì˜ ê°œìˆ˜ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>10</td><td>ë³¸íŒ</td><td>Concierge</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>11</td><td>ë³¸íŒ</td><td>Porter</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>12</td><td>ë³¸íŒ</td><td>Receptionist</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>13</td><td>ë³¸íŒ</td><td>Chambermaid</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê°ì‹¤ 1ê°œë¥¼ ì¤€ë¹„í•  ë•Œ ë¹„ìš©ì´ 1í¬ë¡œë„¤ ê°ì†Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>14</td><td>ë³¸íŒ</td><td>Salesman</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì§ì› ì¹´ë“œ 2ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>15</td><td>ë³¸íŒ</td><td>Lobby Boy</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>16</td><td>ë³¸íŒ</td><td>Hotel Manager</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>17</td><td>ë³¸íŒ</td><td>Assistant Manager</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš©ì„ ìµœëŒ€ 2í¬ë¡œë„¤ê¹Œì§€ í• ì¸í•˜ì—¬ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>18</td><td>ë³¸íŒ</td><td>Head of Service</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, í–‰ë™ì„ ê°•í™”(Boost)í•  ë•Œ í•„ìš”í•œ 1í¬ë¡œë„¤ë¥¼ ì§€ë¶ˆí•˜ì§€ ì•Šì•„ë„ ë©ë‹ˆë‹¤.</td></tr>
-          <tr><td>19</td><td>ë³¸íŒ</td><td>Sous Chef</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ìš”ë¦¬(ìŠˆíŠ¸ë£¨ë¸/ì¼€ì´í¬) ìµœëŒ€ 2ê°œë¥¼ ê°€ì ¸ì™€ ì†ë‹˜ë“¤ì—ê²Œ ì˜¬ë ¤ë‘˜ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>20</td><td>ë³¸íŒ</td><td>Dishwasher</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì£¼ë°©ì˜ ìš”ë¦¬/ìŒë£Œ ìµœëŒ€ 3ê°œë¥¼ ì†ë‹˜ë“¤ì—ê²Œ ë¹„ìš© ì—†ì´ ì˜®ê¸¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>21</td><td>ë³¸íŒ</td><td>Bellboy</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ 1ëª…ì„ ë¹„ìš© ì—†ì´ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>22</td><td>ë³¸íŒ</td><td>Waitress</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ 1ëª…ì„ ê°€ì ¸ì˜¬ ë•Œ ë¹„ìš©ì´ 1í¬ë¡œë„¤ ê°ì†Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>23</td><td>ë³¸íŒ</td><td>Room Service</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ê³µìš© ê³µê¸‰ì²˜ì—ì„œ í•„ìš”í•œ ì•„ì´í…œì„ ê°€ì ¸ì™€ ì†ë‹˜ 1ëª…ì˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>24</td><td>ë³¸íŒ</td><td>Musician</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>25</td><td>ë³¸íŒ</td><td>Accountant</td><td>ì§ì› ì¹´ë“œë¥¼ ê³ ìš©í•  ë•Œë§ˆë‹¤ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>26</td><td>ë³¸íŒ</td><td>Chef</td><td>ìš”ë¦¬ ê°€ì ¸ì˜¤ê¸° í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ìŠˆíŠ¸ë£¨ë¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>27</td><td>ë³¸íŒ</td><td>Sommelier</td><td>ìŒë£Œ ê°€ì ¸ì˜¤ê¸° í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ì™€ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ê°€ì ¸ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>28</td><td>ë³¸íŒ</td><td>Maid</td><td>ê°ì‹¤ ì¤€ë¹„ í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ê°ì‹¤ 1ê°œë¥¼ ì¶”ê°€ë¡œ ì¤€ë¹„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>29</td><td>ë³¸íŒ</td><td>Clerk</td><td>í˜¸ì˜/ëˆ ì–»ê¸° í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ì¶”ê°€ë¡œ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>30</td><td>ë³¸íŒ</td><td>Lobbyist</td><td>í™©ì œ íŠ¸ëž™ì—ì„œ ì „ì§„í•  ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>31</td><td>ë³¸íŒ</td><td>Architect</td><td>ê°ì‹¤ì„ ì¤€ë¹„í•  ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>32</td><td>ë³¸íŒ</td><td>Interior Designer</td><td>VPê°€ ì¸ì‡„ëœ ì¹¸ì— ê°ì‹¤ì„ ì¤€ë¹„í•  ë•Œë§ˆë‹¤ ì¶”ê°€ë¡œ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>33</td><td>ë³¸íŒ</td><td>Confectioner</td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤ ì¼€ì´í¬ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>34</td><td>ë³¸íŒ</td><td>Bartender</td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤ ì™€ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>35</td><td>ë³¸íŒ</td><td>Coffee Server</td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤ ì»¤í”¼ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>36</td><td>ë³¸íŒ</td><td>Chef de Partie</td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤ ìŠˆíŠ¸ë£¨ë¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>37</td><td>ë³¸íŒ</td><td>Doorman</td><td>ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ì„ ê°€ì ¸ì˜¬ ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>38</td><td>ë³¸íŒ</td><td>Room Inspector</td><td>ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>39</td><td>ë³¸íŒ</td><td>Bell Captain</td><td>ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤ í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>40</td><td>ë³¸íŒ</td><td>Marketing Director</td><td>ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>41</td><td>ë³¸íŒ</td><td>Diplomat</td><td>ëª©í‘œ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ë†“ì„ ë•Œë§ˆë‹¤ í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>42</td><td>ë³¸íŒ</td><td>Politician</td><td>ëª©í‘œ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ë†“ì„ ë•Œë§ˆë‹¤ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>43</td><td>ë³¸íŒ</td><td>Investor</td><td>ë¼ìš´ë“œ ì¢…ë£Œ ì‹œ, 10í¬ë¡œë„¤ ì´ìƒì´ë©´ VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>44</td><td>ë³¸íŒ</td><td>Banker</td><td>ë¼ìš´ë“œ ì¢…ë£Œ ì‹œ, 3í¬ë¡œë„¤ ì´í•˜ì´ë©´ 2í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>45</td><td>ë³¸íŒ</td><td>Inspector</td><td>ìµœì¢… ì ìˆ˜ ê³„ì‚° ì‹œ, ëª©í‘œë¥¼ 2ê°œ ì´ìƒ ë‹¬ì„±í–ˆë‹¤ë©´ VP 5ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>46</td><td>ë³¸íŒ</td><td>Female Floor Housekeeper</td><td>ìµœì¢… ì ìˆ˜ ê³„ì‚° ì‹œ, ìµœìƒì¸µì˜ ì ìœ ëœ ê°ì‹¤ 1ê°œë‹¹ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>47</td><td>ë³¸íŒ</td><td>Butler</td><td>ìµœì¢… ì ìˆ˜ ê³„ì‚° ì‹œ, ê³ ìš©í•œ ì§ì› ì¹´ë“œ 1ìž¥ë‹¹ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>48</td><td>ë³¸íŒ</td><td>Barkeeper</td><td>ìµœì¢… ì ìˆ˜ ê³„ì‚° ì‹œ, ì‘ëŒ€í•œ ì†ë‹˜ 1ëª…ë‹¹ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>119</td><td>ì™ˆì¸ </td><td>Dancing Master</td><td>3ì§œë¦¬ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°ˆ ë•Œë§ˆë‹¤, ë©”ì¸ í–‰ë™ ì „ ë˜ëŠ” í›„ì—(ì •ìƒ ë¹„ìš© ì§€ë¶ˆ) ë¬´ìš©ìˆ˜ 1ê°œë¥¼ ë¬´ë„ìž¥ìœ¼ë¡œ ë³´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤. ë©”ì¸ í–‰ë™ê³¼ ë¬´ìš©ìˆ˜ ë³´ë‚´ê¸° ì‚¬ì´ì— ì¶”ê°€ í–‰ë™ì„ ë¼ì›Œ ë„£ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>120</td><td>ì™ˆì¸ </td><td>Violinist</td><td>ì¦‰ì‹œ(ê·¸ë¦¬ê³  1íšŒë§Œ) ìƒ´íŽ˜ì¸ 3ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>121</td><td>ì™ˆì¸ </td><td>Concertmaster</td><td>1ì§œë¦¬ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°ˆ ë•Œë§ˆë‹¤, í–‰ë™ì„ ì •ìƒì ìœ¼ë¡œ ìˆ˜í–‰í•œ ë’¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ê³  VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>122</td><td>ì™ˆì¸ </td><td>Symphonist</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ì£¼ë°©ì—ì„œ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ VP 5ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>123</td><td>ì™ˆì¸ </td><td>Usherette</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, 2í¬ë¡œë„¤ë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ê³  VP 3ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>124</td><td>ì™ˆì¸ </td><td>Conductor</td><td>4ì§œë¦¬ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°ˆ ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œì™€ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>125</td><td>ì™ˆì¸ </td><td>Choirmaster</td><td>5ì§œë¦¬ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°ˆ ë•Œë§ˆë‹¤, ë¬´ìš©ìˆ˜ë¥¼ ë³´ë‚¼ ë•Œ í•„ìš”í•œ ìƒ´íŽ˜ì¸ ë¹„ìš©ì´ 1ê°œ ê°ì†Œí•©ë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>126</td><td>ì™ˆì¸ </td><td>Stagehand</td><td>6ì§œë¦¬ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°ˆ ë•Œë§ˆë‹¤, ë¬´ìš©ìˆ˜ë¥¼ ë³´ë‚¼ ë•Œ í•„ìš”í•œ ìƒ´íŽ˜ì¸ ë¹„ìš©ì´ 1ê°œ ê°ì†Œí•©ë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>127</td><td>ì™ˆì¸ </td><td>Costume Designer</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ê°ì‹¤ 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>128</td><td>ì™ˆì¸ </td><td>Music Teacher</td><td>ê°ì‹¤ì„ ì¤€ë¹„í•  ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>129</td><td>ì™ˆì¸ </td><td>Choreographer</td><td>ë¬´ìš©ìˆ˜ë¥¼ ë¬´ë„ìž¥ìœ¼ë¡œ ë³´ë‚¼ ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>130</td><td>ì™ˆì¸ </td><td>Director</td><td>ì§ì› ì¹´ë“œë¥¼ ê³ ìš©í•œ ë’¤, ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì‚¬ìš©í•´ ì¦‰ì‹œ ë‹¤ë¥¸ ì§ì› ì¹´ë“œ 1ìž¥ì„ ê³ ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>131</td><td>ì™ˆì¸ </td><td>Impresario</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>132</td><td>ì™ˆì¸ </td><td>Producer</td><td>ëª©í‘œ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ë†“ì€ ë’¤ ì´ ì¹´ë“œë¥¼ ë’¤ì§‘ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•©ë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>133</td><td>ì™ˆì¸ </td><td>Masked Guest</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ê³µìš© ê³µê¸‰ì²˜ì—ì„œ ìš”ë¦¬/ìŒë£Œ 1ê°œë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.</td></tr>
-          <tr><td>166</td><td>ì™ˆì¸ </td><td>Bartender</td><td>ìŒë£Œ ê°€ì ¸ì˜¤ê¸° í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>167</td><td>ì™ˆì¸ </td><td>Pastry Chef</td><td>ìš”ë¦¬ ê°€ì ¸ì˜¤ê¸° í–‰ë™ì„ í•  ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>168</td><td>ì™ˆì¸ </td><td>Butler</td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>169</td><td>ì™ˆì¸ </td><td>Room Service</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ê³µìš© ê³µê¸‰ì²˜ì—ì„œ í•„ìš”í•œ ì•„ì´í…œì„ ê°€ì ¸ì™€ ì†ë‹˜ 1ëª…ì˜ ì£¼ë¬¸ì„ ì™„ë£Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>170</td><td>ì™ˆì¸ </td><td>Concierge</td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ, ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì •í™•ížˆ ì‚¬ìš©í•´ ëŒ€ê¸° ì¤„ì˜ ì†ë‹˜ 1ëª…ì„ ë¹„ìš© ì—†ì´ ê°€ì ¸ì˜µë‹ˆë‹¤.</td></tr>
-          <tr><td>171</td><td>ì™ˆì¸ </td><td>Doorman</td><td>ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ì„ ê°€ì ¸ì˜¬ ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ê³  ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>172</td><td>ì™ˆì¸ </td><td>Tour Guide</td><td>ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ì„ ê°€ì ¸ì˜¬ ë•Œë§ˆë‹¤ í™©ì œ íŠ¸ëž™ì„ 1ì¹¸ ì „ì§„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>173</td><td>ì™ˆì¸ </td><td>Usher</td><td>ì†ë‹˜ì„ í…Œì´ë¸”ì— ë†“ì„ ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>174</td><td>ì™ˆì¸ </td><td>Chambermaid</td><td>ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>175</td><td>ì™ˆì¸ </td><td>Maid</td><td>ê°ì‹¤ì„ ì¤€ë¹„í•  ë•Œë§ˆë‹¤ VP 1ì ì„ ì–»ê³  ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>176</td><td>ì™ˆì¸ </td><td>Banker</td><td>1í¬ë¡œë„¤ ì´ìƒ ì–»ì„ ë•Œë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>177</td><td>ì™ˆì¸ </td><td>Sommelier</td><td>ìµœì¢… ì ìˆ˜ ê³„ì‚° ì‹œ, ì£¼ë°©ì— ìžˆëŠ” ìƒ´íŽ˜ì¸ 1ê°œë‹¹ VP 1ì ì„ ì–»ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>178</td><td>ì™ˆì¸ </td><td>Janitor</td><td>ì–´ë–¤ ê·¸ë£¹ì„ ì™„ì „ížˆ ì ìœ í•œ ë’¤ ì´ ì¹´ë“œë¥¼ ë’¤ì§‘ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ì¦‰ì‹œ ì†ì— ìžˆëŠ” ì§ì› ì¹´ë“œ ìµœëŒ€ 2ìž¥ì„ ë¹„ìš© ì—†ì´ ê³ ìš©í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>179</td><td>ì™ˆì¸ </td><td>Entertainer</td><td>ëª©í‘œ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ë†“ì€ ë’¤ ì´ ì¹´ë“œë¥¼ ë’¤ì§‘ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ê³µìš© ê³µê¸‰ì²˜ì—ì„œ í•„ìš”í•œ ì•„ì´í…œì„ ê°€ì ¸ì™€ ì†ë‹˜ ìµœëŒ€ 2ëª…ì˜ ì£¼ë¬¸ì„ ì™„ë£Œí•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>183*</td><td>ì™ˆì¸ </td><td>Managerâ€™s Son</td><td>í–‰ë™ ì¤‘ ìƒ´íŽ˜ì¸ì„ 1ê°œ ì´ìƒ ì‚¬ìš©í•  ë•Œë§ˆë‹¤ 1í¬ë¡œë„¤ë¥¼ ì–»ìŠµë‹ˆë‹¤.</td></tr>
+          <tr><td>1</td><td>º»ÆÇ</td><td>Breakfast Server</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ½´Æ®·çµ¨ 1°³ ¶Ç´Â ÄÉÀÌÅ© 1°³¸¦ °¡Á®¿Í ¼Õ´Ô 1¸í À§¿¡ ³õÀ» ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>2</td><td>º»ÆÇ</td><td>Dish Washer</td><td>¶ó¿îµå´ç 1¹ø, ¼­ºù ¾ÆÀÌÅÛ Ãß°¡ Çàµ¿À» ºñ¿ë ¾øÀÌ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>3</td><td>º»ÆÇ</td><td>Head Chef</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ½´Æ®·çµ¨ 1°³¿Í ÄÉÀÌÅ© 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>4</td><td>º»ÆÇ</td><td>Pastry Chef</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ÄÉÀÌÅ© 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>5</td><td>º»ÆÇ</td><td>Candy Boy</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ½´Æ®·çµ¨ 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>6</td><td>º»ÆÇ</td><td>Wine Butler</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ¿ÍÀÎ 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>7</td><td>º»ÆÇ</td><td>Coffee Brewer</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ Ä¿ÇÇ 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>8</td><td>º»ÆÇ</td><td>Barista</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ¿ÍÀÎ 1°³¿Í Ä¿ÇÇ 1°³¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>9</td><td>º»ÆÇ</td><td>Head Waiter</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ¿ÍÀÎ°ú Ä¿ÇÇ¸¦ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù. ÀÌ¶§ °¡Á®¿À´Â ¿ÍÀÎÀÇ °³¼ö´Â Ä¿ÇÇÀÇ °³¼ö ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.</td></tr>
+          <tr><td>10</td><td>º»ÆÇ</td><td>Concierge</td><td>¶ó¿îµå´ç 1¹ø, È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>11</td><td>º»ÆÇ</td><td>Porter</td><td>¶ó¿îµå´ç 1¹ø, 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>12</td><td>º»ÆÇ</td><td>Receptionist</td><td>¶ó¿îµå´ç 1¹ø, °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>13</td><td>º»ÆÇ</td><td>Chambermaid</td><td>¶ó¿îµå´ç 1¹ø, °´½Ç 1°³¸¦ ÁØºñÇÒ ¶§ ºñ¿ëÀÌ 1Å©·Î³× °¨¼ÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>14</td><td>º»ÆÇ</td><td>Salesman</td><td>¶ó¿îµå´ç 1¹ø, Á÷¿ø Ä«µå 2ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>15</td><td>º»ÆÇ</td><td>Lobby Boy</td><td>¶ó¿îµå´ç 1¹ø, Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>16</td><td>º»ÆÇ</td><td>Hotel Manager</td><td>¶ó¿îµå´ç 1¹ø, ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>17</td><td>º»ÆÇ</td><td>Assistant Manager</td><td>¶ó¿îµå´ç 1¹ø, ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ëÀ» ÃÖ´ë 2Å©·Î³×±îÁö ÇÒÀÎÇÏ¿© °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>18</td><td>º»ÆÇ</td><td>Head of Service</td><td>¶ó¿îµå´ç 1¹ø, Çàµ¿À» °­È­(Boost)ÇÒ ¶§ ÇÊ¿äÇÑ 1Å©·Î³×¸¦ ÁöºÒÇÏÁö ¾Ê¾Æµµ µË´Ï´Ù.</td></tr>
+          <tr><td>19</td><td>º»ÆÇ</td><td>Sous Chef</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ¿ä¸®(½´Æ®·çµ¨/ÄÉÀÌÅ©) ÃÖ´ë 2°³¸¦ °¡Á®¿Í ¼Õ´Ôµé¿¡°Ô ¿Ã·ÁµÑ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>20</td><td>º»ÆÇ</td><td>Dishwasher</td><td>¶ó¿îµå´ç 1¹ø, ÁÖ¹æÀÇ ¿ä¸®/À½·á ÃÖ´ë 3°³¸¦ ¼Õ´Ôµé¿¡°Ô ºñ¿ë ¾øÀÌ ¿Å±æ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>21</td><td>º»ÆÇ</td><td>Bellboy</td><td>¶ó¿îµå´ç 1¹ø, ´ë±â ÁÙ¿¡¼­ ¼Õ´Ô 1¸íÀ» ºñ¿ë ¾øÀÌ °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>22</td><td>º»ÆÇ</td><td>Waitress</td><td>¶ó¿îµå´ç 1¹ø, ´ë±â ÁÙ¿¡¼­ ¼Õ´Ô 1¸íÀ» °¡Á®¿Ã ¶§ ºñ¿ëÀÌ 1Å©·Î³× °¨¼ÒÇÕ´Ï´Ù.</td></tr>
+          <tr><td>23</td><td>º»ÆÇ</td><td>Room Service</td><td>¶ó¿îµå´ç 1¹ø, °ø¿ë °ø±ÞÃ³¿¡¼­ ÇÊ¿äÇÑ ¾ÆÀÌÅÛÀ» °¡Á®¿Í ¼Õ´Ô 1¸íÀÇ ÁÖ¹®À» ¿Ï·áÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>24</td><td>º»ÆÇ</td><td>Musician</td><td>¶ó¿îµå´ç 1¹ø, VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>25</td><td>º»ÆÇ</td><td>Accountant</td><td>Á÷¿ø Ä«µå¸¦ °í¿ëÇÒ ¶§¸¶´Ù 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>26</td><td>º»ÆÇ</td><td>Chef</td><td>¿ä¸® °¡Á®¿À±â Çàµ¿À» ÇÒ ¶§¸¶´Ù ½´Æ®·çµ¨ 1°³¸¦ Ãß°¡·Î °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>27</td><td>º»ÆÇ</td><td>Sommelier</td><td>À½·á °¡Á®¿À±â Çàµ¿À» ÇÒ ¶§¸¶´Ù ¿ÍÀÎ 1°³¸¦ Ãß°¡·Î °¡Á®¿Ã ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>28</td><td>º»ÆÇ</td><td>Maid</td><td>°´½Ç ÁØºñ Çàµ¿À» ÇÒ ¶§¸¶´Ù °´½Ç 1°³¸¦ Ãß°¡·Î ÁØºñÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>29</td><td>º»ÆÇ</td><td>Clerk</td><td>È£ÀÇ/µ· ¾ò±â Çàµ¿À» ÇÒ ¶§¸¶´Ù Ãß°¡·Î 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>30</td><td>º»ÆÇ</td><td>Lobbyist</td><td>È²Á¦ Æ®·¢¿¡¼­ ÀüÁøÇÒ ¶§¸¶´Ù VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>31</td><td>º»ÆÇ</td><td>Architect</td><td>°´½ÇÀ» ÁØºñÇÒ ¶§¸¶´Ù VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>32</td><td>º»ÆÇ</td><td>Interior Designer</td><td>VP°¡ ÀÎ¼âµÈ Ä­¿¡ °´½ÇÀ» ÁØºñÇÒ ¶§¸¶´Ù Ãß°¡·Î VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>33</td><td>º»ÆÇ</td><td>Confectioner</td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§¸¶´Ù ÄÉÀÌÅ© 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>34</td><td>º»ÆÇ</td><td>Bartender</td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§¸¶´Ù ¿ÍÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>35</td><td>º»ÆÇ</td><td>Coffee Server</td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§¸¶´Ù Ä¿ÇÇ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>36</td><td>º»ÆÇ</td><td>Chef de Partie</td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§¸¶´Ù ½´Æ®·çµ¨ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>37</td><td>º»ÆÇ</td><td>Doorman</td><td>´ë±â ÁÙ¿¡¼­ ¼Õ´ÔÀ» °¡Á®¿Ã ¶§¸¶´Ù VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>38</td><td>º»ÆÇ</td><td>Room Inspector</td><td>°´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>39</td><td>º»ÆÇ</td><td>Bell Captain</td><td>°´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>40</td><td>º»ÆÇ</td><td>Marketing Director</td><td>°´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>41</td><td>º»ÆÇ</td><td>Diplomat</td><td>¸ñÇ¥ Ä«µå¿¡ ¸¶Ä¿¸¦ ³õÀ» ¶§¸¶´Ù È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>42</td><td>º»ÆÇ</td><td>Politician</td><td>¸ñÇ¥ Ä«µå¿¡ ¸¶Ä¿¸¦ ³õÀ» ¶§¸¶´Ù VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>43</td><td>º»ÆÇ</td><td>Investor</td><td>¶ó¿îµå Á¾·á ½Ã, 10Å©·Î³× ÀÌ»óÀÌ¸é VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>44</td><td>º»ÆÇ</td><td>Banker</td><td>¶ó¿îµå Á¾·á ½Ã, 3Å©·Î³× ÀÌÇÏÀÌ¸é 2Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>45</td><td>º»ÆÇ</td><td>Inspector</td><td>ÃÖÁ¾ Á¡¼ö °è»ê ½Ã, ¸ñÇ¥¸¦ 2°³ ÀÌ»ó ´Þ¼ºÇß´Ù¸é VP 5Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>46</td><td>º»ÆÇ</td><td>Female Floor Housekeeper</td><td>ÃÖÁ¾ Á¡¼ö °è»ê ½Ã, ÃÖ»óÃþÀÇ Á¡À¯µÈ °´½Ç 1°³´ç VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>47</td><td>º»ÆÇ</td><td>Butler</td><td>ÃÖÁ¾ Á¡¼ö °è»ê ½Ã, °í¿ëÇÑ Á÷¿ø Ä«µå 1Àå´ç VP 2Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>48</td><td>º»ÆÇ</td><td>Barkeeper</td><td>ÃÖÁ¾ Á¡¼ö °è»ê ½Ã, ÀÀ´ëÇÑ ¼Õ´Ô 1¸í´ç VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>119</td><td>¿ÐÃ÷</td><td>Dancing Master</td><td>3Â¥¸® ÁÖ»çÀ§¸¦ °¡Á®°¥ ¶§¸¶´Ù, ¸ÞÀÎ Çàµ¿ Àü ¶Ç´Â ÈÄ¿¡(Á¤»ó ºñ¿ë ÁöºÒ) ¹«¿ë¼ö 1°³¸¦ ¹«µµÀåÀ¸·Î º¸³¾ ¼ö ÀÖ½À´Ï´Ù. 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù. ¸ÞÀÎ Çàµ¿°ú ¹«¿ë¼ö º¸³»±â »çÀÌ¿¡ Ãß°¡ Çàµ¿À» ³¢¿ö ³ÖÀ» ¼ö ¾ø½À´Ï´Ù.</td></tr>
+          <tr><td>120</td><td>¿ÐÃ÷</td><td>Violinist</td><td>Áï½Ã(±×¸®°í 1È¸¸¸) ¼¤ÆäÀÎ 3°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>121</td><td>¿ÐÃ÷</td><td>Concertmaster</td><td>1Â¥¸® ÁÖ»çÀ§¸¦ °¡Á®°¥ ¶§¸¶´Ù, Çàµ¿À» Á¤»óÀûÀ¸·Î ¼öÇàÇÑ µÚ ¼¤ÆäÀÎ 1°³¸¦ ¾ò°í VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>122</td><td>¿ÐÃ÷</td><td>Symphonist</td><td>¶ó¿îµå´ç 1¹ø, ÁÖ¹æ¿¡¼­ ¼¤ÆäÀÎ 1°³¸¦ Á¤È®È÷ »ç¿ëÇØ VP 5Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>123</td><td>¿ÐÃ÷</td><td>Usherette</td><td>¶ó¿îµå´ç 1¹ø, 2Å©·Î³×¸¦ Á¤È®È÷ »ç¿ëÇØ ¼¤ÆäÀÎ 1°³¸¦ ¾ò°í VP 3Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>124</td><td>¿ÐÃ÷</td><td>Conductor</td><td>4Â¥¸® ÁÖ»çÀ§¸¦ °¡Á®°¥ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¿Í 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>125</td><td>¿ÐÃ÷</td><td>Choirmaster</td><td>5Â¥¸® ÁÖ»çÀ§¸¦ °¡Á®°¥ ¶§¸¶´Ù, ¹«¿ë¼ö¸¦ º¸³¾ ¶§ ÇÊ¿äÇÑ ¼¤ÆäÀÎ ºñ¿ëÀÌ 1°³ °¨¼ÒÇÕ´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>126</td><td>¿ÐÃ÷</td><td>Stagehand</td><td>6Â¥¸® ÁÖ»çÀ§¸¦ °¡Á®°¥ ¶§¸¶´Ù, ¹«¿ë¼ö¸¦ º¸³¾ ¶§ ÇÊ¿äÇÑ ¼¤ÆäÀÎ ºñ¿ëÀÌ 1°³ °¨¼ÒÇÕ´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>127</td><td>¿ÐÃ÷</td><td>Costume Designer</td><td>¶ó¿îµå´ç 1¹ø, ¼¤ÆäÀÎ 1°³¸¦ Á¤È®È÷ »ç¿ëÇØ °´½Ç 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÕ´Ï´Ù.</td></tr>
+          <tr><td>128</td><td>¿ÐÃ÷</td><td>Music Teacher</td><td>°´½ÇÀ» ÁØºñÇÒ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>129</td><td>¿ÐÃ÷</td><td>Choreographer</td><td>¹«¿ë¼ö¸¦ ¹«µµÀåÀ¸·Î º¸³¾ ¶§¸¶´Ù VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>130</td><td>¿ÐÃ÷</td><td>Director</td><td>Á÷¿ø Ä«µå¸¦ °í¿ëÇÑ µÚ, ¼¤ÆäÀÎ 1°³¸¦ »ç¿ëÇØ Áï½Ã ´Ù¸¥ Á÷¿ø Ä«µå 1ÀåÀ» °í¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>131</td><td>¿ÐÃ÷</td><td>Impresario</td><td>¶ó¿îµå´ç 1¹ø, ¼¤ÆäÀÎ 2°³¸¦ Á¤È®È÷ »ç¿ëÇØ Á÷¿ø Ä«µå 3ÀåÀ» »Ì½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>132</td><td>¿ÐÃ÷</td><td>Producer</td><td>¸ñÇ¥ Ä«µå¿¡ ¸¶Ä¿¸¦ ³õÀº µÚ ÀÌ Ä«µå¸¦ µÚÁýÀ» ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÕ´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>133</td><td>¿ÐÃ÷</td><td>Masked Guest</td><td>¶ó¿îµå´ç 1¹ø, ¼¤ÆäÀÎ 1°³¸¦ Á¤È®È÷ »ç¿ëÇØ °ø¿ë °ø±ÞÃ³¿¡¼­ ¿ä¸®/À½·á 1°³¸¦ °¡Á®¿É´Ï´Ù.</td></tr>
+          <tr><td>166</td><td>¿ÐÃ÷</td><td>Bartender</td><td>À½·á °¡Á®¿À±â Çàµ¿À» ÇÒ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ Ãß°¡·Î ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>167</td><td>¿ÐÃ÷</td><td>Pastry Chef</td><td>¿ä¸® °¡Á®¿À±â Çàµ¿À» ÇÒ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ Ãß°¡·Î ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>168</td><td>¿ÐÃ÷</td><td>Butler</td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ Ãß°¡·Î ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>169</td><td>¿ÐÃ÷</td><td>Room Service</td><td>¶ó¿îµå´ç 1¹ø, ¼¤ÆäÀÎ 2°³¸¦ Á¤È®È÷ »ç¿ëÇØ °ø¿ë °ø±ÞÃ³¿¡¼­ ÇÊ¿äÇÑ ¾ÆÀÌÅÛÀ» °¡Á®¿Í ¼Õ´Ô 1¸íÀÇ ÁÖ¹®À» ¿Ï·áÇÕ´Ï´Ù.</td></tr>
+          <tr><td>170</td><td>¿ÐÃ÷</td><td>Concierge</td><td>¶ó¿îµå´ç 1¹ø, ¼¤ÆäÀÎ 1°³¸¦ Á¤È®È÷ »ç¿ëÇØ ´ë±â ÁÙÀÇ ¼Õ´Ô 1¸íÀ» ºñ¿ë ¾øÀÌ °¡Á®¿É´Ï´Ù.</td></tr>
+          <tr><td>171</td><td>¿ÐÃ÷</td><td>Doorman</td><td>´ë±â ÁÙ¿¡¼­ ¼Õ´ÔÀ» °¡Á®¿Ã ¶§¸¶´Ù VP 1Á¡À» ¾ò°í ¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>172</td><td>¿ÐÃ÷</td><td>Tour Guide</td><td>´ë±â ÁÙ¿¡¼­ ¼Õ´ÔÀ» °¡Á®¿Ã ¶§¸¶´Ù È²Á¦ Æ®·¢À» 1Ä­ ÀüÁøÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+          <tr><td>173</td><td>¿ÐÃ÷</td><td>Usher</td><td>¼Õ´ÔÀ» Å×ÀÌºí¿¡ ³õÀ» ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>174</td><td>¿ÐÃ÷</td><td>Chambermaid</td><td>°´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>175</td><td>¿ÐÃ÷</td><td>Maid</td><td>°´½ÇÀ» ÁØºñÇÒ ¶§¸¶´Ù VP 1Á¡À» ¾ò°í ¼¤ÆäÀÎ 1°³¸¦ ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>176</td><td>¿ÐÃ÷</td><td>Banker</td><td>1Å©·Î³× ÀÌ»ó ¾òÀ» ¶§¸¶´Ù ¼¤ÆäÀÎ 1°³¸¦ Ãß°¡·Î ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>177</td><td>¿ÐÃ÷</td><td>Sommelier</td><td>ÃÖÁ¾ Á¡¼ö °è»ê ½Ã, ÁÖ¹æ¿¡ ÀÖ´Â ¼¤ÆäÀÎ 1°³´ç VP 1Á¡À» ¾ò½À´Ï´Ù.</td></tr>
+          <tr><td>178</td><td>¿ÐÃ÷</td><td>Janitor</td><td>¾î¶² ±×·ìÀ» ¿ÏÀüÈ÷ Á¡À¯ÇÑ µÚ ÀÌ Ä«µå¸¦ µÚÁýÀ» ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é Áï½Ã ¼Õ¿¡ ÀÖ´Â Á÷¿ø Ä«µå ÃÖ´ë 2ÀåÀ» ºñ¿ë ¾øÀÌ °í¿ëÇÕ´Ï´Ù.</td></tr>
+          <tr><td>179</td><td>¿ÐÃ÷</td><td>Entertainer</td><td>¸ñÇ¥ Ä«µå¿¡ ¸¶Ä¿¸¦ ³õÀº µÚ ÀÌ Ä«µå¸¦ µÚÁýÀ» ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é °ø¿ë °ø±ÞÃ³¿¡¼­ ÇÊ¿äÇÑ ¾ÆÀÌÅÛÀ» °¡Á®¿Í ¼Õ´Ô ÃÖ´ë 2¸íÀÇ ÁÖ¹®À» ¿Ï·áÇÕ´Ï´Ù.</td></tr>
+          <tr><td>183*</td><td>¿ÐÃ÷</td><td>Manager¡¯s Son</td><td>Çàµ¿ Áß ¼¤ÆäÀÎÀ» 1°³ ÀÌ»ó »ç¿ëÇÒ ¶§¸¶´Ù 1Å©·Î³×¸¦ ¾ò½À´Ï´Ù.</td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
     </section>
 
     <section class="card" data-section="tile">
-      <div class="card-header"><h2>ìœ ëª…ì¸ì‚¬ íƒ€ì¼(ì™ˆì¸ )</h2><span class="count-tag">ì´ 12ìž¥</span></div>
+      <div class="card-header"><h2>À¯¸íÀÎ»ç Å¸ÀÏ(¿ÐÃ÷)</h2><span class="count-tag">ÃÑ 12Àå</span></div>
       <table class="data-table">
         <colgroup>
           <col class="col-img">
           <col>
         </colgroup>
-        <thead><tr><th>ì´ë¯¸ì§€</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>ÀÌ¹ÌÁö</th><th>³»¿ë</th></tr></thead>
         <tbody>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì•„ê°€ì‚¬ í¬ë¦¬ìŠ¤í‹°<br>(Agatha Christie)</div><img src="img/Celebrity_1.png" alt="Agatha Christie"></div></td><td>í™©ì œ íŠ¸ëž™ì—ì„œ 1ì¹¸ ì´ìƒ ì „ì§„í•  ë•Œë§ˆë‹¤: ì†ì˜ ì§ì› ì¹´ë“œ 1ìž¥ì„ ìµœëŒ€ 2í¬ë¡œë„¤ í• ì¸í•´ í”Œë ˆì´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì „ì§„ ì¶œì²˜ë§ˆë‹¤ 1ìž¥ì”©).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì•Œë² ë¥´íŠ¸ ì•„ì¸ìŠˆíƒ€ì¸<br>(Albert Einstein)</div><img src="img/Celebrity_2.png" alt="Albert Einstein"></div></td><td>ë¼ìš´ë“œë‹¹ 1ë²ˆ: ì£¼ë°©ì˜ ìŒì‹/ìŒë£Œ(ìµœëŒ€ 4ê°œ)ë¥¼ ê³µê¸‰ì²˜ì˜ ë‹¤ë¥¸ ìŒì‹/ìŒë£Œì™€ ê°™ì€ ê°œìˆ˜ë¡œ êµí™˜í•©ë‹ˆë‹¤(ìƒ´íŽ˜ì¸/ëˆì€ ë¶ˆê°€).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì°°ë¦¬ ì±„í”Œë¦°<br>(Charlie Chaplin)</div><img src="img/Celebrity_3.png" alt="Charlie Chaplin"></div></td><td>VPë¥¼ 1 ì´ìƒ íšë“í•  ë•Œë§ˆë‹¤: ì¶”ê°€ë¡œ 2VPë¥¼ ì–»ìŠµë‹ˆë‹¤(VP íšë“ ì¶œì²˜ë§ˆë‹¤ ì ìš©, ìžê¸° ìžì‹  ì—°ì‡„ ì—†ìŒ).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì—˜ë¦¬ìžë² ìŠ¤ ë§¤ê¸°<br>(Elizabeth Magie)</div><img src="img/Celebrity_4.png" alt="Elizabeth Magie"></div></td><td>í¬ë¡œë„¤ë¥¼ 1 ì´ìƒ íšë“í•  ë•Œë§ˆë‹¤: ê°ì‹¤ 1ê°œë¥¼ ì¤€ë¹„í•  ë•Œ ë¹„ìš© 1í¬ë¡œë„¤ í• ì¸ì„ ì ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì¶œì²˜ë§ˆë‹¤ 1íšŒ, ì—°ì‡„ ì—†ìŒ).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">J.R.R. í†¨í‚¨<br>(J.R.R. Tolkien)</div><img src="img/Celebrity_6.png" alt="J.R.R. Tolkien"></div></td><td>(ëª¨ë“ˆ 1+2 ë™ì‹œì¼ ë•Œë§Œ) ì–´ë–¤ ì´ìœ ë“  ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤ ì¶”ê°€ 2VP.</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì§€ì•„ì½”ëª¨ í‘¸ì¹˜ë‹ˆ<br>(Giacomo Puccini)</div><img src="img/Celebrity_5.png" alt="Giacomo Puccini"></div></td><td>ì§ì› ì¹´ë“œë¥¼ í”Œë ˆì´í•œ ë’¤ë§ˆë‹¤ ìƒ´íŽ˜ì¸ 1ê°œ + 2VP ì¶”ê°€.</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ë§ˆí•˜íŠ¸ë§ˆ ê°„ë””<br>(Mahatma Gandhi)</div><img src="img/Celebrity_7.png" alt="Mahatma Gandhi"></div></td><td>ì´ë²ˆ ë¼ìš´ë“œ ë™ì•ˆ ê°ì‹¤ ì¤€ë¹„ ë¹„ìš©ì´ 0ìž…ë‹ˆë‹¤(í–‰ë™ ìžì²´ê°€ ë¬´ë£Œê°€ ì•„ë‹ˆë¼ â€œë¹„ìš©ë§Œ 0â€).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ë§ˆë¦¬ í€´ë¦¬<br>(Marie Curie)</div><img src="img/Celebrity_8.png" alt="Marie Curie"></div></td><td>(ëª¨ë“ˆ 1+2 ë™ì‹œì¼ ë•Œë§Œ) ì§ì› ì¹´ë“œ í”Œë ˆì´ í›„ë§ˆë‹¤ ìŒì‹/ìŒë£Œ 2ê°œ(ìƒ´íŽ˜ì¸ ì œì™¸)ë¥¼ ì¶”ê°€ë¡œ íšë“(ê°™ê±°ë‚˜ ë‹¬ë¼ë„ ë¨).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ë§ˆíƒ€ í•˜ë¦¬<br>(Mata Hari)</div><img src="img/Celebrity_9.png" alt="Mata Hari"></div></td><td>(ëª¨ë“ˆ 1+2 ë™ì‹œì¼ ë•Œë§Œ) ë¬´ìš©ìˆ˜ 1ê°œë¥¼ ë¬´ë„ìž¥ì— ë³´ë‚¼ ë•Œë§ˆë‹¤ 1VP + í™©ì œ íŠ¸ëž™ +1(ë¬´ìš©ìˆ˜ë§ˆë‹¤ ì ìš©).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">íŒŒë¸”ë¡œ í”¼ì¹´ì†Œ<br>(Pablo Picasso)</div><img src="img/Celebrity_10.png" alt="Pablo Picasso"></div></td><td>(ëª¨ë“ˆ 1+2 ë™ì‹œì¼ ë•Œë§Œ) ìƒ´íŽ˜ì¸ì„ 1 ì´ìƒ íšë“í•  ë•Œë§ˆë‹¤: ì›í•˜ëŠ” ìŒì‹/ìŒë£Œ 1ê°œ(ìƒ´íŽ˜ì¸ ì œì™¸) + 1VP ì¶”ê°€(ì¶œì²˜ë§ˆë‹¤ ì ìš©).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ì§€ê·¸ë¬¸íŠ¸ í”„ë¡œì´íŠ¸<br>(Sigmund Freud)</div><img src="img/Celebrity_11.png" alt="Sigmund Freud"></div></td><td>ì†ë‹˜ ì£¼ë¬¸ì„ ì™„ë£Œí•  ë•Œ: ìš”êµ¬ ì•„ì´í…œ ì¤‘ 1ê°œë¥¼ ë¬´ì‹œí•˜ê³  ì™„ë£Œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ìš”êµ¬ ì•„ì´í…œì´ 1ê°œë¿ì¸ ì†ë‹˜ì—ëŠ” ì ìš© ë¶ˆê°€).</td></tr>
-          <tr><td><div class="celeb-card"><div class="celeb-name">ìœˆìŠ¤í„´ ì²˜ì¹ <br>(Winston Churchill)</div><img src="img/Celebrity_12.png" alt="Winston Churchill"></div></td><td>í™©ì œ íŠ¸ëž™ì—ì„œ 1ì¹¸ ì´ìƒ ì „ì§„í•  ë•Œë§ˆë‹¤ ì¶”ê°€ë¡œ +1ì¹¸ ë” ì „ì§„í•©ë‹ˆë‹¤(ì¶œì²˜ë§ˆë‹¤ ì ìš©, ì—°ì‡„ ì—†ìŒ).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¾Æ°¡»ç Å©¸®½ºÆ¼<br>(Agatha Christie)</div><img src="img/Celebrity_1.png" alt="Agatha Christie"></div></td><td>È²Á¦ Æ®·¢¿¡¼­ 1Ä­ ÀÌ»ó ÀüÁøÇÒ ¶§¸¶´Ù: ¼ÕÀÇ Á÷¿ø Ä«µå 1ÀåÀ» ÃÖ´ë 2Å©·Î³× ÇÒÀÎÇØ ÇÃ·¹ÀÌÇÒ ¼ö ÀÖ½À´Ï´Ù(ÀüÁø ÃâÃ³¸¶´Ù 1Àå¾¿).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¾Ëº£¸£Æ® ¾ÆÀÎ½´Å¸ÀÎ<br>(Albert Einstein)</div><img src="img/Celebrity_2.png" alt="Albert Einstein"></div></td><td>¶ó¿îµå´ç 1¹ø: ÁÖ¹æÀÇ À½½Ä/À½·á(ÃÖ´ë 4°³)¸¦ °ø±ÞÃ³ÀÇ ´Ù¸¥ À½½Ä/À½·á¿Í °°Àº °³¼ö·Î ±³È¯ÇÕ´Ï´Ù(¼¤ÆäÀÎ/µ·Àº ºÒ°¡).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">Âû¸® Ã¤ÇÃ¸°<br>(Charlie Chaplin)</div><img src="img/Celebrity_3.png" alt="Charlie Chaplin"></div></td><td>VP¸¦ 1 ÀÌ»ó È¹µæÇÒ ¶§¸¶´Ù: Ãß°¡·Î 2VP¸¦ ¾ò½À´Ï´Ù(VP È¹µæ ÃâÃ³¸¶´Ù Àû¿ë, ÀÚ±â ÀÚ½Å ¿¬¼â ¾øÀ½).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¿¤¸®ÀÚº£½º ¸Å±â<br>(Elizabeth Magie)</div><img src="img/Celebrity_4.png" alt="Elizabeth Magie"></div></td><td>Å©·Î³×¸¦ 1 ÀÌ»ó È¹µæÇÒ ¶§¸¶´Ù: °´½Ç 1°³¸¦ ÁØºñÇÒ ¶§ ºñ¿ë 1Å©·Î³× ÇÒÀÎÀ» Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù(ÃâÃ³¸¶´Ù 1È¸, ¿¬¼â ¾øÀ½).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">J.R.R. ÅçÅ²<br>(J.R.R. Tolkien)</div><img src="img/Celebrity_6.png" alt="J.R.R. Tolkien"></div></td><td>(¸ðµâ 1+2 µ¿½ÃÀÏ ¶§¸¸) ¾î¶² ÀÌÀ¯µç °´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù Ãß°¡ 2VP.</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">Áö¾ÆÄÚ¸ð ÇªÄ¡´Ï<br>(Giacomo Puccini)</div><img src="img/Celebrity_5.png" alt="Giacomo Puccini"></div></td><td>Á÷¿ø Ä«µå¸¦ ÇÃ·¹ÀÌÇÑ µÚ¸¶´Ù ¼¤ÆäÀÎ 1°³ + 2VP Ãß°¡.</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¸¶ÇÏÆ®¸¶ °£µð<br>(Mahatma Gandhi)</div><img src="img/Celebrity_7.png" alt="Mahatma Gandhi"></div></td><td>ÀÌ¹ø ¶ó¿îµå µ¿¾È °´½Ç ÁØºñ ºñ¿ëÀÌ 0ÀÔ´Ï´Ù(Çàµ¿ ÀÚÃ¼°¡ ¹«·á°¡ ¾Æ´Ï¶ó ¡°ºñ¿ë¸¸ 0¡±).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¸¶¸® Äû¸®<br>(Marie Curie)</div><img src="img/Celebrity_8.png" alt="Marie Curie"></div></td><td>(¸ðµâ 1+2 µ¿½ÃÀÏ ¶§¸¸) Á÷¿ø Ä«µå ÇÃ·¹ÀÌ ÈÄ¸¶´Ù À½½Ä/À½·á 2°³(¼¤ÆäÀÎ Á¦¿Ü)¸¦ Ãß°¡·Î È¹µæ(°°°Å³ª ´Þ¶óµµ µÊ).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">¸¶Å¸ ÇÏ¸®<br>(Mata Hari)</div><img src="img/Celebrity_9.png" alt="Mata Hari"></div></td><td>(¸ðµâ 1+2 µ¿½ÃÀÏ ¶§¸¸) ¹«¿ë¼ö 1°³¸¦ ¹«µµÀå¿¡ º¸³¾ ¶§¸¶´Ù 1VP + È²Á¦ Æ®·¢ +1(¹«¿ë¼ö¸¶´Ù Àû¿ë).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">ÆÄºí·Î ÇÇÄ«¼Ò<br>(Pablo Picasso)</div><img src="img/Celebrity_10.png" alt="Pablo Picasso"></div></td><td>(¸ðµâ 1+2 µ¿½ÃÀÏ ¶§¸¸) ¼¤ÆäÀÎÀ» 1 ÀÌ»ó È¹µæÇÒ ¶§¸¶´Ù: ¿øÇÏ´Â À½½Ä/À½·á 1°³(¼¤ÆäÀÎ Á¦¿Ü) + 1VP Ãß°¡(ÃâÃ³¸¶´Ù Àû¿ë).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">Áö±×¹®Æ® ÇÁ·ÎÀÌÆ®<br>(Sigmund Freud)</div><img src="img/Celebrity_11.png" alt="Sigmund Freud"></div></td><td>¼Õ´Ô ÁÖ¹®À» ¿Ï·áÇÒ ¶§: ¿ä±¸ ¾ÆÀÌÅÛ Áß 1°³¸¦ ¹«½ÃÇÏ°í ¿Ï·áÇÒ ¼ö ÀÖ½À´Ï´Ù(¿ä±¸ ¾ÆÀÌÅÛÀÌ 1°³»ÓÀÎ ¼Õ´Ô¿¡´Â Àû¿ë ºÒ°¡).</td></tr>
+          <tr><td><div class="celeb-card"><div class="celeb-name">À©½ºÅÏ Ã³Ä¥<br>(Winston Churchill)</div><img src="img/Celebrity_12.png" alt="Winston Churchill"></div></td><td>È²Á¦ Æ®·¢¿¡¼­ 1Ä­ ÀÌ»ó ÀüÁøÇÒ ¶§¸¶´Ù Ãß°¡·Î +1Ä­ ´õ ÀüÁøÇÕ´Ï´Ù(ÃâÃ³¸¶´Ù Àû¿ë, ¿¬¼â ¾øÀ½).</td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
     </section>
 
     <section class="card" data-section="objective">
-      <div class="card-header"><h2>ëª©í‘œì¹´ë“œ</h2><span class="count-tag">ë³¸íŒ 12ìž¥ Â· ì™ˆì¸  6ìž¥ Â· ì´ 18ìž¥</span></div>
+      <div class="card-header"><h2>¸ñÇ¥Ä«µå</h2><span class="count-tag">º»ÆÇ 12Àå ¡¤ ¿ÐÃ÷ 6Àå ¡¤ ÃÑ 18Àå</span></div>
       <table class="data-table">
         <colgroup>
           <col>
           <col class="col-img">
           <col>
         </colgroup>
-        <thead><tr><th>ì¹´ë“œ</th><th>ì´ë¯¸ì§€</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>Ä«µå</th><th>ÀÌ¹ÌÁö</th><th>³»¿ë</th></tr></thead>
         <tbody>
-          <tr><td>105</td><td><div class="obj-img"><img class="obj-main" src="img/objective_1.png" alt="Objective 105" width="120"></div></td><td>í¬ë¡œë„¤ 20ê°œ ë³´ìœ </td></tr>
-          <tr><td>106</td><td><div class="obj-img"><img class="obj-main" src="img/objective_2.png" alt="Objective 106" width="120"></div></td><td>í™©ì œ íŠ¸ëž™ 10ì¹¸ ì´ìƒ</td></tr>
-          <tr><td>107</td><td><div class="obj-img"><img class="obj-main" src="img/objective_3.png" alt="Objective 107" width="120"></div></td><td>ì§ì› ì¹´ë“œ 6ìž¥ ì´ìƒ í”Œë ˆì´</td></tr>
-          <tr><td>108</td><td><div class="obj-img"><img class="obj-main" src="img/objective_4.png" alt="Objective 108" width="120"></div></td><td>í˜¸í…” ë³´ë“œì— ë°© íƒ€ì¼ 12ê°œ ì´ìƒ(ë¹ˆ/ì ìœ  ë¬´ê´€)</td></tr>
-          <tr><td>109</td><td><div class="obj-img"><img class="obj-main" src="img/objective_5.png" alt="Objective 109" width="120"></div></td><td>í˜¸í…”ì˜ ì¸µ 2ê°œ ì´ìƒì´ ì™„ì „ ì ìœ (ì¸ì ‘ ë¶ˆí•„ìš”)</td></tr>
-          <tr><td>110</td><td><div class="obj-img"><img class="obj-main" src="img/objective_6.png" alt="Objective 110" width="120"></div></td><td>í˜¸í…”ì˜ ì—´ 2ê°œ ì´ìƒì´ ì™„ì „ ì ìœ (ì¸ì ‘ ë¶ˆí•„ìš”)</td></tr>
-          <tr><td>111</td><td><div class="obj-img"><img class="obj-main" src="img/objective_7.png" alt="Objective 111" width="120"></div></td><td>ì™„ì „ ì ìœ ëœ ë°© ê·¸ë£¹ 6ê°œ ì´ìƒ(ê·¸ë£¹ë¼ë¦¬ ì´ì–´ì§ˆ í•„ìš” ì—†ìŒ)</td></tr>
-          <tr><td>112</td><td><div class="obj-img"><img class="obj-main" src="img/objective_8.png" alt="Objective 112" width="120"></div></td><td>ì–´ëŠ í•œ ìƒ‰ì˜ ë°©ì„ ì „ë¶€ ì ìœ </td></tr>
-          <tr><td>113</td><td><div class="obj-img"><img class="obj-main" src="img/objective_9.png" alt="Objective 113" width="120"></div></td><td>ì ìœ  ë°©ì´ ë¹¨ê°• 3+ / íŒŒëž‘ 3+ / ë…¸ëž‘ 3+</td></tr>
-          <tr><td>114</td><td><div class="obj-img"><img class="obj-main" src="img/objective_10.png" alt="Objective 114" width="120"></div></td><td>ì ìœ  ë°©ì´ ë¹¨ê°• 4+ / ë…¸ëž‘ 3+</td></tr>
-          <tr><td>115</td><td><div class="obj-img"><img class="obj-main" src="img/objective_11.png" alt="Objective 115" width="120"></div></td><td>ì ìœ  ë°©ì´ ë…¸ëž‘ 4+ / íŒŒëž‘ 3+</td></tr>
-          <tr><td>116</td><td><div class="obj-img"><img class="obj-main" src="img/objective_12.png" alt="Objective 116" width="120"></div></td><td>ì ìœ  ë°©ì´ íŒŒëž‘ 4+ / ë¹¨ê°• 3+</td></tr>
-          <tr><td>163</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_1.png" alt="Objective 163" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>ì£¼ë°©ì— ìƒ´íŽ˜ì¸ 7ê°œ ì´ìƒ</td></tr>
-          <tr><td>164</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_2.png" alt="Objective 164" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>ë¬´ë„íšŒìž¥ ì „ì²´(ë°œì½”ë‹ˆ í¬í•¨) ë‚´ ë¬´ìš©ìˆ˜ í•©ê³„ 7ê°œ ì´ìƒ</td></tr>
-          <tr><td>165</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_3.png" alt="Objective 165" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>ì´ˆë¡ ì†ë‹˜ 4ëª… ì´ìƒ ì£¼ë¬¸ ì™„ë£Œ.</td></tr>
-          <tr><td>180</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_4.png" alt="Objective 180" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸ 3+ / ì¼€ì´í¬ 3+ / ì™€ì¸ 3+ / ì»¤í”¼ 3+</td></tr>
-          <tr><td>181</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_5.png" alt="Objective 181" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>í˜¸í…” ìµœìƒì¸µ ì ìœ  ë°© 3ê°œ ì´ìƒ</td></tr>
-          <tr><td>182</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_6.png" alt="Objective 182" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>â€œê°ìž ì£¼ë¬¸ì´ 3ê°œ ì´ìƒâ€ì¸ ì†ë‹˜ì„ 5ëª… ì´ìƒ ì£¼ë¬¸ ì™„ë£Œ</td></tr>
+          <tr><td>105</td><td><div class="obj-img"><img class="obj-main" src="img/objective_1.png" alt="Objective 105" width="120"></div></td><td>Å©·Î³× 20°³ º¸À¯</td></tr>
+          <tr><td>106</td><td><div class="obj-img"><img class="obj-main" src="img/objective_2.png" alt="Objective 106" width="120"></div></td><td>È²Á¦ Æ®·¢ 10Ä­ ÀÌ»ó</td></tr>
+          <tr><td>107</td><td><div class="obj-img"><img class="obj-main" src="img/objective_3.png" alt="Objective 107" width="120"></div></td><td>Á÷¿ø Ä«µå 6Àå ÀÌ»ó ÇÃ·¹ÀÌ</td></tr>
+          <tr><td>108</td><td><div class="obj-img"><img class="obj-main" src="img/objective_4.png" alt="Objective 108" width="120"></div></td><td>È£ÅÚ º¸µå¿¡ ¹æ Å¸ÀÏ 12°³ ÀÌ»ó(ºó/Á¡À¯ ¹«°ü)</td></tr>
+          <tr><td>109</td><td><div class="obj-img"><img class="obj-main" src="img/objective_5.png" alt="Objective 109" width="120"></div></td><td>È£ÅÚÀÇ Ãþ 2°³ ÀÌ»óÀÌ ¿ÏÀü Á¡À¯(ÀÎÁ¢ ºÒÇÊ¿ä)</td></tr>
+          <tr><td>110</td><td><div class="obj-img"><img class="obj-main" src="img/objective_6.png" alt="Objective 110" width="120"></div></td><td>È£ÅÚÀÇ ¿­ 2°³ ÀÌ»óÀÌ ¿ÏÀü Á¡À¯(ÀÎÁ¢ ºÒÇÊ¿ä)</td></tr>
+          <tr><td>111</td><td><div class="obj-img"><img class="obj-main" src="img/objective_7.png" alt="Objective 111" width="120"></div></td><td>¿ÏÀü Á¡À¯µÈ ¹æ ±×·ì 6°³ ÀÌ»ó(±×·ì³¢¸® ÀÌ¾îÁú ÇÊ¿ä ¾øÀ½)</td></tr>
+          <tr><td>112</td><td><div class="obj-img"><img class="obj-main" src="img/objective_8.png" alt="Objective 112" width="120"></div></td><td>¾î´À ÇÑ »öÀÇ ¹æÀ» ÀüºÎ Á¡À¯</td></tr>
+          <tr><td>113</td><td><div class="obj-img"><img class="obj-main" src="img/objective_9.png" alt="Objective 113" width="120"></div></td><td>Á¡À¯ ¹æÀÌ »¡°­ 3+ / ÆÄ¶û 3+ / ³ë¶û 3+</td></tr>
+          <tr><td>114</td><td><div class="obj-img"><img class="obj-main" src="img/objective_10.png" alt="Objective 114" width="120"></div></td><td>Á¡À¯ ¹æÀÌ »¡°­ 4+ / ³ë¶û 3+</td></tr>
+          <tr><td>115</td><td><div class="obj-img"><img class="obj-main" src="img/objective_11.png" alt="Objective 115" width="120"></div></td><td>Á¡À¯ ¹æÀÌ ³ë¶û 4+ / ÆÄ¶û 3+</td></tr>
+          <tr><td>116</td><td><div class="obj-img"><img class="obj-main" src="img/objective_12.png" alt="Objective 116" width="120"></div></td><td>Á¡À¯ ¹æÀÌ ÆÄ¶û 4+ / »¡°­ 3+</td></tr>
+          <tr><td>163</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_1.png" alt="Objective 163" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>ÁÖ¹æ¿¡ ¼¤ÆäÀÎ 7°³ ÀÌ»ó</td></tr>
+          <tr><td>164</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_2.png" alt="Objective 164" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>¹«µµÈ¸Àå ÀüÃ¼(¹ßÄÚ´Ï Æ÷ÇÔ) ³» ¹«¿ë¼ö ÇÕ°è 7°³ ÀÌ»ó</td></tr>
+          <tr><td>165</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_3.png" alt="Objective 165" width="120"><img class="obj-icon" src="img/waltz_icon.jpg" alt="Waltz"></div></td><td>ÃÊ·Ï ¼Õ´Ô 4¸í ÀÌ»ó ÁÖ¹® ¿Ï·á.</td></tr>
+          <tr><td>180</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_4.png" alt="Objective 180" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>ÁÖ¹æ¿¡ ½´Æ®·çµ¨ 3+ / ÄÉÀÌÅ© 3+ / ¿ÍÀÎ 3+ / Ä¿ÇÇ 3+</td></tr>
+          <tr><td>181</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_5.png" alt="Objective 181" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>È£ÅÚ ÃÖ»óÃþ Á¡À¯ ¹æ 3°³ ÀÌ»ó</td></tr>
+          <tr><td>182</td><td><div class="obj-img"><img class="obj-main" src="img/objective_w_6.png" alt="Objective 182" width="120"><img class="obj-icon" src="img/plus_icon.jpg" alt="Plus"></div></td><td>¡°°¢ÀÚ ÁÖ¹®ÀÌ 3°³ ÀÌ»ó¡±ÀÎ ¼Õ´ÔÀ» 5¸í ÀÌ»ó ÁÖ¹® ¿Ï·á</td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
       <p class="hint" style="margin-top:8px;">
-        ì™ˆì¸  165/182 ì¶”ì  ê·œì¹™(ì¤‘ìš”): í•´ë‹¹ ëª©í‘œì— í•´ë‹¹í•˜ëŠ” ì†ë‹˜ì€ ì¦‰ì‹œ ë²„ë¦¬ì§€ ë§ê³ , ê°œì¸ ë’·ë©´ ë”ë¯¸ë¡œ ë³´ê´€í•˜ë‹¤ê°€ ëª©í‘œ ë‹¬ì„± í›„ì—ë§Œ ë²„ë¦½ë‹ˆë‹¤. (ëª¨ë“ˆ 3 + ì¹´ìš°í”„ë§Œì´ë©´ ë”ë¯¸ 2ê°œë¡œ ë¶„ë¦¬)<br>
-        ì°¸ê³ : ë‹¬ì„±í–ˆë”ë¼ë„ ë‚´ ì°¨ë¡€ì— â€œì¶”ê°€ í–‰ë™â€ìœ¼ë¡œë§Œ í•´ë‹¹ ì¹´ë“œì— ë§ˆì»¤ë¥¼ ì˜¬ë ¤(í´ë ˆìž„) ë‹¬ì„± ì²˜ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í™©ì œ ì ìˆ˜ê³„ì‚° ì¤‘ ì¡°ê±´ì„ ì¶©ì¡±í•˜ë”ë¼ë„ ì¦‰ì‹œ í´ë ˆìž„í•  ìˆ˜ ì—†ìœ¼ë©°, ë‹¤ìŒ ë‚´ ì°¨ë¡€ì— í´ë ˆìž„í•´ì•¼ í•©ë‹ˆë‹¤.
+        ¿ÐÃ÷ 165/182 ÃßÀû ±ÔÄ¢(Áß¿ä): ÇØ´ç ¸ñÇ¥¿¡ ÇØ´çÇÏ´Â ¼Õ´ÔÀº Áï½Ã ¹ö¸®Áö ¸»°í, °³ÀÎ µÞ¸é ´õ¹Ì·Î º¸°üÇÏ´Ù°¡ ¸ñÇ¥ ´Þ¼º ÈÄ¿¡¸¸ ¹ö¸³´Ï´Ù. (¸ðµâ 3 + Ä«¿ìÇÁ¸¸ÀÌ¸é ´õ¹Ì 2°³·Î ºÐ¸®)<br>
+        Âü°í: ´Þ¼ºÇß´õ¶óµµ ³» Â÷·Ê¿¡ ¡°Ãß°¡ Çàµ¿¡±À¸·Î¸¸ ÇØ´ç Ä«µå¿¡ ¸¶Ä¿¸¦ ¿Ã·Á(Å¬·¹ÀÓ) ´Þ¼º Ã³¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù. È²Á¦ Á¡¼ö°è»ê Áß Á¶°ÇÀ» ÃæÁ·ÇÏ´õ¶óµµ Áï½Ã Å¬·¹ÀÓÇÒ ¼ö ¾øÀ¸¸ç, ´ÙÀ½ ³» Â÷·Ê¿¡ Å¬·¹ÀÓÇØ¾ß ÇÕ´Ï´Ù.
       </p>
     </section>
 
     <section class="card" data-section="emperor">
-      <div class="card-header"><h2>í™©ì œ íƒ€ì¼</h2><span class="count-tag">ë³¸íŒ 12ìž¥ Â· ì™ˆì¸  6ìž¥ Â· ì´ 18ìž¥</span></div>
+      <div class="card-header"><h2>È²Á¦ Å¸ÀÏ</h2><span class="count-tag">º»ÆÇ 12Àå ¡¤ ¿ÐÃ÷ 6Àå ¡¤ ÃÑ 18Àå</span></div>
       <table class="data-table">
         <colgroup>
           <col class="col-version">
           <col class="col-img">
           <col>
         </colgroup>
-        <thead><tr><th>ë²„ì „</th><th>ì´ë¯¸ì§€</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>¹öÀü</th><th>ÀÌ¹ÌÁö</th><th>³»¿ë</th></tr></thead>
         <tbody>
         <tbody>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_1.png" alt="Emperor Base 1" width="120"></td><td>ë³´ìƒ: 3í¬ë¡œë„¤ë¥¼ ë°›ìŠµë‹ˆë‹¤.<br>ë²Œì : 3í¬ë¡œë„¤ë¥¼ ìžƒìŠµë‹ˆë‹¤. í¬ë¡œë„¤ê°€ 3ê°œë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 5ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_2.png" alt="Emperor Base 2" width="120"></td><td>ë³´ìƒ: ì›í•˜ëŠ” ìš”ë¦¬/ìŒë£Œ 2ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤. (í‰ì†Œì²˜ëŸ¼ ì†ë‹˜ì—ê²Œ ë†“ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.)<br>ë²Œì : ì£¼ë°©ì— ìžˆëŠ” ëª¨ë“  ìš”ë¦¬ì™€ ìŒë£Œë¥¼ ê³µê¸‰ì²˜ë¡œ ë°˜í™˜í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_3.png" alt="Emperor Base 3" width="120"></td><td>ë³´ìƒ: ë±ì—ì„œ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ê³  ê·¸ì¤‘ 1ìž¥ì„ ì¦‰ì‹œ í”Œë ˆì´í•©ë‹ˆë‹¤. ì´ë•Œ ë¹„ìš©ì„ ìµœëŒ€ í¬ë¡œë„¤ 3ê°œê¹Œì§€ ëœ ë‚´ê³  í”Œë ˆì´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‚˜ë¨¸ì§€ 2ìž¥ì€ ì›í•˜ëŠ” ìˆœì„œë¡œ ë± ë§¨ ì•„ëž˜ì— ë„£ìŠµë‹ˆë‹¤.Â¹<br>ë²Œì : ì†ì—ì„œ ì§ì› ì¹´ë“œ 2ìž¥ì„ ë± ë§¨ ì•„ëž˜ë¡œ ë³´ëƒ…ë‹ˆë‹¤. ì†ì— ì§ì› ì¹´ë“œê°€ 2ìž¥ë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 5ì ì„ ìžƒìŠµë‹ˆë‹¤.<div class="footnote-inline">Â¹ ë½‘ì€ 3ìž¥ ì¤‘ ì–´ëŠ ê²ƒë„(ë¹„ìš© ë¬¸ì œ ë“±ìœ¼ë¡œ) í”Œë ˆì´í•  ìˆ˜ ì—†ê±°ë‚˜ í”Œë ˆì´í•˜ê³  ì‹¶ì§€ ì•Šë‹¤ë©´, 3ìž¥ ì „ë¶€ë¥¼ ë± ë§¨ ì•„ëž˜ë¡œ ë³´ëƒ…ë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_4.png" alt="Emperor Base 4" width="120"></td><td>ë³´ìƒ: ë°© 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•©ë‹ˆë‹¤(ê±´ì„¤).<br>ë²Œì : í˜¸í…”ì—ì„œ ë¹ˆ ë°© 1ê°œë¥¼ ì œê±°í•©ë‹ˆë‹¤. ê°€ëŠ¥í•œ í•œ ê°€ìž¥ ë†’ì€ ì¸µì—ì„œ ì œê±°í•©ë‹ˆë‹¤.Â² ë¹ˆ ë°©ì´ ì—†ìœ¼ë©´ ëŒ€ì‹  VP 5ì ì„ ìžƒìŠµë‹ˆë‹¤.<div class="footnote-inline">Â² ë°© ì œê±°ë¡œ ì¸í•´ í˜¸í…”ì´ ì—¬ëŸ¬ ë¶„ë¦¬ëœ ë©ì–´ë¦¬(í´ëŸ¬ìŠ¤í„°)ë¡œ ê°ˆë¼ì§€ë”ë¼ë„, ì´í›„ì—ëŠ” ì–´ëŠ ë©ì–´ë¦¬ì—ë“  ë°©ì„ ì¶”ê°€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë©ì–´ë¦¬ë¼ë¦¬ ì—°ê²°í•  í•„ìš”ëŠ” ì—†ìŠµë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_5.png" alt="Emperor Base 5" width="120"></td><td>ë³´ìƒ: ìŠˆíŠ¸ë£¨ë¸ 1ê°œ, ì¼€ì´í¬ 1ê°œ, ì™€ì¸ 1ê°œ, ì»¤í”¼ 1ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.<br>ë²Œì : ì£¼ë°©ì— ìžˆëŠ” ê²ƒê³¼ ì¹´íŽ˜ì˜ ì†ë‹˜ ì¹´ë“œ ìœ„ì— ë†“ì¸ ê²ƒì„ í¬í•¨í•´, ëª¨ë“  ìš”ë¦¬ì™€ ìŒë£Œë¥¼ ê³µê¸‰ì²˜ë¡œ ë°˜í™˜í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_6.png" alt="Emperor Base 6" width="120"></td><td>ë³´ìƒ: 5í¬ë¡œë„¤ë¥¼ ë°›ìŠµë‹ˆë‹¤.<br>ë²Œì : 5í¬ë¡œë„¤ë¥¼ ìžƒìŠµë‹ˆë‹¤. 5í¬ë¡œë„¤ë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 7ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_8.png" alt="Emperor Base 7" width="120"></td><td>ë³´ìƒ: í˜¸í…” ì•„ëž˜ 2ê°œ ì¸µì— ìžˆëŠ” ë°© 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•˜ê³  ì¦‰ì‹œ ì ìœ  ë©´ìœ¼ë¡œ ë’¤ì§‘ìŠµë‹ˆë‹¤. ì•„ëž˜ 2ê°œ ì¸µì´ ì´ë¯¸ ë°©ìœ¼ë¡œ ê½‰ ì°¨ ìžˆìœ¼ë©´ ì•„ë¬´ê²ƒë„ ì–»ì§€ ëª»í•©ë‹ˆë‹¤.<br>ë²Œì : í˜¸í…”ì—ì„œ ë¹ˆ ë°© 2ê°œë¥¼ ì œê±°í•©ë‹ˆë‹¤. ê°ê° ê°€ëŠ¥í•œ í•œ ê°€ìž¥ ë†’ì€ ì¸µì—ì„œ ì œê±°í•©ë‹ˆë‹¤.Â² ë¹ˆ ë°©ì´ 1ê°œ ì´í•˜ë¼ë©´ ëŒ€ì‹  VP 7ì ì„ ìžƒìŠµë‹ˆë‹¤.<div class="footnote-inline">Â² ë°© ì œê±°ë¡œ ì¸í•´ í˜¸í…”ì´ ì—¬ëŸ¬ ë¶„ë¦¬ëœ ë©ì–´ë¦¬(í´ëŸ¬ìŠ¤í„°)ë¡œ ê°ˆë¼ì§€ë”ë¼ë„, ì´í›„ì—ëŠ” ì–´ëŠ ë©ì–´ë¦¬ì—ë“  ë°©ì„ ì¶”ê°€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë©ì–´ë¦¬ë¼ë¦¬ ì—°ê²°í•  í•„ìš”ëŠ” ì—†ìŠµë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_7.png" alt="Emperor Base 8" width="120"></td><td>ë³´ìƒ: ë±ì—ì„œ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ê³  ê·¸ì¤‘ 1ìž¥ì„ ë¹„ìš© ì—†ì´ ì¦‰ì‹œ í”Œë ˆì´í•©ë‹ˆë‹¤. ë‚˜ë¨¸ì§€ 2ìž¥ì€ ì›í•˜ëŠ” ìˆœì„œë¡œ ë± ë§¨ ì•„ëž˜ì— ë„£ìŠµë‹ˆë‹¤.<br>ë²Œì : ì†ì—ì„œ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë± ë§¨ ì•„ëž˜ë¡œ ë³´ëƒ…ë‹ˆë‹¤. ì†ì— ì§ì› ì¹´ë“œê°€ 3ìž¥ë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 7ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_9.png" alt="Emperor Base 9" width="120"></td><td>ë³´ìƒ: VP 8ì ì„ ì–»ìŠµë‹ˆë‹¤.<br>ë²Œì : VP 8ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_10.png" alt="Emperor Base 10" width="120"></td><td>ë³´ìƒ: ë°© 1ê°œë¥¼ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•˜ê³  ì¦‰ì‹œ ì ìœ  ë©´ìœ¼ë¡œ ë’¤ì§‘ì–´ ì ìœ ì‹œí‚µë‹ˆë‹¤.Â³ â´<br>ë²Œì : í˜¸í…”ì—ì„œ ì ìœ ëœ ë°© 1ê°œë¥¼ ê°€ëŠ¥í•œ í•œ ê°€ìž¥ ë†’ì€ ì¸µì—ì„œ ì œê±°í•˜ê³ , ê°€ëŠ¥í•˜ë‹¤ë©´ ê·¸ ë‹¤ìŒìœ¼ë¡œ ë†’ì€ ì¸µì—ì„œ ì ìœ ëœ ë°© 1ê°œë¥¼ ì¶”ê°€ë¡œ ì œê±°í•©ë‹ˆë‹¤(ê°™ì€ ì—´ ë˜ëŠ” ë‹¤ë¥¸ ì—´ ê°€ëŠ¥).âµ<div class="footnote-inline">Â³ ì´ í–‰ë™ìœ¼ë¡œ ê°™ì€ ìƒ‰ ë°©ì˜ ì ìœ  ê·¸ë£¹ì„ ì™„ì„±í–ˆë‹¤ë©´, ì ìœ  ë³´ë„ˆìŠ¤ëŠ” ë°›ìŠµë‹ˆë‹¤.<br>â´ ì´ë¡œ ì¸í•´ ë‚´ ëª©í‘œë¥¼ ì™„ì„±í–ˆë”ë¼ë„, ëª©í‘œ ë‹¬ì„± ë³´ìƒì€ ì¦‰ì‹œ ì£¼ìž¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ëª©í‘œ ì£¼ìž¥ì€ ë‚´ ì°¨ë¡€ì— ì¶”ê°€ í–‰ë™ìœ¼ë¡œ í•´ì•¼ í•˜ëŠ”ë°, ì§€ê¸ˆì€ ê²Œìž„ì´ ëë‚œ ìƒíƒœë¼ ë‹¤ìŒ ì°¨ë¡€ê°€ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.<br>âµ ì´ì „ íŒê³¼ ë‹¬ë¦¬, ì œê±°ë˜ëŠ” ë°©ë“¤ì´ ê°™ì€ ì—´ì¼ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_11.png" alt="Emperor Base 11" width="120"></td><td>ë³´ìƒ: í”Œë ˆì´í•œ ì§ì› ì¹´ë“œ 1ìž¥ë§ˆë‹¤ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤(ì¢…ë¥˜ ë¬´ê´€).<br>ë²Œì : ì§ì› ì¹´ë“œ 1ìž¥ë§ˆë‹¤ VP 2ì ì„ ìžƒìŠµë‹ˆë‹¤(ì¢…ë¥˜ ë¬´ê´€).</td></tr>
-          <tr><td>ë³¸íŒ</td><td><img src="img/emperor_12.png" alt="Emperor Base 12" width="120"></td><td>ë³´ìƒ: ì†ì—ì„œ ì§ì› ì¹´ë“œ 1ìž¥ì„ ë¹„ìš© ì—†ì´ í”Œë ˆì´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.â´<br>ë²Œì : ì§„ì—´ëŒ€ì—ì„œ í•´ë‹¹ ê¸°í˜¸ê°€ ìžˆëŠ” ì§ì› ì¹´ë“œ 1ìž¥ì„ ì œê±°í•©ë‹ˆë‹¤. ê·¸ ê¸°í˜¸ì˜ ì§ì› ì¹´ë“œê°€ í”Œë ˆì´ ì¤‘ì¸ ê²ƒì´ ì—†ë‹¤ë©´ ëŒ€ì‹  VP 10ì ì„ ìžƒìŠµë‹ˆë‹¤.<div class="footnote-inline">â´ ì´ë¡œ ì¸í•´ ë‚´ ëª©í‘œë¥¼ ì™„ì„±í–ˆë”ë¼ë„, ëª©í‘œ ë‹¬ì„± ë³´ìƒì€ ì¦‰ì‹œ ì£¼ìž¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ëª©í‘œ ì£¼ìž¥ì€ ë‚´ ì°¨ë¡€ì— ì¶”ê°€ í–‰ë™ìœ¼ë¡œ í•´ì•¼ í•˜ëŠ”ë°, ì§€ê¸ˆì€ ê²Œìž„ì´ ëë‚œ ìƒíƒœë¼ ë‹¤ìŒ ì°¨ë¡€ê°€ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_1.png" alt="Emperor Waltz 1" width="120"></td><td>ë³´ìƒ: ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.<br>ë²Œì : ì£¼ë°©ì—ì„œ ìƒ´íŽ˜ì¸ 2ê°œë¥¼ ê³µê¸‰ì²˜ë¡œ ë°˜í™˜í•©ë‹ˆë‹¤. ì£¼ë°©ì— ìƒ´íŽ˜ì¸ì´ 2ê°œë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 5ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_2.png" alt="Emperor Waltz 2" width="120"></td><td>ë³´ìƒ: 2í¬ë¡œë„¤ì™€, ì›í•˜ëŠ” ìš”ë¦¬/ìŒë£Œ 1ê°œ(ìƒ´íŽ˜ì¸ ì œì™¸)ë¥¼ ë°›ìŠµë‹ˆë‹¤.<br>ë²Œì : 2í¬ë¡œë„¤ë¥¼ ì§€ë¶ˆí•˜ê³ , ì£¼ë°©ì—ì„œ ì›í•˜ëŠ” ìš”ë¦¬/ìŒë£Œ 1ê°œ(ìƒ´íŽ˜ì¸ ì œì™¸)ë¥¼ ê³µê¸‰ì²˜ë¡œ ë°˜í™˜í•©ë‹ˆë‹¤. í¬ë¡œë„¤ê°€ 2ê°œë³´ë‹¤ ì ê±°ë‚˜ ì£¼ë°©ì— ìš”ë¦¬/ìŒë£Œê°€ ì—†ìœ¼ë©´ ëŒ€ì‹  VP 5ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_3.png" alt="Emperor Waltz 3" width="120"></td><td>ë³´ìƒ: ë±ì—ì„œ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë½‘ì•„ ì†ìœ¼ë¡œ ê°€ì ¸ì˜µë‹ˆë‹¤. ì¶”ê°€ë¡œ VP 4ì ì„ ì–»ìŠµë‹ˆë‹¤.<br>ë²Œì : ì†ì—ì„œ ì§ì› ì¹´ë“œ 3ìž¥ì„ ë± ë§¨ ì•„ëž˜ë¡œ ë³´ëƒ…ë‹ˆë‹¤. ì†ì— ì§ì› ì¹´ë“œê°€ 3ìž¥ë³´ë‹¤ ì ìœ¼ë©´ ëŒ€ì‹  VP 7ì ì„ ìžƒìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_4.png" alt="Emperor Waltz 4" width="120"></td><td>ë³´ìƒ: ëª©í‘œ ì¹´ë“œë“¤ ìœ„ì— ë†“ì¸ ë‚´ ë§ˆì»¤ 1ê°œë§ˆë‹¤ VP 5ì ì„ ì–»ìŠµë‹ˆë‹¤.Â²<br>ë²Œì : ëˆ(í¬ë¡œë„¤)ì„ ì „ë¶€ ìžƒê³ , ì£¼ë°©ì—ì„œ ëª¨ë“  ì•„ì´í…œ(ìš”ë¦¬/ìŒë£Œ/ìƒ´íŽ˜ì¸)ì„ ì œê±°í•©ë‹ˆë‹¤.<div class="footnote-inline">Â² ëª¨ë“ˆ 3ì„ ì‚¬ìš©í•˜ë©° ë‹ˆë‚˜ìŠ¤ ë©œëž€ì§€(Ninas Melange) í”Œë ˆì´ì–´ì¼ ë•ŒëŠ”, ì™„ë£Œí•œ ê°œì¸ ëª©í‘œë¡œ ì¸í•œ ì´ VP 5ì ë“¤ì„ ì–»ì§€ ì•ŠìŠµë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_5.png" alt="Emperor Waltz 5" width="120"></td><td>ë³´ìƒ: ìƒ´íŽ˜ì¸ ë¹„ìš© ì—†ì´ ë¬´ìš©ìˆ˜ë¥¼ ë¬´ë„íšŒìž¥ìœ¼ë¡œ ë³´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ê°€ëŠ¥í•˜ë‹¤ë©´, í‰ì†Œì˜ ëª¨ë“  ì´ì  ì ìš©).<br>ë²Œì : ê°€ìš´ë° ë¬´ë„íšŒìž¥ì— ìžˆëŠ” ë‚´ ë¬´ìš©ìˆ˜ í† í° 1ê°œë¥¼ ì œê±°í•´ ê²Œìž„ ë°•ìŠ¤ë¡œ ë˜ëŒë¦½ë‹ˆë‹¤.Â¹ ê°€ìš´ë° ë¬´ë„íšŒìž¥ì— ë¬´ìš©ìˆ˜ê°€ ì—†ìœ¼ë©´ ëŒ€ì‹  VP 7ì ì„ ìžƒìŠµë‹ˆë‹¤.<div class="footnote-inline">Â¹ ì—¬ê¸°ì„œ ë§í•˜ëŠ” â€œê°€ìš´ë°/ê°€ìž¥ ì˜¤ë¥¸ìª½ ë¬´ë„íšŒìž¥â€ì€ ì´ë²ˆ í™©ì œ ë“ì  ì§í›„ ì ìˆ˜ ê³„ì‚°ë  ë¬´ë„íšŒìž¥ì„ ëœ»í•©ë‹ˆë‹¤.</div></td></tr>
-          <tr><td>ì™ˆì¸ </td><td><img src="img/emperor_w_6.png" alt="Emperor Waltz 6" width="120"></td><td>ë³´ìƒ: ëª¨ë“  ë¬´ë„íšŒìž¥ ì „ì²´ì— ìžˆëŠ” ë‚´ ë¬´ìš©ìˆ˜ 1ê°œë§ˆë‹¤ VP 2ì ì„ ì–»ìŠµë‹ˆë‹¤.Â³<br>ë²Œì : ê°€ìž¥ ì˜¤ë¥¸ìª½ ë¬´ë„íšŒìž¥ì—ì„œ ë‚´ ë¬´ìš©ìˆ˜ í† í° 2ê°œë¥¼ ì œê±°í•´ ê²Œìž„ ë°•ìŠ¤ë¡œ ë˜ëŒë¦½ë‹ˆë‹¤.Â¹ ê°€ìž¥ ì˜¤ë¥¸ìª½ ë¬´ë„íšŒìž¥ì— ë¬´ìš©ìˆ˜ê°€ 1ê°œ ì´í•˜ë¼ë©´ ëŒ€ì‹  VP 10ì ì„ ìžƒìŠµë‹ˆë‹¤.Â³<div class="footnote-inline">Â¹ ì—¬ê¸°ì„œ ë§í•˜ëŠ” â€œê°€ìš´ë°/ê°€ìž¥ ì˜¤ë¥¸ìª½ ë¬´ë„íšŒìž¥â€ì€ ì´ë²ˆ í™©ì œ ë“ì  ì§í›„ ì ìˆ˜ ê³„ì‚°ë  ë¬´ë„íšŒìž¥ì„ ëœ»í•©ë‹ˆë‹¤.<br>Â³ ë°œì½”ë‹ˆì˜ ë¬´ìš©ìˆ˜ëŠ” ê°€ìž¥ ì˜¤ë¥¸ìª½ ë¬´ë„íšŒìž¥ì˜ ë§¨ ìœ„ ì¤„(top row)ì— ìžˆëŠ” ê²ƒìœ¼ë¡œ ê³„ì‚°í•©ë‹ˆë‹¤.</div></td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_1.png" alt="Emperor Base 1" width="120"></td><td>º¸»ó: 3Å©·Î³×¸¦ ¹Þ½À´Ï´Ù.<br>¹úÁ¡: 3Å©·Î³×¸¦ ÀÒ½À´Ï´Ù. Å©·Î³×°¡ 3°³º¸´Ù ÀûÀ¸¸é ´ë½Å VP 5Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_2.png" alt="Emperor Base 2" width="120"></td><td>º¸»ó: ¿øÇÏ´Â ¿ä¸®/À½·á 2°³¸¦ ¹Þ½À´Ï´Ù. (Æò¼ÒÃ³·³ ¼Õ´Ô¿¡°Ô ³õÀ» ¼ö ÀÖ½À´Ï´Ù.)<br>¹úÁ¡: ÁÖ¹æ¿¡ ÀÖ´Â ¸ðµç ¿ä¸®¿Í À½·á¸¦ °ø±ÞÃ³·Î ¹ÝÈ¯ÇÕ´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_3.png" alt="Emperor Base 3" width="120"></td><td>º¸»ó: µ¦¿¡¼­ Á÷¿ø Ä«µå 3ÀåÀ» »Ì°í ±×Áß 1ÀåÀ» Áï½Ã ÇÃ·¹ÀÌÇÕ´Ï´Ù. ÀÌ¶§ ºñ¿ëÀ» ÃÖ´ë Å©·Î³× 3°³±îÁö ´ú ³»°í ÇÃ·¹ÀÌÇÒ ¼ö ÀÖ½À´Ï´Ù. ³ª¸ÓÁö 2ÀåÀº ¿øÇÏ´Â ¼ø¼­·Î µ¦ ¸Ç ¾Æ·¡¿¡ ³Ö½À´Ï´Ù.©ö<br>¹úÁ¡: ¼Õ¿¡¼­ Á÷¿ø Ä«µå 2ÀåÀ» µ¦ ¸Ç ¾Æ·¡·Î º¸³À´Ï´Ù. ¼Õ¿¡ Á÷¿ø Ä«µå°¡ 2Àåº¸´Ù ÀûÀ¸¸é ´ë½Å VP 5Á¡À» ÀÒ½À´Ï´Ù.<div class="footnote-inline">©ö »ÌÀº 3Àå Áß ¾î´À °Íµµ(ºñ¿ë ¹®Á¦ µîÀ¸·Î) ÇÃ·¹ÀÌÇÒ ¼ö ¾ø°Å³ª ÇÃ·¹ÀÌÇÏ°í ½ÍÁö ¾Ê´Ù¸é, 3Àå ÀüºÎ¸¦ µ¦ ¸Ç ¾Æ·¡·Î º¸³À´Ï´Ù.</div></td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_4.png" alt="Emperor Base 4" width="120"></td><td>º¸»ó: ¹æ 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÕ´Ï´Ù(°Ç¼³).<br>¹úÁ¡: È£ÅÚ¿¡¼­ ºó ¹æ 1°³¸¦ Á¦°ÅÇÕ´Ï´Ù. °¡´ÉÇÑ ÇÑ °¡Àå ³ôÀº Ãþ¿¡¼­ Á¦°ÅÇÕ´Ï´Ù.©÷ ºó ¹æÀÌ ¾øÀ¸¸é ´ë½Å VP 5Á¡À» ÀÒ½À´Ï´Ù.<div class="footnote-inline">©÷ ¹æ Á¦°Å·Î ÀÎÇØ È£ÅÚÀÌ ¿©·¯ ºÐ¸®µÈ µ¢¾î¸®(Å¬·¯½ºÅÍ)·Î °¥¶óÁö´õ¶óµµ, ÀÌÈÄ¿¡´Â ¾î´À µ¢¾î¸®¿¡µç ¹æÀ» Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù. µ¢¾î¸®³¢¸® ¿¬°áÇÒ ÇÊ¿ä´Â ¾ø½À´Ï´Ù.</div></td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_5.png" alt="Emperor Base 5" width="120"></td><td>º¸»ó: ½´Æ®·çµ¨ 1°³, ÄÉÀÌÅ© 1°³, ¿ÍÀÎ 1°³, Ä¿ÇÇ 1°³¸¦ ¹Þ½À´Ï´Ù.<br>¹úÁ¡: ÁÖ¹æ¿¡ ÀÖ´Â °Í°ú Ä«ÆäÀÇ ¼Õ´Ô Ä«µå À§¿¡ ³õÀÎ °ÍÀ» Æ÷ÇÔÇØ, ¸ðµç ¿ä¸®¿Í À½·á¸¦ °ø±ÞÃ³·Î ¹ÝÈ¯ÇÕ´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_6.png" alt="Emperor Base 6" width="120"></td><td>º¸»ó: 5Å©·Î³×¸¦ ¹Þ½À´Ï´Ù.<br>¹úÁ¡: 5Å©·Î³×¸¦ ÀÒ½À´Ï´Ù. 5Å©·Î³×º¸´Ù ÀûÀ¸¸é ´ë½Å VP 7Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_8.png" alt="Emperor Base 7" width="120"></td><td>º¸»ó: È£ÅÚ ¾Æ·¡ 2°³ Ãþ¿¡ ÀÖ´Â ¹æ 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÏ°í Áï½Ã Á¡À¯ ¸éÀ¸·Î µÚÁý½À´Ï´Ù. ¾Æ·¡ 2°³ ÃþÀÌ ÀÌ¹Ì ¹æÀ¸·Î ²Ë Â÷ ÀÖÀ¸¸é ¾Æ¹«°Íµµ ¾òÁö ¸øÇÕ´Ï´Ù.<br>¹úÁ¡: È£ÅÚ¿¡¼­ ºó ¹æ 2°³¸¦ Á¦°ÅÇÕ´Ï´Ù. °¢°¢ °¡´ÉÇÑ ÇÑ °¡Àå ³ôÀº Ãþ¿¡¼­ Á¦°ÅÇÕ´Ï´Ù.©÷ ºó ¹æÀÌ 1°³ ÀÌÇÏ¶ó¸é ´ë½Å VP 7Á¡À» ÀÒ½À´Ï´Ù.<div class="footnote-inline">©÷ ¹æ Á¦°Å·Î ÀÎÇØ È£ÅÚÀÌ ¿©·¯ ºÐ¸®µÈ µ¢¾î¸®(Å¬·¯½ºÅÍ)·Î °¥¶óÁö´õ¶óµµ, ÀÌÈÄ¿¡´Â ¾î´À µ¢¾î¸®¿¡µç ¹æÀ» Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù. µ¢¾î¸®³¢¸® ¿¬°áÇÒ ÇÊ¿ä´Â ¾ø½À´Ï´Ù.</div></td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_7.png" alt="Emperor Base 8" width="120"></td><td>º¸»ó: µ¦¿¡¼­ Á÷¿ø Ä«µå 3ÀåÀ» »Ì°í ±×Áß 1ÀåÀ» ºñ¿ë ¾øÀÌ Áï½Ã ÇÃ·¹ÀÌÇÕ´Ï´Ù. ³ª¸ÓÁö 2ÀåÀº ¿øÇÏ´Â ¼ø¼­·Î µ¦ ¸Ç ¾Æ·¡¿¡ ³Ö½À´Ï´Ù.<br>¹úÁ¡: ¼Õ¿¡¼­ Á÷¿ø Ä«µå 3ÀåÀ» µ¦ ¸Ç ¾Æ·¡·Î º¸³À´Ï´Ù. ¼Õ¿¡ Á÷¿ø Ä«µå°¡ 3Àåº¸´Ù ÀûÀ¸¸é ´ë½Å VP 7Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_9.png" alt="Emperor Base 9" width="120"></td><td>º¸»ó: VP 8Á¡À» ¾ò½À´Ï´Ù.<br>¹úÁ¡: VP 8Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_10.png" alt="Emperor Base 10" width="120"></td><td>º¸»ó: ¹æ 1°³¸¦ ºñ¿ë ¾øÀÌ ÁØºñÇÏ°í Áï½Ã Á¡À¯ ¸éÀ¸·Î µÚÁý¾î Á¡À¯½ÃÅµ´Ï´Ù.©ø ©ù<br>¹úÁ¡: È£ÅÚ¿¡¼­ Á¡À¯µÈ ¹æ 1°³¸¦ °¡´ÉÇÑ ÇÑ °¡Àå ³ôÀº Ãþ¿¡¼­ Á¦°ÅÇÏ°í, °¡´ÉÇÏ´Ù¸é ±× ´ÙÀ½À¸·Î ³ôÀº Ãþ¿¡¼­ Á¡À¯µÈ ¹æ 1°³¸¦ Ãß°¡·Î Á¦°ÅÇÕ´Ï´Ù(°°Àº ¿­ ¶Ç´Â ´Ù¸¥ ¿­ °¡´É).?<div class="footnote-inline">©ø ÀÌ Çàµ¿À¸·Î °°Àº »ö ¹æÀÇ Á¡À¯ ±×·ìÀ» ¿Ï¼ºÇß´Ù¸é, Á¡À¯ º¸³Ê½º´Â ¹Þ½À´Ï´Ù.<br>©ù ÀÌ·Î ÀÎÇØ ³» ¸ñÇ¥¸¦ ¿Ï¼ºÇß´õ¶óµµ, ¸ñÇ¥ ´Þ¼º º¸»óÀº Áï½Ã ÁÖÀåÇÒ ¼ö ¾ø½À´Ï´Ù. ¸ñÇ¥ ÁÖÀåÀº ³» Â÷·Ê¿¡ Ãß°¡ Çàµ¿À¸·Î ÇØ¾ß ÇÏ´Âµ¥, Áö±ÝÀº °ÔÀÓÀÌ ³¡³­ »óÅÂ¶ó ´ÙÀ½ Â÷·Ê°¡ ¾ø±â ¶§¹®ÀÔ´Ï´Ù.<br>? ÀÌÀü ÆÇ°ú ´Þ¸®, Á¦°ÅµÇ´Â ¹æµéÀÌ °°Àº ¿­ÀÏ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.</div></td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_11.png" alt="Emperor Base 11" width="120"></td><td>º¸»ó: ÇÃ·¹ÀÌÇÑ Á÷¿ø Ä«µå 1Àå¸¶´Ù VP 2Á¡À» ¾ò½À´Ï´Ù(Á¾·ù ¹«°ü).<br>¹úÁ¡: Á÷¿ø Ä«µå 1Àå¸¶´Ù VP 2Á¡À» ÀÒ½À´Ï´Ù(Á¾·ù ¹«°ü).</td></tr>
+          <tr><td>º»ÆÇ</td><td><img src="img/emperor_12.png" alt="Emperor Base 12" width="120"></td><td>º¸»ó: ¼Õ¿¡¼­ Á÷¿ø Ä«µå 1ÀåÀ» ºñ¿ë ¾øÀÌ ÇÃ·¹ÀÌÇÒ ¼ö ÀÖ½À´Ï´Ù.©ù<br>¹úÁ¡: Áø¿­´ë¿¡¼­ ÇØ´ç ±âÈ£°¡ ÀÖ´Â Á÷¿ø Ä«µå 1ÀåÀ» Á¦°ÅÇÕ´Ï´Ù. ±× ±âÈ£ÀÇ Á÷¿ø Ä«µå°¡ ÇÃ·¹ÀÌ ÁßÀÎ °ÍÀÌ ¾ø´Ù¸é ´ë½Å VP 10Á¡À» ÀÒ½À´Ï´Ù.<div class="footnote-inline">©ù ÀÌ·Î ÀÎÇØ ³» ¸ñÇ¥¸¦ ¿Ï¼ºÇß´õ¶óµµ, ¸ñÇ¥ ´Þ¼º º¸»óÀº Áï½Ã ÁÖÀåÇÒ ¼ö ¾ø½À´Ï´Ù. ¸ñÇ¥ ÁÖÀåÀº ³» Â÷·Ê¿¡ Ãß°¡ Çàµ¿À¸·Î ÇØ¾ß ÇÏ´Âµ¥, Áö±ÝÀº °ÔÀÓÀÌ ³¡³­ »óÅÂ¶ó ´ÙÀ½ Â÷·Ê°¡ ¾ø±â ¶§¹®ÀÔ´Ï´Ù.</div></td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_1.png" alt="Emperor Waltz 1" width="120"></td><td>º¸»ó: ¼¤ÆäÀÎ 2°³¸¦ ¹Þ½À´Ï´Ù.<br>¹úÁ¡: ÁÖ¹æ¿¡¼­ ¼¤ÆäÀÎ 2°³¸¦ °ø±ÞÃ³·Î ¹ÝÈ¯ÇÕ´Ï´Ù. ÁÖ¹æ¿¡ ¼¤ÆäÀÎÀÌ 2°³º¸´Ù ÀûÀ¸¸é ´ë½Å VP 5Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_2.png" alt="Emperor Waltz 2" width="120"></td><td>º¸»ó: 2Å©·Î³×¿Í, ¿øÇÏ´Â ¿ä¸®/À½·á 1°³(¼¤ÆäÀÎ Á¦¿Ü)¸¦ ¹Þ½À´Ï´Ù.<br>¹úÁ¡: 2Å©·Î³×¸¦ ÁöºÒÇÏ°í, ÁÖ¹æ¿¡¼­ ¿øÇÏ´Â ¿ä¸®/À½·á 1°³(¼¤ÆäÀÎ Á¦¿Ü)¸¦ °ø±ÞÃ³·Î ¹ÝÈ¯ÇÕ´Ï´Ù. Å©·Î³×°¡ 2°³º¸´Ù Àû°Å³ª ÁÖ¹æ¿¡ ¿ä¸®/À½·á°¡ ¾øÀ¸¸é ´ë½Å VP 5Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_3.png" alt="Emperor Waltz 3" width="120"></td><td>º¸»ó: µ¦¿¡¼­ Á÷¿ø Ä«µå 3ÀåÀ» »Ì¾Æ ¼ÕÀ¸·Î °¡Á®¿É´Ï´Ù. Ãß°¡·Î VP 4Á¡À» ¾ò½À´Ï´Ù.<br>¹úÁ¡: ¼Õ¿¡¼­ Á÷¿ø Ä«µå 3ÀåÀ» µ¦ ¸Ç ¾Æ·¡·Î º¸³À´Ï´Ù. ¼Õ¿¡ Á÷¿ø Ä«µå°¡ 3Àåº¸´Ù ÀûÀ¸¸é ´ë½Å VP 7Á¡À» ÀÒ½À´Ï´Ù.</td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_4.png" alt="Emperor Waltz 4" width="120"></td><td>º¸»ó: ¸ñÇ¥ Ä«µåµé À§¿¡ ³õÀÎ ³» ¸¶Ä¿ 1°³¸¶´Ù VP 5Á¡À» ¾ò½À´Ï´Ù.©÷<br>¹úÁ¡: µ·(Å©·Î³×)À» ÀüºÎ ÀÒ°í, ÁÖ¹æ¿¡¼­ ¸ðµç ¾ÆÀÌÅÛ(¿ä¸®/À½·á/¼¤ÆäÀÎ)À» Á¦°ÅÇÕ´Ï´Ù.<div class="footnote-inline">©÷ ¸ðµâ 3À» »ç¿ëÇÏ¸ç ´Ï³ª½º ¸á¶õÁö(Ninas Melange) ÇÃ·¹ÀÌ¾îÀÏ ¶§´Â, ¿Ï·áÇÑ °³ÀÎ ¸ñÇ¥·Î ÀÎÇÑ ÀÌ VP 5Á¡µéÀ» ¾òÁö ¾Ê½À´Ï´Ù.</div></td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_5.png" alt="Emperor Waltz 5" width="120"></td><td>º¸»ó: ¼¤ÆäÀÎ ºñ¿ë ¾øÀÌ ¹«¿ë¼ö¸¦ ¹«µµÈ¸ÀåÀ¸·Î º¸³¾ ¼ö ÀÖ½À´Ï´Ù(°¡´ÉÇÏ´Ù¸é, Æò¼ÒÀÇ ¸ðµç ÀÌÁ¡ Àû¿ë).<br>¹úÁ¡: °¡¿îµ¥ ¹«µµÈ¸Àå¿¡ ÀÖ´Â ³» ¹«¿ë¼ö ÅäÅ« 1°³¸¦ Á¦°ÅÇØ °ÔÀÓ ¹Ú½º·Î µÇµ¹¸³´Ï´Ù.©ö °¡¿îµ¥ ¹«µµÈ¸Àå¿¡ ¹«¿ë¼ö°¡ ¾øÀ¸¸é ´ë½Å VP 7Á¡À» ÀÒ½À´Ï´Ù.<div class="footnote-inline">©ö ¿©±â¼­ ¸»ÇÏ´Â ¡°°¡¿îµ¥/°¡Àå ¿À¸¥ÂÊ ¹«µµÈ¸Àå¡±Àº ÀÌ¹ø È²Á¦ µæÁ¡ Á÷ÈÄ Á¡¼ö °è»êµÉ ¹«µµÈ¸ÀåÀ» ¶æÇÕ´Ï´Ù.</div></td></tr>
+          <tr><td>¿ÐÃ÷</td><td><img src="img/emperor_w_6.png" alt="Emperor Waltz 6" width="120"></td><td>º¸»ó: ¸ðµç ¹«µµÈ¸Àå ÀüÃ¼¿¡ ÀÖ´Â ³» ¹«¿ë¼ö 1°³¸¶´Ù VP 2Á¡À» ¾ò½À´Ï´Ù.©ø<br>¹úÁ¡: °¡Àå ¿À¸¥ÂÊ ¹«µµÈ¸Àå¿¡¼­ ³» ¹«¿ë¼ö ÅäÅ« 2°³¸¦ Á¦°ÅÇØ °ÔÀÓ ¹Ú½º·Î µÇµ¹¸³´Ï´Ù.©ö °¡Àå ¿À¸¥ÂÊ ¹«µµÈ¸Àå¿¡ ¹«¿ë¼ö°¡ 1°³ ÀÌÇÏ¶ó¸é ´ë½Å VP 10Á¡À» ÀÒ½À´Ï´Ù.©ø<div class="footnote-inline">©ö ¿©±â¼­ ¸»ÇÏ´Â ¡°°¡¿îµ¥/°¡Àå ¿À¸¥ÂÊ ¹«µµÈ¸Àå¡±Àº ÀÌ¹ø È²Á¦ µæÁ¡ Á÷ÈÄ Á¡¼ö °è»êµÉ ¹«µµÈ¸ÀåÀ» ¶æÇÕ´Ï´Ù.<br>©ø ¹ßÄÚ´ÏÀÇ ¹«¿ë¼ö´Â °¡Àå ¿À¸¥ÂÊ ¹«µµÈ¸ÀåÀÇ ¸Ç À§ ÁÙ(top row)¿¡ ÀÖ´Â °ÍÀ¸·Î °è»êÇÕ´Ï´Ù.</div></td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
     </section>
 
     <section class="card" data-section="entrance">
-      <div class="card-header"><h2>í˜¸í…” ìž…êµ¬ íƒ€ì¼(ì™ˆì¸ )</h2><span class="count-tag">ì´ 10ìž¥</span></div>
+      <div class="card-header"><h2>È£ÅÚ ÀÔ±¸ Å¸ÀÏ(¿ÐÃ÷)</h2><span class="count-tag">ÃÑ 10Àå</span></div>
       <table class="data-table">
         <colgroup>
           <col>
           <col>
         </colgroup>
-        <thead><tr><th>ì´ë¦„</th><th>ë‚´ìš©</th></tr></thead>
+        <thead><tr><th>ÀÌ¸§</th><th>³»¿ë</th></tr></thead>
         <tbody>
-          <tr><td>Chateau Paulwei</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ì¼€ì´í¬ 1ê°œ, ì™€ì¸ 1ê°œ, ì»¤í”¼ 1ê°œë¥¼ ë†“ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: í˜¸í…” ë³´ë“œì˜ ì ìœ  ë³´ë„ˆìŠ¤ í‘œë¥¼ ì´ í˜¸í…” ìž…êµ¬ì˜ í‘œë¡œ êµì²´í•©ë‹ˆë‹¤. (ì´ˆê¸° ê°ì‹¤ 3ê°œ ì¤€ë¹„ ì‹œ, ì¶”ê°€ë¡œ 2ê°œ ë” ì¤€ë¹„ ê°€ëŠ¥. ë¹„ìš©ì€ ì •ìƒ ê·œì¹™ëŒ€ë¡œ ì§€ë¶ˆ)</td></tr>
-          <tr><td>Corogari Zant-Mainz</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸ 1ê°œ, ì™€ì¸ 1ê°œë¥¼ ë†“ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ë§¤ ë¼ìš´ë“œ, ë‘ ë²ˆì§¸ ì£¼ì‚¬ìœ„ë¥¼ ê°€ì ¸ê°„ ì¦‰ì‹œ, ë©”ì¸ í–‰ë™ì„ í•˜ê¸° ì „ì— ë‘ ì£¼ì‚¬ìœ„ì˜ í•©(2~12)ì— ë”°ë¼ ë³´ë„ˆìŠ¤ë¥¼ ë°›ìŠµë‹ˆë‹¤. (ëª¨ë“ˆ 3+4 ë™ì‹œ ì‚¬ìš© ì‹œ í•´ê³¨ ì—´ì‡  ê´€ë ¨ ì£¼ì„ì€ ì›ë¬¸ ê·œì¹™ì„ ë”°ë¦…ë‹ˆë‹¤.)</td></tr>
-          <tr><td>Dove</td><td>ì¤€ë¹„: ë³´ë„ˆìŠ¤ í† í° 5ê°œë¥¼ ì´ íƒ€ì¼ ì˜†ì— íƒ€ì¼ì˜ ì•žë©´ì´ ë³´ì´ë„ë¡ ë‘¡ë‹ˆë‹¤.<br>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸ 1ê°œ, ì™€ì¸ 1ê°œë¥¼ ë†“ê³ , ì´ˆê¸° ê°ì‹¤ 3ê°œ ì¤€ë¹„ í›„ ì¶”ê°€ë¡œ 4ë²ˆì§¸ ê°ì‹¤ì„ ë¹„ìš© ì—†ì´ ì¤€ë¹„í•©ë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: í•œ ì—´ì˜ ê°ì‹¤ 4ê°œë¥¼ ëª¨ë‘ ì ìœ í•˜ì—¬ ì—´ì„ ì™„ë£Œí•  ë•Œë§ˆë‹¤, ë‚¨ì•„ ìžˆëŠ” ë³´ë„ˆìŠ¤ í† í° 1ê°œë¥¼ ì„ íƒí•´ ì¦‰ì‹œ ë³´ë„ˆìŠ¤ë¥¼ ë°›ìŠµë‹ˆë‹¤(ì´ 5íšŒ).</td></tr>
-          <tr><td>Kaufman</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸/ì¼€ì´í¬/ì™€ì¸/ì»¤í”¼ë¥¼ 1ê°œì”© ë†“ê³ , ëŒ€ê¸° ì¤„ì—ì„œ ì†ë‹˜ 1ëª…ì„ ì¶”ê°€ë¡œ ë¹„ìš© ì—†ì´ ê°€ì ¸ì˜µë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ì¹´íŽ˜ì— 4ë²ˆì§¸ í…Œì´ë¸”ì´ ì¶”ê°€ë˜ëŠ” ë“±, ì†ë‹˜ ë°°ì¹˜/ë¼ìš´ë“œ ì¢…ë£Œ ì‹œ ì²˜ë¦¬ì— ëŒ€í•œ ì¶”ê°€ ê·œì¹™ì„ ì ìš©í•©ë‹ˆë‹¤(ì›ë¬¸ ê·œì¹™ ê·¸ëŒ€ë¡œ).</td></tr>
-          <tr><td>Mayenfels</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ì¼€ì´í¬ 1ê°œ, ì»¤í”¼ 1ê°œë¥¼ ë†“ê³ , ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ì€ ë’¤ ì§ì› ì¹´ë“œ 1ìž¥ì„ ìµœëŒ€ 3í¬ë¡œë„¤ í• ì¸í•´ í”Œë ˆì´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ì§ì› ì¹´ë“œ 1ìž¥ì„ í”Œë ˆì´í•œ ë’¤ë§ˆë‹¤ 1í¬ë¡œë„¤ë¥¼ ì–»ê³ , ìƒˆ ì§ì› ì¹´ë“œ 1ìž¥ì„ ë½‘ìŠµë‹ˆë‹¤.</td></tr>
-          <tr><td>Ninas Melange</td><td>ì¤€ë¹„: ê²½ë§¤ ì „ ë‚¨ì€ A/B/C ëª©í‘œ ì¤‘ì—ì„œ ê° 1ìž¥ì”© ì„ íƒí•©ë‹ˆë‹¤(ê³µìš© ëª©í‘œ).<br>íšë“ ì‹œ: ì£¼ë°©ì— ê¸°ë³¸ ì„¸íŠ¸ ì•„ì´í…œì„ ë†“ê³  ê°œì¸ ëª©í‘œ 3ìž¥ì„ ë°›ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ê°œì¸ ëª©í‘œ ë‹¬ì„± ì‹œ ë¼ìš´ë“œì— ë”°ë¼ 15/10/5 VPë¥¼ ë°›ê³  í•´ë‹¹ ëª©í‘œë¥¼ ë’¤ì§‘ìŠµë‹ˆë‹¤. (ê³µìš© ëª©í‘œì™€ì˜ ìƒí˜¸ìž‘ìš© ì œí•œ ë° ìµœì¢… ì ìˆ˜ ì¡°ê±´ì€ ì›ë¬¸ ê·¸ëŒ€ë¡œ)</td></tr>
-          <tr><td>Stroup</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸/ì¼€ì´í¬/ì™€ì¸/ì»¤í”¼ë¥¼ 1ê°œì”© ë†“ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ì–´ë–¤ ê·¸ë£¹ì—ì„œë“  ê·¸ ê·¸ë£¹ì˜ ì²« ë²ˆì§¸ ê°ì‹¤ì„ ì ìœ í•  ë•Œë§ˆë‹¤, ê·¸ë£¹ ìƒ‰ì— ë”°ë¼ ë³´ë„ˆìŠ¤ë¥¼ ë°›ìŠµë‹ˆë‹¤(íŒŒëž‘ 3VP / ë¹¨ê°• 2í¬ë¡œë„¤ / ë…¸ëž‘ í™©ì œ íŠ¸ëž™ +2).</td></tr>
-          <tr><td>The Grand Wray Hotel</td><td>ì¤€ë¹„: ê²½ë§¤ ì „ ë‚¨ì€ A/B/C í™©ì œ íƒ€ì¼ ì¤‘ ê° 2ê°œì”© ì„ íƒí•©ë‹ˆë‹¤.<br>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸ 1ê°œë¥¼ ë†“ê³  í™©ì œ íŠ¸ëž™ 2ì¹¸ ì „ì§„, ì„ íƒëœ í™©ì œ íƒ€ì¼ 6ê°œë¥¼ ì˜†ì— ë‘¡ë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ìžì‹ ì˜ í„´ì— 1ë²ˆ, í™©ì œ íŠ¸ëž™ì„ 1/2/3ì¹¸ í›„í‡´í•˜ì—¬ í•´ë‹¹ ê·¸ë£¹ í™©ì œ íƒ€ì¼ 1ê°œì˜ ë³´ìƒì„ ë°›ê³ , ê·¸ íƒ€ì¼ì„ ì œê±°í•©ë‹ˆë‹¤.</td></tr>
-          <tr><td>The Kozi Palace, Vienna</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ì¼€ì´í¬ 1ê°œ, ì»¤í”¼ 1ê°œë¥¼ ë†“ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: í–‰ë™ ì¹¸ì„ ì‚¬ìš©í•˜ê¸° ì „ì—, ì¸ì ‘í•œ í–‰ë™ ì¹¸ì˜ ì£¼ì‚¬ìœ„ 1ê°œë¥¼ ì„ íƒí•˜ì—¬ í•´ë‹¹ í–‰ë™ ì¹¸ìœ¼ë¡œ ì˜®ê¸°ê³  ê·œì¹™ì— ë§žê²Œ ê°’ì„ ì¡°ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤(ì„¸ë¶€ëŠ” ì›ë¬¸).</td></tr>
-          <tr><td>The Ren</td><td>íšë“ ì‹œ: ì£¼ë°©ì— ìŠˆíŠ¸ë£¨ë¸/ì¼€ì´í¬/ì™€ì¸/ì»¤í”¼ ê° 1ê°œ + ìƒ´íŽ˜ì¸ 1ê°œë¥¼ ì¶”ê°€ë¡œ ë†“ìŠµë‹ˆë‹¤.<br>ì§€ì† íš¨ê³¼: ë¬´ìš©ìˆ˜ë¥¼ ë³´ë‚¼ ë•Œ ë³´ë„ˆìŠ¤ê°€ ë‘ ë°°ê°€ ë˜ê±°ë‚˜, ë¬´ë„ìž¥ ì±„ì  ì‹œ ìµœë‹¤ ì¡°ê±´ì—ì„œ ì¶”ê°€ VP ë“±ì„ ì ìš©í•©ë‹ˆë‹¤(ì›ë¬¸ ê·¸ëŒ€ë¡œ).</td></tr>
+          <tr><td>Chateau Paulwei</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ÄÉÀÌÅ© 1°³, ¿ÍÀÎ 1°³, Ä¿ÇÇ 1°³¸¦ ³õ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: È£ÅÚ º¸µåÀÇ Á¡À¯ º¸³Ê½º Ç¥¸¦ ÀÌ È£ÅÚ ÀÔ±¸ÀÇ Ç¥·Î ±³Ã¼ÇÕ´Ï´Ù. (ÃÊ±â °´½Ç 3°³ ÁØºñ ½Ã, Ãß°¡·Î 2°³ ´õ ÁØºñ °¡´É. ºñ¿ëÀº Á¤»ó ±ÔÄ¢´ë·Î ÁöºÒ)</td></tr>
+          <tr><td>Corogari Zant-Mainz</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨ 1°³, ¿ÍÀÎ 1°³¸¦ ³õ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: ¸Å ¶ó¿îµå, µÎ ¹øÂ° ÁÖ»çÀ§¸¦ °¡Á®°£ Áï½Ã, ¸ÞÀÎ Çàµ¿À» ÇÏ±â Àü¿¡ µÎ ÁÖ»çÀ§ÀÇ ÇÕ(2~12)¿¡ µû¶ó º¸³Ê½º¸¦ ¹Þ½À´Ï´Ù. (¸ðµâ 3+4 µ¿½Ã »ç¿ë ½Ã ÇØ°ñ ¿­¼è °ü·Ã ÁÖ¼®Àº ¿ø¹® ±ÔÄ¢À» µû¸¨´Ï´Ù.)</td></tr>
+          <tr><td>Dove</td><td>ÁØºñ: º¸³Ê½º ÅäÅ« 5°³¸¦ ÀÌ Å¸ÀÏ ¿·¿¡ Å¸ÀÏÀÇ ¾Õ¸éÀÌ º¸ÀÌµµ·Ï µÓ´Ï´Ù.<br>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨ 1°³, ¿ÍÀÎ 1°³¸¦ ³õ°í, ÃÊ±â °´½Ç 3°³ ÁØºñ ÈÄ Ãß°¡·Î 4¹øÂ° °´½ÇÀ» ºñ¿ë ¾øÀÌ ÁØºñÇÕ´Ï´Ù.<br>Áö¼Ó È¿°ú: ÇÑ ¿­ÀÇ °´½Ç 4°³¸¦ ¸ðµÎ Á¡À¯ÇÏ¿© ¿­À» ¿Ï·áÇÒ ¶§¸¶´Ù, ³²¾Æ ÀÖ´Â º¸³Ê½º ÅäÅ« 1°³¸¦ ¼±ÅÃÇØ Áï½Ã º¸³Ê½º¸¦ ¹Þ½À´Ï´Ù(ÃÑ 5È¸).</td></tr>
+          <tr><td>Kaufman</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨/ÄÉÀÌÅ©/¿ÍÀÎ/Ä¿ÇÇ¸¦ 1°³¾¿ ³õ°í, ´ë±â ÁÙ¿¡¼­ ¼Õ´Ô 1¸íÀ» Ãß°¡·Î ºñ¿ë ¾øÀÌ °¡Á®¿É´Ï´Ù.<br>Áö¼Ó È¿°ú: Ä«Æä¿¡ 4¹øÂ° Å×ÀÌºíÀÌ Ãß°¡µÇ´Â µî, ¼Õ´Ô ¹èÄ¡/¶ó¿îµå Á¾·á ½Ã Ã³¸®¿¡ ´ëÇÑ Ãß°¡ ±ÔÄ¢À» Àû¿ëÇÕ´Ï´Ù(¿ø¹® ±ÔÄ¢ ±×´ë·Î).</td></tr>
+          <tr><td>Mayenfels</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ÄÉÀÌÅ© 1°³, Ä¿ÇÇ 1°³¸¦ ³õ°í, Á÷¿ø Ä«µå 1ÀåÀ» »ÌÀº µÚ Á÷¿ø Ä«µå 1ÀåÀ» ÃÖ´ë 3Å©·Î³× ÇÒÀÎÇØ ÇÃ·¹ÀÌÇÒ ¼ö ÀÖ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: Á÷¿ø Ä«µå 1ÀåÀ» ÇÃ·¹ÀÌÇÑ µÚ¸¶´Ù 1Å©·Î³×¸¦ ¾ò°í, »õ Á÷¿ø Ä«µå 1ÀåÀ» »Ì½À´Ï´Ù.</td></tr>
+          <tr><td>Ninas Melange</td><td>ÁØºñ: °æ¸Å Àü ³²Àº A/B/C ¸ñÇ¥ Áß¿¡¼­ °¢ 1Àå¾¿ ¼±ÅÃÇÕ´Ï´Ù(°ø¿ë ¸ñÇ¥).<br>È¹µæ ½Ã: ÁÖ¹æ¿¡ ±âº» ¼¼Æ® ¾ÆÀÌÅÛÀ» ³õ°í °³ÀÎ ¸ñÇ¥ 3ÀåÀ» ¹Þ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: °³ÀÎ ¸ñÇ¥ ´Þ¼º ½Ã ¶ó¿îµå¿¡ µû¶ó 15/10/5 VP¸¦ ¹Þ°í ÇØ´ç ¸ñÇ¥¸¦ µÚÁý½À´Ï´Ù. (°ø¿ë ¸ñÇ¥¿ÍÀÇ »óÈ£ÀÛ¿ë Á¦ÇÑ ¹× ÃÖÁ¾ Á¡¼ö Á¶°ÇÀº ¿ø¹® ±×´ë·Î)</td></tr>
+          <tr><td>Stroup</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨/ÄÉÀÌÅ©/¿ÍÀÎ/Ä¿ÇÇ¸¦ 1°³¾¿ ³õ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: ¾î¶² ±×·ì¿¡¼­µç ±× ±×·ìÀÇ Ã¹ ¹øÂ° °´½ÇÀ» Á¡À¯ÇÒ ¶§¸¶´Ù, ±×·ì »ö¿¡ µû¶ó º¸³Ê½º¸¦ ¹Þ½À´Ï´Ù(ÆÄ¶û 3VP / »¡°­ 2Å©·Î³× / ³ë¶û È²Á¦ Æ®·¢ +2).</td></tr>
+          <tr><td>The Grand Wray Hotel</td><td>ÁØºñ: °æ¸Å Àü ³²Àº A/B/C È²Á¦ Å¸ÀÏ Áß °¢ 2°³¾¿ ¼±ÅÃÇÕ´Ï´Ù.<br>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨ 1°³¸¦ ³õ°í È²Á¦ Æ®·¢ 2Ä­ ÀüÁø, ¼±ÅÃµÈ È²Á¦ Å¸ÀÏ 6°³¸¦ ¿·¿¡ µÓ´Ï´Ù.<br>Áö¼Ó È¿°ú: ÀÚ½ÅÀÇ ÅÏ¿¡ 1¹ø, È²Á¦ Æ®·¢À» 1/2/3Ä­ ÈÄÅðÇÏ¿© ÇØ´ç ±×·ì È²Á¦ Å¸ÀÏ 1°³ÀÇ º¸»óÀ» ¹Þ°í, ±× Å¸ÀÏÀ» Á¦°ÅÇÕ´Ï´Ù.</td></tr>
+          <tr><td>The Kozi Palace, Vienna</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ÄÉÀÌÅ© 1°³, Ä¿ÇÇ 1°³¸¦ ³õ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: Çàµ¿ Ä­À» »ç¿ëÇÏ±â Àü¿¡, ÀÎÁ¢ÇÑ Çàµ¿ Ä­ÀÇ ÁÖ»çÀ§ 1°³¸¦ ¼±ÅÃÇÏ¿© ÇØ´ç Çàµ¿ Ä­À¸·Î ¿Å±â°í ±ÔÄ¢¿¡ ¸Â°Ô °ªÀ» Á¶Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù(¼¼ºÎ´Â ¿ø¹®).</td></tr>
+          <tr><td>The Ren</td><td>È¹µæ ½Ã: ÁÖ¹æ¿¡ ½´Æ®·çµ¨/ÄÉÀÌÅ©/¿ÍÀÎ/Ä¿ÇÇ °¢ 1°³ + ¼¤ÆäÀÎ 1°³¸¦ Ãß°¡·Î ³õ½À´Ï´Ù.<br>Áö¼Ó È¿°ú: ¹«¿ë¼ö¸¦ º¸³¾ ¶§ º¸³Ê½º°¡ µÎ ¹è°¡ µÇ°Å³ª, ¹«µµÀå Ã¤Á¡ ½Ã ÃÖ´Ù Á¶°Ç¿¡¼­ Ãß°¡ VP µîÀ» Àû¿ëÇÕ´Ï´Ù(¿ø¹® ±×´ë·Î).</td></tr>
         </tbody>
       </table>
-      <div class="empty hide">ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</div>
+      <div class="empty hide">°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.</div>
     </section>
   </div>
 
@@ -525,8 +533,8 @@
       }
     });
     tabs.forEach(btn => btn.addEventListener('click', () => showSection(btn.dataset.show)));
-    showSection('all'); // ê¸°ë³¸ìœ¼ë¡œ ì „ì²´ í‘œì‹œ
-    applyFilter(''); // ì´ˆê¸° í‘œì‹œ
+    showSection('all'); // ±âº»À¸·Î ÀüÃ¼ Ç¥½Ã
+    applyFilter(''); // ÃÊ±â Ç¥½Ã
 
     const toggleTop = () => {
       if (window.scrollY > 180) btnTop.classList.add('show');
@@ -536,7 +544,7 @@
     toggleTop();
   </script>
   <footer style="text-align:center; margin:16px 0 12px; font-size:11px; color:#94a3b8;">
-    Â© ossonida@gamil.com
+    ¨Ï ossonida@gmail.com
   </footer>
 </body>
 
