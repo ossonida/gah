@@ -34,7 +34,26 @@
       color: var(--text); padding: 20px 20px;
     }
     .layout { max-width: 1200px; margin: 0 auto; display: grid; gap: 24px; }
-    .page-title { margin: 0 0 12px; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; text-align: center;}
+    .page-top-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .page-title { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
+    .lang-switch { position: relative; z-index: 120; }
+    .lang-switch button {
+      border: 1px solid var(--border); background: rgba(255,255,255,0.06);
+      color: var(--text); padding: 8px 12px; border-radius: 10px;
+      font-weight: 600; cursor: pointer; display:flex; align-items:center; gap:6px;
+    }
+    .lang-menu {
+      position: absolute; right: 0; top: calc(100% + 6px);
+      background: var(--card); border:1px solid var(--border); border-radius:12px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.35); z-index:130;
+      display:none; min-width: 140px; padding:6px;
+    }
+    .lang-menu button {
+      width:100%; background:transparent; border:none; color:var(--text);
+      padding:10px 12px; text-align:left; border-radius:10px; cursor:pointer;
+    }
+    .lang-menu button:hover { background: rgba(255,255,255,0.06); }
+    .lang-switch.open .lang-menu { display:block; }
     .search-bar { position: relative; margin-bottom: 8px; }
     .search-bar input {
       width: 100%; padding: 12px 14px;
@@ -143,7 +162,16 @@
 <body>
   <div class="layout">
     <div class="page-top">
-      <h1 class="page-title">GAH 카드/타일 설명</h1>
+      <div class="page-top-row">
+        <h1 class="page-title" id="page-title">GAH 카드/타일 설명</h1>
+        <div class="lang-switch" id="lang-switch">
+          <button type="button" aria-haspopup="listbox" aria-expanded="false" id="lang-button">Language ▾</button>
+          <div class="lang-menu" role="listbox" aria-label="Language">
+            <button type="button" data-lang="ko">Korean</button>
+            <button type="button" data-lang="en">English</button>
+          </div>
+        </div>
+      </div>
       <div class="filter-tabs" id="section-tabs">
         <button type="button" data-show="all" class="is-active">전체</button>
         <button type="button" data-show="guest">손님카드</button>
@@ -554,6 +582,263 @@
     };
     window.addEventListener('scroll', toggleTop, { passive: true });
     toggleTop();
+
+    // Language switch
+    const langSwitch = document.getElementById('lang-switch');
+    const langButton = document.getElementById('lang-button');
+    const langMenu = langSwitch?.querySelector('.lang-menu');
+    const translations = {
+      ko: {
+        pageTitle: 'GAH 카드/타일 설명',
+        tabs: ['전체','손님카드','직원카드','목표카드','황제 타일','유명인사(왈츠)','호텔입구(왈츠)'],
+        search: '카드번호·이름·내용을 입력하세요',
+        globalEmpty: '검색 결과가 없습니다.',
+        empty: '검색 결과가 없습니다.'
+      },
+      en: {
+        pageTitle: 'GAH Cards / Tiles Reference',
+        tabs: ['All','Guests','Staff','Objectives','Emperor Tiles','Celebrities (Waltz)','Hotel Entrances (Waltz)'],
+        search: 'Search by number, name, or text',
+        globalEmpty: 'No results found.',
+        empty: 'No results found.'
+      }
+    };
+    const staffTexts = {
+      '1': {nameKo:'Breakfast Server',nameEn:'Breakfast Server',textKo:'라운드당 1번, 공용 공급처에서 슈트루델 1개 또는 케이크 1개를 가져와 손님 1명 위에 놓을 수 있습니다.',textEn:'Once per round, take 1 strudel or 1 cake from the supply and place it on 1 guest.'},
+      '2': {nameKo:'Dish Washer',nameEn:'Dish Washer',textKo:'라운드당 1번, 서빙 아이템 추가 행동을 비용 없이 사용할 수 있습니다.',textEn:'Once per round, you may use the “serve items” extra action for free.'},
+      '3': {nameKo:'Head Chef',nameEn:'Head Chef',textKo:'라운드당 1번, 공용 공급처에서 슈트루델 1개와 케이크 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 strudel and 1 cake from the supply.'},
+      '4': {nameKo:'Pastry Chef',nameEn:'Pastry Chef',textKo:'라운드당 1번, 공용 공급처에서 케이크 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 cake from the supply.'},
+      '5': {nameKo:'Candy Boy',nameEn:'Candy Boy',textKo:'라운드당 1번, 공용 공급처에서 슈트루델 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 strudel from the supply.'},
+      '6': {nameKo:'Wine Butler',nameEn:'Wine Butler',textKo:'라운드당 1번, 공용 공급처에서 와인 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 wine from the supply.'},
+      '7': {nameKo:'Coffee Brewer',nameEn:'Coffee Brewer',textKo:'라운드당 1번, 공용 공급처에서 커피 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 coffee from the supply.'},
+      '8': {nameKo:'Barista',nameEn:'Barista',textKo:'라운드당 1번, 공용 공급처에서 와인 1개와 커피 1개를 가져올 수 있습니다.',textEn:'Once per round, take 1 wine and 1 coffee from the supply.'},
+      '9': {nameKo:'Head Waiter',nameEn:'Head Waiter',textKo:'라운드당 1번, 공용 공급처에서 와인과 커피를 가져올 수 있습니다. 이때 가져오는 와인의 개수는 커피의 개수 이상이어야 합니다.',textEn:'Once per round, take wine and coffee from the supply, with wine taken at least as many as coffee.'},
+      '10': {nameKo:'Concierge',nameEn:'Concierge',textKo:'라운드당 1번, 황제 트랙을 1칸 전진할 수 있습니다.',textEn:'Once per round, advance 1 space on the Emperor track.'},
+      '11': {nameKo:'Porter',nameEn:'Porter',textKo:'라운드당 1번, 2크로네를 얻습니다.',textEn:'Once per round, gain 2 krone.'},
+      '12': {nameKo:'Receptionist',nameEn:'Receptionist',textKo:'라운드당 1번, 객실 1개를 비용 없이 준비할 수 있습니다.',textEn:'Once per round, prepare 1 room for free.'},
+      '13': {nameKo:'Chambermaid',nameEn:'Chambermaid',textKo:'라운드당 1번, 객실 1개를 준비할 때 비용이 1크로네 감소합니다.',textEn:'Once per round, prepare 1 room with a 1-krone discount.'},
+      '14': {nameKo:'Salesman',nameEn:'Salesman',textKo:'라운드당 1번, 직원 카드 2장을 뽑습니다.',textEn:'Once per round, draw 2 staff cards.'},
+      '15': {nameKo:'Lobby Boy',nameEn:'Lobby Boy',textKo:'라운드당 1번, 직원 카드 1장을 뽑습니다.',textEn:'Once per round, draw 1 staff card.'},
+      '16': {nameKo:'Hotel Manager',nameEn:'Hotel Manager',textKo:'라운드당 1번, 손에 있는 직원 카드 1장을 비용 없이 고용할 수 있습니다.',textEn:'Once per round, hire 1 staff card from your hand for free.'},
+      '17': {nameKo:'Assistant Manager',nameEn:'Assistant Manager',textKo:'라운드당 1번, 손에 있는 직원 카드 1장을 비용을 최대 2크로네까지 할인하여 고용할 수 있습니다.',textEn:'Once per round, hire 1 staff card from your hand with up to a 2-krone discount.'},
+      '18': {nameKo:'Head of Service',nameEn:'Head of Service',textKo:'라운드당 1번, 행동을 강화(Boost)할 때 필요한 1크로네를 지불하지 않아도 됩니다.',textEn:'Once per round, you may Boost without paying the 1 krone cost.'},
+      '19': {nameKo:'Sous Chef',nameEn:'Sous Chef',textKo:'라운드당 1번, 공용 공급처에서 요리(슈트루델/케이크) 최대 2개를 가져와 손님들에게 올려둘 수 있습니다.',textEn:'Once per round, take up to 2 dishes (strudel/cake) from the supply and place them on guests.'},
+      '20': {nameKo:'Dishwasher',nameEn:'Dishwasher',textKo:'라운드당 1번, 주방의 요리/음료 최대 3개를 손님들에게 비용 없이 옮길 수 있습니다.',textEn:'Once per round, move up to 3 items (dishes/drinks) from your kitchen onto guests for free.'},
+      '21': {nameKo:'Bellboy',nameEn:'Bellboy',textKo:'라운드당 1번, 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Once per round, take 1 guest from the queue for free.'},
+      '22': {nameKo:'Waitress',nameEn:'Waitress',textKo:'라운드당 1번, 대기 줄에서 손님 1명을 가져올 때 비용이 1크로네 감소합니다.',textEn:'Once per round, take 1 guest from the queue with a 1-krone discount.'},
+      '23': {nameKo:'Room Service',nameEn:'Room Service',textKo:'라운드당 1번, 공용 공급처에서 필요한 아이템을 가져와 손님 1명의 주문을 완료할 수 있습니다.',textEn:'Once per round, fulfill 1 guest’s entire order using required items from the supply.'},
+      '24': {nameKo:'Musician',nameEn:'Musician',textKo:'라운드당 1번, VP 3점을 얻습니다.',textEn:'Once per round, gain 3 VP.'},
+      '25': {nameKo:'Accountant',nameEn:'Accountant',textKo:'직원 카드를 고용할 때마다 1크로네를 얻습니다.',textEn:'Whenever you hire a staff card, gain 1 krone.'},
+      '26': {nameKo:'Chef',nameEn:'Chef',textKo:'요리 가져오기 행동을 할 때마다 슈트루델 1개를 추가로 가져올 수 있습니다.',textEn:'Whenever you take dishes, take 1 additional strudel.'},
+      '27': {nameKo:'Sommelier',nameEn:'Sommelier',textKo:'음료 가져오기 행동을 할 때마다 와인 1개를 추가로 가져올 수 있습니다.',textEn:'Whenever you take drinks, take 1 additional wine.'},
+      '28': {nameKo:'Maid',nameEn:'Maid',textKo:'객실 준비 행동을 할 때마다 객실 1개를 추가로 준비할 수 있습니다.',textEn:'Whenever you prepare rooms, you may prepare 1 additional room.'},
+      '29': {nameKo:'Clerk',nameEn:'Clerk',textKo:'호의/돈 얻기 행동을 할 때마다 추가로 1크로네를 얻습니다.',textEn:'Whenever you take the “favor/money” action, gain 1 additional krone.'},
+      '30': {nameKo:'Lobbyist',nameEn:'Lobbyist',textKo:'황제 트랙에서 전진할 때마다 VP 1점을 얻습니다.',textEn:'Whenever you advance on the Emperor track, gain 1 VP.'},
+      '31': {nameKo:'Architect',nameEn:'Architect',textKo:'객실을 준비할 때마다 VP 1점을 얻습니다.',textEn:'Whenever you prepare a room, gain 1 VP.'},
+      '32': {nameKo:'Interior Designer',nameEn:'Interior Designer',textKo:'VP가 인쇄된 칸에 객실을 준비할 때마다 추가로 VP 2점을 얻습니다.',textEn:'Whenever you prepare a room on a space with printed VP, gain an additional 2 VP.'},
+      '33': {nameKo:'Confectioner',nameEn:'Confectioner',textKo:'손님 주문을 완료할 때마다 케이크 1개를 얻습니다.',textEn:'Whenever you complete a guest’s order, gain 1 cake.'},
+      '34': {nameKo:'Bartender',nameEn:'Bartender',textKo:'손님 주문을 완료할 때마다 와인 1개를 얻습니다.',textEn:'Whenever you complete a guest’s order, gain 1 wine.'},
+      '35': {nameKo:'Coffee Server',nameEn:'Coffee Server',textKo:'손님 주문을 완료할 때마다 커피 1개를 얻습니다.',textEn:'Whenever you complete a guest’s order, gain 1 coffee.'},
+      '36': {nameKo:'Chef de Partie',nameEn:'Chef de Partie',textKo:'손님 주문을 완료할 때마다 슈트루델 1개를 얻습니다.',textEn:'Whenever you complete a guest’s order, gain 1 strudel.'},
+      '37': {nameKo:'Doorman',nameEn:'Doorman',textKo:'대기 줄에서 손님을 가져올 때마다 VP 1점을 얻습니다.',textEn:'Whenever you take a guest from the queue, gain 1 VP.'},
+      '38': {nameKo:'Room Inspector',nameEn:'Room Inspector',textKo:'객실을 점유할 때마다 1크로네를 얻습니다.',textEn:'Whenever you occupy a room, gain 1 krone.'},
+      '39': {nameKo:'Bell Captain',nameEn:'Bell Captain',textKo:'객실을 점유할 때마다 황제 트랙을 1칸 전진할 수 있습니다.',textEn:'Whenever you occupy a room, you may advance 1 on the Emperor track.'},
+      '40': {nameKo:'Marketing Director',nameEn:'Marketing Director',textKo:'객실을 점유할 때마다 VP 1점을 얻습니다.',textEn:'Whenever you occupy a room, gain 1 VP.'},
+      '41': {nameKo:'Diplomat',nameEn:'Diplomat',textKo:'목표 카드에 마커를 놓을 때마다 황제 트랙을 1칸 전진할 수 있습니다.',textEn:'Whenever you place a marker on an objective card, you may advance 1 on the Emperor track.'},
+      '42': {nameKo:'Politician',nameEn:'Politician',textKo:'목표 카드에 마커를 놓을 때마다 VP 2점을 얻습니다.',textEn:'Whenever you place a marker on an objective card, gain 2 VP.'},
+      '43': {nameKo:'Investor',nameEn:'Investor',textKo:'라운드 종료 시, 10크로네 이상이면 VP 3점을 얻습니다.',textEn:'At end of each round, if you have 10+ krone, gain 3 VP.'},
+      '44': {nameKo:'Banker',nameEn:'Banker',textKo:'라운드 종료 시, 3크로네 이하이면 2크로네를 얻습니다.',textEn:'At end of each round, if you have 3 krone or less, gain 2 krone.'},
+      '45': {nameKo:'Inspector',nameEn:'Inspector',textKo:'최종 점수 계산 시, 목표를 2개 이상 달성했다면 VP 5점을 얻습니다.',textEn:'At final scoring, if you completed at least 2 objectives, gain 5 VP.'},
+      '46': {nameKo:'Female Floor Housekeeper',nameEn:'Female Floor Housekeeper',textKo:'최종 점수 계산 시, 최상층의 점유된 객실 1개당 VP 1점을 얻습니다.',textEn:'At final scoring, gain 1 VP per occupied room on the top floor.'},
+      '47': {nameKo:'Butler',nameEn:'Butler',textKo:'최종 점수 계산 시, 고용한 직원 카드 1장당 VP 2점을 얻습니다.',textEn:'At final scoring, gain 2 VP per staff card you have hired.'},
+      '48': {nameKo:'Barkeeper',nameEn:'Barkeeper',textKo:'최종 점수 계산 시, 응대한 손님 1명당 VP 1점을 얻습니다.',textEn:'At final scoring, gain 1 VP per guest you served.'},
+      '119': {nameKo:'Dancing Master',nameEn:'Dancing Master',textKo:'주사위 ‘3’을 가져갈 때마다(메인 행동 전/후), 정상 비용을 내고 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 추가로 1크로네 획득. (메인 행동과 무용수 보내기 사이에 다른 추가 행동 불가)',textEn:'Each time you take a die showing 3 (before or after the main action), you may also send 1 dancer to a ballroom paying the normal cost, and gain 1 krone. No other extra actions may occur between the main action and sending the dancer.'},
+      '120': {nameKo:'Violinist',nameEn:'Violinist',textKo:'즉시(단 1회) 샴페인 3개 획득.',textEn:'Immediately (one time only), gain 3 champagne.'},
+      '121': {nameKo:'Concertmaster',nameEn:'Concertmaster',textKo:'주사위 ‘1’을 가져간 뒤 메인 행동을 정상 수행하면, 샴페인 1개 획득 + VP 1점. (추가 샴페인은 ‘슈트루델/케이크 최소 수량’ 규칙에 영향 없음)',textEn:'Each time you take a die showing 1 and perform the action normally, gain 1 champagne and 1 VP. This extra champagne does not affect any minimum strudel/cake requirement.'},
+      '122': {nameKo:'Symphonist',nameEn:'Symphonist',textKo:'라운드당 1회, 주방에서 샴페인 1개를 정확히 지불하고 VP 5점.',textEn:'Once per round, pay exactly 1 champagne from your kitchen to gain 5 VP.'},
+      '123': {nameKo:'Usherette',nameEn:'Usherette',textKo:'라운드당 1회, 2크로네를 정확히 지불하고 샴페인 1개 + VP 3점.',textEn:'Once per round, pay exactly 2 krone to gain 1 champagne and 3 VP.'},
+      '124': {nameKo:'Conductor',nameEn:'Conductor',textKo:'주사위 ‘4’를 가져갈 때마다 샴페인 1개 + 1크로네 추가 획득.',textEn:'Each time you take a die showing 4, gain 1 champagne and 1 krone.'},
+      '125': {nameKo:'Choirmaster',nameEn:'Choirmaster',textKo:'주사위 ‘5’를 가져갈 때마다(메인 행동 전/후), 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 이때 비용은 샴페인 1개 할인. (사이에 다른 추가 행동 불가)',textEn:'Each time you take a die showing 5 (before or after the main action), you may also send 1 dancer to a ballroom paying 1 less champagne. No other extra actions may occur in between.'},
+      '126': {nameKo:'Leading Dancer',nameEn:'Leading Dancer',textKo:'최종 점수 계산 시, (발코니 포함) 모든 무도회장에 있는 내 무용수 1개당 VP 2점.',textEn:'At final scoring, score 2 VP per your dancer in all ballrooms, including the balcony.'},
+      '127': {nameKo:'Harpist',nameEn:'Harpist',textKo:'즉시(단 1회), 무용수 최대 2개를 같은/다른 무도회장으로 보냄. 첫 번째는 샴페인 최대 2개 할인, 두 번째는 샴페인 1개 할인. (중간 추가 행동 불가)',textEn:'Immediately (one time only), send up to 2 dancers to the same or different ballrooms: the first costs up to 2 less champagne, the second costs 1 less. No extra actions in between.'},
+      '128': {nameKo:'Cellist',nameEn:'Cellist',textKo:'라운드당 1회, 주방에서 요리/음료 1개를 정확히 지불하고 무용수 1개를 무도회장으로 보냄(비용 샴페인 1개 할인).',textEn:'Once per round, pay exactly 1 dish or drink from your kitchen to send 1 dancer to a ballroom with the cost reduced by 1 champagne.'},
+      '129': {nameKo:'Pianist',nameEn:'Pianist',textKo:'라운드당 1회, 이 카드로 샴페인 1개 획득.',textEn:'Once per round, gain 1 champagne using this card.'},
+      '130': {nameKo:'Ballet Master',nameEn:'Ballet Master',textKo:'무용수를 무도회장으로 보낼 때마다 1크로네 획득 + 직원 카드 1장 뽑기.',textEn:'Each time you send a dancer to a ballroom, gain 1 krone and draw 1 staff card.'},
+      '131': {nameKo:'Trumpeter',nameEn:'Trumpeter',textKo:'주사위 ‘2’를 가져가 메인 행동을 정상 수행한 뒤, 샴페인 1개 획득 + 직원 카드 1장 뽑기. (추가 샴페인은 최소 수량 규칙에 영향 없음)',textEn:'Each time you take a die showing 2 and perform the action normally, gain 1 champagne and draw 1 staff card. This extra champagne does not affect any minimum strudel/cake requirement.'},
+      '132': {nameKo:'Arranger',nameEn:'Arranger',textKo:'목표 카드에 마커를 놓을 때마다 샴페인 2개 획득.',textEn:'Each time you place a marker on an objective card, gain 2 champagne.'},
+      '133': {nameKo:'Danube Steamship Captain',nameEn:'Danube Steamship Captain',textKo:'라운드당 1회, (이 카드 제외) 직원 카드 1장을 플레이한 후, 무용수 1개를 무도회장으로 보낼 수 있음(비용 샴페인 1개 할인). (직원 카드 플레이와 무용수 보내기 사이 추가 행동 불가)',textEn:'Once per round, after you play a staff card (not this one), you may send 1 dancer to a ballroom paying 1 less champagne. No other extra actions between playing the staff card and sending the dancer.'},
+      '166': {nameKo:'Handmaid',nameEn:'Handmaid',textKo:'행동 중 황제 트랙을 3칸 이상 전진했다면 이 카드를 뒤집을 수 있음. 그러면 즉시(1회) 객실 최대 2개를 무료로 준비하고 곧바로 점유 면으로 뒤집어 점유.',textEn:'After you advance 3+ spaces on the Emperor track during an action, you may flip this card. If you do, immediately (one time only) prepare up to 2 rooms for free and occupy them right away.'},
+      '167': {nameKo:'Apprentice',nameEn:'Apprentice',textKo:'파란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 슈트루델 3 + 케이크 3 획득.',textEn:'After completing a blue guest whose order required at least 3 items, you may flip this card to immediately gain 3 strudel and 3 cake.'},
+      '168': {nameKo:'Dishwasher',nameEn:'Dishwasher',textKo:'빨간 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 와인 3 + 커피 3 획득.',textEn:'After completing a red guest whose order required at least 3 items, you may flip this card to immediately gain 3 wine and 3 coffee.'},
+      '169': {nameKo:'Tapster',nameEn:'Tapster',textKo:'노란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 6크로네 획득.',textEn:'After completing a yellow guest whose order required at least 3 items, you may flip this card to immediately gain 6 krone.'},
+      '170': {nameKo:'Coachwoman',nameEn:'Coachwoman',textKo:'라운드당 1회, 주방에서 커피 1개를 정확히 지불하면 VP 3점 + 대기열 손님 1명 무료로 획득.',textEn:'Once per round, pay exactly 1 coffee from your kitchen to gain 3 VP and take 1 guest from the queue for free.'},
+      '171': {nameKo:'Bookkeeper',nameEn:'Bookkeeper',textKo:'라운드당 1회, 주방에서 케이크 1개를 정확히 지불하면 객실 1개 준비 시 최대 2크로네 할인.',textEn:'Once per round, pay exactly 1 cake to prepare 1 room with up to a 2-krone discount.'},
+      '172': {nameKo:'Chef de Rang',nameEn:'Chef de Rang',textKo:'행동으로 음료(와인/커피) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 황제 트랙 5칸 전진.',textEn:'After you gain 3+ drinks (wine/coffee) from an action, you may flip this card to immediately (one time only) advance 5 on the Emperor track.'},
+      '173': {nameKo:'Interpreter',nameEn:'Interpreter',textKo:'라운드당 1회, 주방에서 슈트루델 2개를 정확히 지불하면 2크로네 + VP 2점.',textEn:'Once per round, pay exactly 2 strudel to gain 2 krone and 2 VP.'},
+      '174': {nameKo:'Bartender',nameEn:'Bartender',textKo:'행동 중 요리(슈트루델/케이크) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 대기열 손님 1명 무료로 가져오고, 공용 공급처에서 필요한 아이템을 가져와 주문을 즉시 완성.',textEn:'After you gain 3+ dishes (strudel/cake) during an action, you may flip this card to immediately (one time only) take 1 guest from the queue for free and instantly fulfill their order using items from the supply.'},
+      '175': {nameKo:'Wagon Master',nameEn:'Wagon Master',textKo:'라운드당 1회, 주방에서 (샴페인 제외) 요리/음료 합 2개를 정확히 지불하면, 지불한 것과 다른 종류의 (샴페인 제외) 요리/음료 2개 획득 + VP 2점.',textEn:'Once per round, pay exactly 2 total dishes/drinks (no champagne) to gain 2 different (non-champagne) dishes/drinks than those paid, and gain 2 VP.'},
+      '176': {nameKo:'Dog Walker',nameEn:'Dog Walker',textKo:'라운드당 1회, 주방에서 와인 2개를 정확히 지불하면 VP 2점 + 황제 트랙 2칸 전진.',textEn:'Once per round, pay exactly 2 wine to gain 2 VP and advance 2 on the Emperor track.'},
+      '177': {nameKo:'Hairdresser',nameEn:'Hairdresser',textKo:'라운드당 1회, 황제 트랙을 정확히 2칸 후퇴하면 손패 직원 카드 1장을 최대 3크로네 할인하여 플레이 가능.',textEn:'Once per round, retreat exactly 2 spaces on the Emperor track to play 1 staff card from your hand with up to a 3-krone discount.'},
+      '178': {nameKo:'Janitor',nameEn:'Janitor',textKo:'같은 색/다른 색 무관, 객실 3개 이상으로 이뤄진 한 그룹을 완전 점유하면 뒤집을 수 있음. 그러면 즉시(1회) 손패 직원 카드 최대 2장을 무료로 플레이.',textEn:'After you fully occupy a group of at least 3 rooms (any colors), you may flip this card to immediately (one time only) play up to 2 staff cards from your hand for free.'},
+      '179': {nameKo:'Entertainer',nameEn:'Entertainer',textKo:'목표 카드에 마커를 놓은 뒤 뒤집을 수 있음. 그러면 즉시(1회) 공용 공급처에서 필요한 아이템을 가져와 손님 최대 2명의 주문을 즉시 완성.',textEn:'After placing a marker on an objective card, you may flip this card to immediately (one time only) instantly fulfill up to 2 guests’ orders using required items from the supply.'},
+      '183*': {nameKo:"Manager's Son",nameEn:"Manager's Son",textKo:'행동 중 샴페인 1개 이상을 소비할 때마다 1크로네 획득.',textEn:'Each time you spend at least 1 champagne during an action, gain 1 krone.'}
+    };
+    const guestTexts = {
+      '49': {nameKo:'Sculptor',nameEn:'Sculptor',textKo:'어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다. 단, 호텔 보드의 맨 아래 2개 층에서 선택해야 합니다. (아래 2개 층이 이미 전부 객실이면 아무것도 못 받음)',textEn:'You may prepare 1 room of any color for free, but it must be in one of the bottom two floors. If those floors are already full, you gain nothing.'},
+      '50': {nameKo:'Musician',nameEn:'Musician',textKo:'직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.',textEn:'Draw 1 staff card into your hand. Then you may prepare 1 room of any color by paying its normal cost.'},
+      '51': {nameKo:'Composer',nameEn:'Composer',textKo:'슈트루델 1개를 얻습니다.',textEn:'Gain 1 strudel.'},
+      '52': {nameKo:'Tailor',nameEn:'Tailor',textKo:'슈트루델 1개와 2크로네를 얻습니다.',textEn:'Gain 1 strudel and 2 krone.'},
+      '53': {nameKo:'Flamenco Dancer',nameEn:'Flamenco Dancer',textKo:'커피 1개를 얻고, 황제 트랙을 2칸 전진합니다.',textEn:'Gain 1 coffee and advance 2 spaces on the Emperor track.'},
+      '54': {nameKo:'Portrait Painter',nameEn:'Portrait Painter',textKo:'원하는 요리/음료 1개와 2크로네를 얻습니다.',textEn:'Gain 1 dish or drink of your choice and 2 krone.'},
+      '55': {nameKo:'Photographer',nameEn:'Photographer',textKo:'직원 카드 덱에서 2장을 뽑아 손에 넣습니다.',textEn:'Draw 2 staff cards into your hand.'},
+      '56': {nameKo:'Vocalist',nameEn:'Vocalist',textKo:'케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.',textEn:'Gain 1 cake. Also, hire 1 staff card from your hand with up to a 3-krone discount.'},
+      '57': {nameKo:'Architect',nameEn:'Architect',textKo:'어떤 색이든 객실을 최대 2개까지 준비할 수 있습니다. 각 객실은 준비 비용을 각각 1크로네 덜 냅니다.',textEn:'You may prepare up to 2 rooms of any color; each one costs 1 krone less to prepare.'},
+      '58': {nameKo:'Actress',nameEn:'Actress',textKo:'어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(해당 객실을 점유 면으로 뒤집기).',textEn:'Occupy 1 additional room of any color (flip it to the occupied side).'},
+      '59': {nameKo:'Poet',nameEn:'Poet',textKo:'케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 2크로네 덜 내고 고용할 수 있습니다.',textEn:'Gain 1 cake. Also, hire 1 staff card from your hand with up to a 2-krone discount.'},
+      '60': {nameKo:'Jewelry Designer',nameEn:'Jewelry Designer',textKo:'커피 1개와 3크로네를 얻습니다.',textEn:'Gain 1 coffee and 3 krone.'},
+      '61': {nameKo:'Painter',nameEn:'Painter',textKo:'객실을 최대 2개까지 준비할 수 있습니다. 그중 1개는 준비 비용을 1크로네 덜 내고, 2번째를 준비한다면 2번째는 정상 비용을 냅니다.',textEn:'You may prepare up to 2 rooms. The first costs 1 krone less; if you prepare a second, it costs the normal amount.'},
+      '62': {nameKo:'Opera Singer',nameEn:'Opera Singer',textKo:'대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.',textEn:'Take 1 guest from the queue for free, and advance 3 spaces on the Emperor track.'},
+      '63': {nameKo:'Dame',nameEn:'Dame',textKo:'대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Take 1 guest from the queue for free.'},
+      '64': {nameKo:'Duchess',nameEn:'Duchess',textKo:'손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.',textEn:'Hire 1 staff card from your hand, paying 1 krone less.'},
+      '65': {nameKo:'Knight of the Empire',nameEn:'Knight of the Empire',textKo:'효과 없음.',textEn:'No effect.'},
+      '66': {nameKo:'Landgrave',nameEn:'Landgrave',textKo:'손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.',textEn:'Hire 1 staff from hand with a 1-krone discount. Then you may prepare 1 room of any color at normal cost.'},
+      '67': {nameKo:'Sovereign',nameEn:'Sovereign',textKo:'직원 카드 덱에서 2장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.',textEn:'Draw 2 staff cards into hand and advance 2 on the Emperor track.'},
+      '68': {nameKo:'Princess',nameEn:'Princess',textKo:'황제 트랙을 3칸 전진합니다.',textEn:'Advance 3 on the Emperor track.'},
+      '69': {nameKo:'Countess',nameEn:'Countess',textKo:'3크로네를 얻습니다.',textEn:'Gain 3 krone.'},
+      '70': {nameKo:'Elector',nameEn:'Elector',textKo:'손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.',textEn:'Hire 1 staff from hand with a 1-krone discount, then advance 3 on the Emperor track.'},
+      '71': {nameKo:'Baron',nameEn:'Baron',textKo:'어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다.',textEn:'Prepare 1 room of any color for free.'},
+      '72': {nameKo:'Prince',nameEn:'Prince',textKo:'어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).',textEn:'Occupy 1 additional room of any color.'},
+      '73': {nameKo:'Count',nameEn:'Count',textKo:'손에서 직원 카드 최대 2장을 고용할 수 있습니다. 각 카드의 비용을 각각 1크로네 덜 냅니다.',textEn:'Hire up to 2 staff cards from your hand; each costs 1 krone less.'},
+      '74': {nameKo:'Earl',nameEn:'Earl',textKo:'1크로네를 얻습니다.',textEn:'Gain 1 krone.'},
+      '75': {nameKo:'Baroness',nameEn:'Baroness',textKo:'직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다. (세 장 모두 너무 비싸서 고용 불가/고용하고 싶지 않다면, 3장 전부를 덱 맨 아래로 보냅니다.)',textEn:'Draw 3 staff cards; immediately hire 1 of them with up to a 3-krone discount. Put the other 2 on the bottom of the deck in any order. If you hire none, put all 3 on the bottom.'},
+      '76': {nameKo:'Duke',nameEn:'Duke',textKo:'직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 비용 없이 고용합니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다.',textEn:'Draw 3 staff cards; immediately hire 1 for free. Put the other 2 on the bottom in any order.'},
+      '77': {nameKo:'Apothecary',nameEn:'Apothecary',textKo:'1크로네를 얻습니다.',textEn:'Gain 1 krone.'},
+      '78': {nameKo:'Post Councillor',nameEn:'Post Councillor',textKo:'대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Take 1 guest from the queue for free.'},
+      '79': {nameKo:'Privy Councillor',nameEn:'Privy Councillor',textKo:'1크로네를 얻고, 황제 트랙을 1칸 전진합니다.',textEn:'Gain 1 krone and advance 1 on the Emperor track.'},
+      '80': {nameKo:'Professor Emeritus',nameEn:'Professor Emeritus',textKo:'대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Take 1 guest from the queue for free.'},
+      '81': {nameKo:'General',nameEn:'General',textKo:'와인 1개와 3크로네를 얻습니다.',textEn:'Gain 1 wine and 3 krone.'},
+      '82': {nameKo:'Senior Councillor',nameEn:'Senior Councillor',textKo:'어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).',textEn:'Occupy 1 additional room of any color.'},
+      '83': {nameKo:'Councillor of Commerce',nameEn:'Councillor of Commerce',textKo:'5크로네를 얻습니다.',textEn:'Gain 5 krone.'},
+      '84': {nameKo:'Court Councillor',nameEn:'Court Councillor',textKo:'3크로네를 얻습니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Gain 3 krone, then take 1 guest from the queue for free.'},
+      '85': {nameKo:'Major',nameEn:'Major',textKo:'3크로네를 얻습니다.',textEn:'Gain 3 krone.'},
+      '86': {nameKo:'Veterinary Councillor',nameEn:'Veterinary Councillor',textKo:'손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.',textEn:'Hire 1 staff from your hand with up to a 3-krone discount.'},
+      '87': {nameKo:'Medicinal Councillor',nameEn:'Medicinal Councillor',textKo:'3크로네를 얻습니다. 추가로 대기 줄에서 손님을 최대 2명까지 비용 없이 가져올 수 있습니다. 단, 두 번째 손님을 가져오기 전에 대기 줄을 다시 채워야 합니다.',textEn:'Gain 3 krone. Also, you may take up to 2 guests from the queue for free, but refill the queue before taking the second.'},
+      '88': {nameKo:'Procurator',nameEn:'Procurator',textKo:'어떤 색이든 객실을 최대 2개까지, 둘 다 비용 없이 준비할 수 있습니다.',textEn:'Prepare up to 2 rooms of any color, both for free.'},
+      '89': {nameKo:'Lord High Commissioner',nameEn:'Lord High Commissioner',textKo:'4크로네를 얻습니다.',textEn:'Gain 4 krone.'},
+      '90': {nameKo:'Senior Legal Secretary',nameEn:'Senior Legal Secretary',textKo:'와인 1개와 3크로네를 얻습니다.',textEn:'Gain 1 wine and 3 krone.'},
+      '91': {nameKo:'Tezcatlipoca',nameEn:'Tezcatlipoca',textKo:'직원 카드 덱에서 3장을 뽑아 손에 넣습니다.',textEn:'Draw 3 staff cards into your hand.'},
+      '92': {nameKo:'Capt. Goldhaken',nameEn:'Capt. Goldhaken',textKo:'1크로네를 얻습니다.',textEn:'Gain 1 krone.'},
+      '93': {nameKo:'Mr. Horsa',nameEn:'Mr. Horsa',textKo:'황제 트랙을 1칸 전진합니다.',textEn:'Advance 1 on the Emperor track.'},
+      '94': {nameKo:'M. Ingalls',nameEn:'M. Ingalls',textKo:'손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.',textEn:'Hire 1 staff from hand with a 1-krone discount.'},
+      '95': {nameKo:'Mr. Boydell',nameEn:'Mr. Boydell',textKo:'황제 트랙을 2칸 전진합니다. (주: 이 효과로 “트랙의 잔해/장애물 제거” 같은 건 하지 않습니다 — 직원들은 게임 내내 호텔에 남습니다.)',textEn:'Advance 2 on the Emperor track (this does not remove any “obstacles”; staff remain for the whole game).'},
+      '96': {nameKo:'Mr. Oundo',nameEn:'Mr. Oundo',textKo:'손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.',textEn:'Hire 1 staff from hand with up to a 3-krone discount.'},
+      '97': {nameKo:'E. Gizia',nameEn:'E. Gizia',textKo:'주사위가 1개 이상 있는 행동 칸을 선택해, 그 행동을 정상적으로 수행합니다. 단, 그 행동 칸에서 주사위를 가져오지 않습니다(즉, 주사위를 “가져간 것”이 아님). 이 행동은 강화(Boost)할 수 없습니다. 또한 “특정 눈금의 주사위를 가져갈 때 보너스를 주는 직원 카드”는 사용할 수 없습니다(주사위를 가져가지 않기 때문).',textEn:'Choose an action space that has at least 1 die and perform the action normally, but do not take a die from that space. You cannot Boost this action, and effects that trigger “when taking a die of X” do not apply.'},
+      '98': {nameKo:'M. Polo',nameEn:'M. Polo',textKo:'4크로네를 얻습니다.',textEn:'Gain 4 krone.'},
+      '99': {nameKo:'Cramersopholus',nameEn:'Cramersopholus',textKo:'직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.',textEn:'Draw 1 staff card into hand and advance 2 on the Emperor track.'},
+      '100': {nameKo:'Farmer Franz',nameEn:'Farmer Franz',textKo:'황제 트랙을 3칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).',textEn:'Advance 3 on the Emperor track, then occupy 1 additional room of any color.'},
+      '101': {nameKo:'Brother Uwe',nameEn:'Brother Uwe',textKo:'황제 트랙을 3칸 전진합니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Advance 3 on the Emperor track, then take 1 guest from the queue for free.'},
+      '102': {nameKo:'Conductor',nameEn:'Conductor',textKo:'황제 트랙을 1칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).',textEn:'Advance 1 on the Emperor track, then occupy 1 additional room of any color.'},
+      '103': {nameKo:'Durgoing',nameEn:'Durgoing',textKo:'직원 카드 덱에서 2장을 뽑아 손에 넣습니다.',textEn:'Draw 2 staff cards into your hand.'},
+      '104': {nameKo:'MacLeod',nameEn:'MacLeod',textKo:'손에서 직원 카드 1장을 비용 없이 고용할 수 있습니다.',textEn:'Hire 1 staff card from your hand for free.'},
+      '117*': {nameKo:'Mag. Ferdinand',nameEn:'Mag. Ferdinand',textKo:'황제 트랙을 3칸 전진합니다.',textEn:'Advance 3 on the Emperor track.'},
+      '118*': {nameKo:'Mr. Moras',nameEn:'Mr. Moras',textKo:'대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.',textEn:'Take 1 guest from the queue for free.'},
+      '134': {nameKo:'Debutante',nameEn:'Debutante',textKo:'샴페인 1개 획득.',textEn:'Gain 1 champagne.'},
+      '135': {nameKo:'Lady Companion',nameEn:'Lady Companion',textKo:'황제 트랙 1칸 전진. 추가로 손패 직원 카드 1장을 비용 없이 플레이.',textEn:'Advance 1 on the Emperor track. Also play 1 staff card from your hand for free.'},
+      '136': {nameKo:'Governess',nameEn:'Governess',textKo:'샴페인 1개 획득.',textEn:'Gain 1 champagne.'},
+      '137': {nameKo:'Prima Ballerina',nameEn:'Prima Ballerina',textKo:'2크로네 획득. 추가로 정상 비용을 내고 무용수 최대 2개를 같은/다른 무도회장으로 보낼 수 있음.',textEn:'Gain 2 krone. You may also send up to 2 dancers to the same or different ballrooms, paying the normal cost.'},
+      '138': {nameKo:'Mannequin',nameEn:'Mannequin',textKo:'샴페인 1개 획득. 추가로 손패 직원 카드 1장을 최대 3크로네 할인하여 플레이 가능.',textEn:'Gain 1 champagne. Also play 1 staff card from hand with up to a 3-krone discount.'},
+      '139': {nameKo:'Diva',nameEn:'Diva',textKo:'샴페인 2개 획득.',textEn:'Gain 2 champagne.'},
+      '140': {nameKo:'Waltz Queen',nameEn:'Waltz Queen',textKo:'효과 없음.',textEn:'No effect.'},
+      '141': {nameKo:'Khan',nameEn:'Khan',textKo:'샴페인 1개 획득.',textEn:'Gain 1 champagne.'},
+      '142': {nameKo:'Tenno',nameEn:'Tenno',textKo:'샴페인 1개 획득. 추가로 객실 1개 준비 시 1크로네 할인.',textEn:'Gain 1 champagne. Also, prepare 1 room with a 1-krone discount.'},
+      '143': {nameKo:'Laird',nameEn:'Laird',textKo:'(샴페인 제외) 원하는 요리/음료 2개 획득. (섞어 선택 가능)',textEn:'Gain 2 dishes/drinks of your choice (no champagne), mix and match allowed.'},
+      '144': {nameKo:'Maharani',nameEn:'Maharani',textKo:'샴페인 1개 획득.',textEn:'Gain 1 champagne.'},
+      '145': {nameKo:'Marquis',nameEn:'Marquis',textKo:'샴페인 2개 획득.',textEn:'Gain 2 champagne.'},
+      '146': {nameKo:'Contessa',nameEn:'Contessa',textKo:'효과 없음.',textEn:'No effect.'},
+      '147': {nameKo:'Tsarina',nameEn:'Tsarina',textKo:'무용수 1개를 무도회장으로 보낼 때 샴페인 1개 할인.',textEn:'When you send 1 dancer to a ballroom, pay 1 champagne less.'},
+      '148': {nameKo:'Ambassador',nameEn:'Ambassador',textKo:'무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.',textEn:'Send 1 dancer to a ballroom paying the normal cost.'},
+      '149': {nameKo:'Abbess',nameEn:'Abbess',textKo:'5크로네 획득.',textEn:'Gain 5 krone.'},
+      '150': {nameKo:'Consigliere',nameEn:'Consigliere',textKo:'샴페인 1개 + 2크로네 획득.',textEn:'Gain 1 champagne and 2 krone.'},
+      '151': {nameKo:'Admiral Winterbottom',nameEn:'Admiral Winterbottom',textKo:'황제 트랙 2칸 전진. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.',textEn:'Advance 2 on the Emperor track. Also send 1 dancer to a ballroom at normal cost.'},
+      '152': {nameKo:'Impresario',nameEn:'Impresario',textKo:'샴페인 1개 획득.',textEn:'Gain 1 champagne.'},
+      '153': {nameKo:'Cardinal',nameEn:'Cardinal',textKo:'효과 없음.',textEn:'No effect.'},
+      '154': {nameKo:'Mayor',nameEn:'Mayor',textKo:'샴페인 2개 획득. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.',textEn:'Gain 2 champagne. Also send 1 dancer to a ballroom at normal cost.'},
+      '155': {nameKo:'The Beast',nameEn:'The Beast',textKo:'샴페인 1개 획득. 추가로 객실 1개를 정상 비용으로 준비 가능. (주의: Beast는 VP -1)',textEn:'Gain 1 champagne. You may also prepare 1 room at normal cost. (Final score: the Beast is worth −1 VP.)'},
+      '156': {nameKo:'Kapellmeister Palfy',nameEn:'Kapellmeister Palfy',textKo:'샴페인 2개 획득.',textEn:'Gain 2 champagne.'},
+      '157': {nameKo:'C. Inderella',nameEn:'C. Inderella',textKo:'무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 객실 1개를 점유 면으로 뒤집어 점유 가능.',textEn:'Send 1 dancer to a ballroom at normal cost. Also occupy 1 room of any color (flip to occupied).'},
+      '158': {nameKo:'Phantom',nameEn:'Phantom',textKo:'샴페인 1개 획득. 추가로 대기열에서 손님 1명을 비용 없이 가져옴. (주의: Phantom은 VP -2)',textEn:'Gain 1 champagne and take 1 guest from the queue for free. (Final score: the Phantom is worth −2 VP.)'},
+      '159': {nameKo:'The Beauty',nameEn:'The Beauty',textKo:'무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 직원 카드 3장 뽑아 1장 즉시 플레이(최대 -3크로네 할인), 나머지 2장은 원하는 순서로 덱 맨 아래로.',textEn:'Send 1 dancer to a ballroom at normal cost. Then draw 3 staff cards, immediately play 1 with up to a 3-krone discount, and place the other 2 on the bottom in any order.'},
+      '160': {nameKo:'Medium',nameEn:'Medium',textKo:'(샴페인 제외) 원하는 요리/음료 2개 획득 + 추가로 샴페인 1개.',textEn:'Gain 2 dishes/drinks of your choice (no champagne), plus 1 champagne.'},
+      '161': {nameKo:'Partyer',nameEn:'Partyer',textKo:'무용수 1개를 무도회장으로 보낼 때 샴페인 최대 2개 할인.',textEn:'When sending 1 dancer to a ballroom, reduce the champagne cost by up to 2.'},
+      '162': {nameKo:'Pope',nameEn:'Pope',textKo:'무도회장으로 보낼 수 없고, 반드시 객실로 이동해야 함. 대신 추가 객실 1개(임의 색)를 점유 면으로 뒤집어 점유 가능.',textEn:'The Pope must move into a room (cannot go to a ballroom). In return, you may occupy 1 additional room of any color.'},
+      '184*': {nameKo:'E. Doolittle',nameEn:'E. Doolittle',textKo:'엘리자는 무도회장으로 보내야 하며, 객실로 이동할 수 없습니다. 대신 추가 무용수 1개를 같은 무도회장 칸(엘리자와 동일 칸)에 배치해 보낼 수 있습니다. 이때 비용은 엘리자에 대해서만 1번 지불하고, 행 보너스도 1번만 받습니다. 이후, 무도회장에 있는 내 무용수 토큰 1개당(엘리자 및 같은 칸의 추가 무용수 포함) VP 1점을 얻습니다.',textEn:'Eliza must go to a ballroom (not a room). In return you may send 1 extra dancer to the same ballroom space as Eliza, paying the space cost only once and gaining the row bonus only once. Afterwards score 1 VP per your dancer token in ballrooms, including Eliza and the extra dancer on her space.'},
+      '185*': {nameKo:'M. Antoinette',nameEn:'M. Antoinette',textKo:'마리는 반드시 객실로 이동해야 합니다. 추가로, 무용수 1개를 무도회장으로 보낼 때 다른 플레이어 1명당 샴페인 1개씩 비용을 덜 내고 보낼 수 있습니다. 대신, 다른 모든 플레이어는 각자 (샴페인 제외) 원하는 요리 1개 또는 음료 1개를 얻습니다. 또한 마리를 객실로 이동시킨 라운드에 따라 VP를 얻습니다: 1~3라운드 8VP / 4~5라운드 5VP / 6~7라운드 2VP.',textEn:'Marie must move into a room. You may also send a dancer to a ballroom paying 1 less champagne per other player; each other player then gains 1 dish or 1 drink (no champagne). Score depends on when Marie was moved: Rounds 1–3: 8 VP; 4–5: 5 VP; 6–7: 2 VP.'},
+      '186*': {nameKo:'Lord Mayor of London',nameEn:'Lord Mayor of London',textKo:'즉시 현재 무도회장을 점수 계산합니다. 이 무도회장은 다음 황제 점수계산 이후에 정상적으로 다시 점수 계산됩니다. (이 추가 점수계산에는 모든 플레이어가 참여)',textEn:'Immediately score the current ballroom now; it will be scored again as usual after the next Emperor scoring. All players participate in this extra scoring.'},
+      '187*': {nameKo:'J. Gatsby & D. Buchanan',nameEn:'J. Gatsby & D. Buchanan',textKo:'제이와 데이지는 반드시 객실로 이동해야 하며, 무도회장으로 보낼 수 없습니다. 대신 추가 객실 1개(임의 색)를 점유 면으로 뒤집어 점유할 수 있습니다. 추가로 황제 트랙을 4칸 전진합니다. (비용은 그림에 있는 각 아이템을 2개씩 지불)',textEn:'Jay and Daisy must move into a room (not a ballroom). In return occupy 1 additional room of any color, and advance 4 on the Emperor track. Note: the cost is 2 of each depicted item.'},
+      '188*': {nameKo:'Ms. Hildegard',nameEn:'Ms. Hildegard',textKo:'힐데가르드는 반드시 객실로 이동해야 하며, 무도회장으로 보낼 수 없습니다.',textEn:'Ms. Hildegard must move into a room; she cannot be sent to a ballroom.'},
+      '189**': {nameKo:'Dr. Hagedorn',nameEn:'Dr. Hagedorn',textKo:'하지도른 박사는 무도회장으로 보낼 수 없으며, 가로로 인접한 객실 2개를 반드시 점유해야 합니다(같은 색/다른 색 모두 가능).',textEn:'Dr. Hagedorn cannot be sent to a ballroom and must occupy two horizontally adjacent rooms (same or different colors).'},
+      '190**': {nameKo:'Mr. Schulze',nameEn:'Mr. Schulze',textKo:'무도회장/객실 불가, 테이블에 영구 잔류(비용 없음). 라운드당 1회, 아이템(요리/음료/샴페인) 1개를 소비하면 직원 카드 1장 비용 지불 후 즉시 플레이 + VP 1점 + 황제 트랙 1칸 전진. 최종 점수에서 테이블에 남아도 -5VP 페널티 없음.',textEn:'Mr. Schulze stays at his table indefinitely (no cost) and cannot go to a room or ballroom. Once per round, spend 1 item (dish/drink/champagne) to immediately play 1 staff card by paying its cost, gain 1 VP, and advance 1 on the Emperor track. At game end, you do not suffer the usual −5 VP despite him still sitting there.'},
+      '191**': {nameKo:'J. Kesselhut',nameEn:'J. Kesselhut',textKo:'즉시, 남아있는 손님들의 와인 주문을 공용 공급처의 와인으로 모두 충족.',textEn:'Immediately fulfill all remaining guests’ wine orders using wine from the supply.'},
+      '192**': {nameKo:'Mrs. Kunkel',nameEn:'Mrs. Kunkel',textKo:'무도회장 불가. 맨 아래층 객실을 반드시 점유. 아래층 빈방이 없으면 테이블 1개 줄이고, 최종 점수에서 -5VP.',textEn:'Mrs. Kunkel cannot go to a ballroom and must occupy a room on the bottom floor. If no bottom-floor room is available, you play with one fewer table for the rest of the game and take −5 VP at final scoring.'}
+    };
+    const applyGuestLanguage = (lang) => {
+      const rows = document.querySelectorAll('[data-section="guest"] tbody tr');
+      rows.forEach(row => {
+        const num = row.cells?.[0]?.textContent.trim();
+        if (!num) return;
+        const key = guestTexts[num] ? num : num.replace(/\D/g,''); // fallback remove non-digits
+        const data = guestTexts[key];
+        if (!data) return;
+        row.cells[2].textContent = lang === 'en' ? data.nameEn : data.nameKo;
+        row.cells[3].textContent = lang === 'en' ? data.textEn : data.textKo;
+      });
+    };
+    const applyStaffLanguage = (lang) => {
+      const rows = document.querySelectorAll('[data-section="staff"] tbody tr');
+      rows.forEach(row => {
+        const num = row.cells?.[0]?.textContent.trim();
+        if (!num) return;
+        const key = staffTexts[num] ? num : num.replace(/\D/g,'');
+        const data = staffTexts[key];
+        if (!data) return;
+        row.cells[2].textContent = lang === 'en' ? data.nameEn : data.nameKo;
+        row.cells[3].textContent = lang === 'en' ? data.textEn : data.textKo;
+      });
+    };
+    const applyLanguage = (lang) => {
+      const t = translations[lang] || translations.ko;
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('data-lang', lang);
+      document.getElementById('page-title').textContent = t.pageTitle;
+      tabs.forEach((btn, i) => { if (t.tabs[i]) btn.textContent = t.tabs[i]; });
+      input.placeholder = t.search;
+      if (globalEmpty) globalEmpty.textContent = t.globalEmpty;
+      document.querySelectorAll('.empty').forEach(el => el.textContent = t.empty);
+      localStorage.setItem('gah-lang', lang);
+      applyGuestLanguage(lang);
+      applyStaffLanguage(lang);
+    };
+    if (langButton && langMenu) {
+      langButton.addEventListener('click', () => {
+        const open = langSwitch.classList.toggle('open');
+        langButton.setAttribute('aria-expanded', open);
+      });
+      langMenu.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          langSwitch.classList.remove('open');
+          langButton.setAttribute('aria-expanded', 'false');
+          applyLanguage(btn.dataset.lang);
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!langSwitch.contains(e.target)) {
+          langSwitch.classList.remove('open');
+          langButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+      const saved = localStorage.getItem('gah-lang') || 'ko';
+      applyLanguage(saved);
+    }
   </script>
   <footer style="text-align:center; margin:16px 0 12px; font-size:11px; color:#94a3b8;">
     ⓒ ossonida@gmail.com
