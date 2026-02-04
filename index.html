@@ -429,13 +429,14 @@
       <div class="empty hide">검색 결과가 없습니다.</div>
     </section>
 
-    <section class="card" data-section="objective">
-      <div class="card-header"><h2>목표카드</h2><span class="count-tag">본판 12장 · 왈츠 6장 · 총 18장</span></div>
-      <table class="data-table">
-        <colgroup>
-          <col>
-          <col class="col-img">
-          <col>
+  <section class="card" data-section="objective">
+    <div class="card-header"><h2>목표카드</h2><span class="count-tag">본판 12장 · 왈츠 6장 · 총 18장</span></div>
+    <p class="section-note" id="objective-note">목표는 내 턴에만, 추가 행동으로만 달성(획득)할 수 있다.<br/>황제 점수계산 중(황제 보상으로 조건을 만족한 경우 포함)에 조건을 만족해도, 다음 내 턴까지 기다렸다가 목표를 달성(획득)해야 한다.</p>
+    <table class="data-table">
+      <colgroup>
+        <col>
+        <col class="col-img">
+        <col>
         </colgroup>
         <thead><tr><th>카드</th><th>이미지</th><th>내용</th></tr></thead>
         <tbody>
@@ -461,8 +462,8 @@
       </table>
       <div class="empty hide">검색 결과가 없습니다.</div>
       <p class="hint" style="margin-top:8px;">
-        왈츠 165/182 추적 규칙(중요): 해당 목표에 해당하는 손님은 즉시 버리지 말고, 개인 뒷면 더미로 보관하다가 목표 달성 후에만 버립니다. (모듈 3 + 카우프만이면 더미 2개로 분리)<br>
-        참고: 달성했더라도 내 차례에 “추가 행동”으로만 해당 카드에 마커를 올려(클레임) 달성 처리할 수 있습니다. 황제 점수계산 중 조건을 충족하더라도 즉시 클레임할 수 없으며, 다음 내 차례에 클레임해야 합니다.
+        추적을 위해: 이 목표와 관련된 손님은 목표를 완료할 때까지 버리지 말고 개인 뒷면 더미에 모아둔다. 목표를 완료한 뒤에만 그 손님들을 버림 더미에 놓는다. 모듈 3을 사용할 때 Kaufman 플레이어는 더미를 2개로 관리해야 한다(이번 라운드 완료 손님 더미 1개 + 목표 관련 손님 더미 1개). 라운드 종료 시 1번째 더미의 손님만으로 VP를 계산한 뒤, 관련 손님을 2번째 더미로 옮기고 나머지는 버린다. <br>
+        *To keep track, do not discard the guests relevant to this objective, but keep them in a personal face-down pile, until you complete this objective. Only then place them in the discard pile. When using module 3, as the Kaufman player, you need to keep two separate piles: one collecting the guests whose order you completed this round and another one collecting the guests relevant to this objective. At the end of a round, you score VP only for the guests in the first pile, before moving any relevant guests to the second pile and discarding the rest.
       </p>
     </section>
 
@@ -594,14 +595,16 @@
         tabs: ['전체','손님카드','직원카드','목표카드','황제 타일','유명인사(왈츠)','호텔입구(왈츠)'],
         search: '카드번호·이름·내용을 입력하세요',
         globalEmpty: '검색 결과가 없습니다.',
-        empty: '검색 결과가 없습니다.'
+        empty: '검색 결과가 없습니다.',
+        objectiveNote: '목표는 내 턴에만, 추가 행동으로만 달성(획득)할 수 있다.<br/>황제 점수계산 중(황제 보상으로 조건을 만족한 경우 포함)에 조건을 만족해도, 다음 내 턴까지 기다렸다가 목표를 달성(획득)해야 한다.'
       },
       en: {
         pageTitle: 'GAH Cards / Tiles Reference',
         tabs: ['All','Guests','Staff','Objectives','Emperor Tiles','Celebrities (Waltz)','Hotel Entrances (Waltz)'],
         search: 'Search by number, name, or text',
         globalEmpty: 'No results found.',
-        empty: 'No results found.'
+        empty: 'No results found.',
+        objectiveNote: 'Remember: You can claim an objective only on your turn, as an additional action. If you meet the requirement during an Emperor scoring, from getting the Emperor reward, you must wait until your next turn to claim the objective.'
       }
     };
     const staffTexts = {
@@ -962,6 +965,8 @@
       input.placeholder = t.search;
       if (globalEmpty) globalEmpty.textContent = t.globalEmpty;
       document.querySelectorAll('.empty').forEach(el => el.textContent = t.empty);
+      const objNote = document.getElementById('objective-note');
+      if (objNote && t.objectiveNote) objNote.innerHTML = t.objectiveNote;
       localStorage.setItem('gah-lang', lang);
       applyGuestLanguage(lang);
       applyStaffLanguage(lang);
