@@ -37,6 +37,14 @@
       color: var(--text); padding: 20px 20px;
     }
     .layout { max-width: 1200px; margin: 0 auto; display: grid; gap: 24px; }
+    .home-link {
+      display:inline-flex; align-items:center; gap:6px; width:max-content;
+      margin: 0 0 8px; color: var(--text); text-decoration:none;
+      font-size: 13px; font-weight: 700; letter-spacing: 0;
+      opacity: 0.88;
+    }
+    .home-link:hover { opacity: 1; color: var(--accent); }
+    .home-link svg { width: 16px; height: 16px; flex: 0 0 auto; }
     .page-top-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:nowrap; }
     .page-title { margin: 0 0 10px; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; flex:1 1 auto; min-width:0; }
     .lang-switch { position: relative; z-index: 120; flex-shrink:0; }
@@ -175,6 +183,12 @@
 <body>
   <div class="layout">
     <div class="page-top">
+      <a class="home-link" href="https://ossonida.github.io/" aria-label="Go to home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 10.8 12 3l9 7.8v9.7a.5.5 0 0 1-.5.5h-5.2v-6.4H8.7V21H3.5a.5.5 0 0 1-.5-.5v-9.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span>HOME</span>
+      </a>
       <div class="page-top-row">
         <h1 class="page-title" id="page-title">GAH 카드/타일 설명</h1>
         <div class="lang-switch" id="lang-switch">
