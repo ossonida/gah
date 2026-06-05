@@ -157,14 +157,11 @@
     @media (max-width: 720px) {
       .layout { gap: 12px; }
       .card { padding: 12px 10px; }
-      /* 손님카드: 버전, 이름 숨김 (카드번호·내용 표시) */
+      /* 손님/직원카드: 이름 숨김 (카드번호·내용 표시) */
       [data-section="guest"] col:nth-child(2), [data-section="guest"] col:nth-child(2),
       [data-section="guest"] th:nth-child(2), [data-section="guest"] td:nth-child(2),
-      [data-section="guest"] th:nth-child(3), [data-section="guest"] td:nth-child(3) { display: none; }
-      /* 직원카드: 버전, 이름 숨김 */
       [data-section="staff"] col:nth-child(2), [data-section="staff"] col:nth-child(2),
-      [data-section="staff"] th:nth-child(2), [data-section="staff"] td:nth-child(2),
-      [data-section="staff"] th:nth-child(3), [data-section="staff"] td:nth-child(3) { display: none; }
+      [data-section="staff"] th:nth-child(2), [data-section="staff"] td:nth-child(2) { display: none; }
       /* 황제 타일: 버전 숨김 */
       [data-section="emperor"] col:nth-child(1), [data-section="emperor"] col:nth-child(1),
       [data-section="emperor"] th:nth-child(1), [data-section="emperor"] td:nth-child(1) { display: none; }
@@ -212,120 +209,119 @@
 
     <section class="card" data-section="guest">
       <div class="card-header"><h2>손님카드</h2><span class="count-tag">본판 58장 · 왈츠 35장 · 총 93장</span></div>
-        <div class="table-wrap"><table class="data-table hide-version-mobile hide-name-version keep-content">
+        <div class="table-wrap"><table class="data-table keep-content">
           <colgroup>
             <col>
-            <col class="col-version">
             <col>
             <col>
         </colgroup>
-        <thead><tr><th>카드</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
+        <thead><tr><th>카드</th><th>이름</th><th>내용</th></tr></thead>
         <tbody>
-          <tr><td>49</td><td>본판</td><td>Sculptor</td><td>어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다. 단, 호텔 보드의 맨 아래 2개 층에서 선택해야 합니다. (아래 2개 층이 이미 전부 객실이면 아무것도 못 받음)</td></tr>
-          <tr><td>50</td><td>본판</td><td>Musician</td><td>직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.</td></tr>
-          <tr><td>51</td><td>본판</td><td>Composer</td><td>슈트루델 1개를 얻습니다.</td></tr>
-          <tr><td>52</td><td>본판</td><td>Tailor</td><td>슈트루델 1개와 2크로네를 얻습니다.</td></tr>
-          <tr><td>53</td><td>본판</td><td>Flamenco Dancer</td><td>커피 1개를 얻고, 황제 트랙을 2칸 전진합니다.</td></tr>
-          <tr><td>54</td><td>본판</td><td>Portrait Painter</td><td>원하는 요리/음료 1개와 2크로네를 얻습니다.</td></tr>
-          <tr><td>55</td><td>본판</td><td>Photographer</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다.</td></tr>
-          <tr><td>56</td><td>본판</td><td>Vocalist</td><td>케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>57</td><td>본판</td><td>Architect</td><td>어떤 색이든 객실을 최대 2개까지 준비할 수 있습니다. 각 객실은 준비 비용을 각각 1크로네 덜 냅니다.</td></tr>
-          <tr><td>58</td><td>본판</td><td>Actress</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(해당 객실을 점유 면으로 뒤집기).</td></tr>
-          <tr><td>59</td><td>본판</td><td>Poet</td><td>케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 2크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>60</td><td>본판</td><td>Jewelry Designer</td><td>커피 1개와 3크로네를 얻습니다.</td></tr>
-          <tr><td>61</td><td>본판</td><td>Painter</td><td>객실을 최대 2개까지 준비할 수 있습니다. 그중 1개는 준비 비용을 1크로네 덜 내고, 2번째를 준비한다면 2번째는 정상 비용을 냅니다.</td></tr>
-          <tr><td>62</td><td>본판</td><td>Opera Singer</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.</td></tr>
-          <tr><td>63</td><td>본판</td><td>Dame</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>64</td><td>본판</td><td>Duchess</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>65</td><td>본판</td><td>Knight of the Empire</td><td>효과 없음.</td></tr>
-          <tr><td>66</td><td>본판</td><td>Landgrave</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.</td></tr>
-          <tr><td>67</td><td>본판</td><td>Sovereign</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.</td></tr>
-          <tr><td>68</td><td>본판</td><td>Princess</td><td>황제 트랙을 3칸 전진합니다.</td></tr>
-          <tr><td>69</td><td>본판</td><td>Countess</td><td>3크로네를 얻습니다.</td></tr>
-          <tr><td>70</td><td>본판</td><td>Elector</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.</td></tr>
-          <tr><td>71</td><td>본판</td><td>Baron</td><td>어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다.</td></tr>
-          <tr><td>72</td><td>본판</td><td>Prince</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
-          <tr><td>73</td><td>본판</td><td>Count</td><td>손에서 직원 카드 최대 2장을 고용할 수 있습니다. 각 카드의 비용을 각각 1크로네 덜 냅니다.</td></tr>
-          <tr><td>74</td><td>본판</td><td>Earl</td><td>1크로네를 얻습니다.</td></tr>
-          <tr><td>75</td><td>본판</td><td>Baroness</td><td>직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다.
+          <tr><td>49</td><td>Sculptor</td><td>어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다. 단, 호텔 보드의 맨 아래 2개 층에서 선택해야 합니다. (아래 2개 층이 이미 전부 객실이면 아무것도 못 받음)</td></tr>
+          <tr><td>50</td><td>Musician</td><td>직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.</td></tr>
+          <tr><td>51</td><td>Composer</td><td>슈트루델 1개를 얻습니다.</td></tr>
+          <tr><td>52</td><td>Tailor</td><td>슈트루델 1개와 2크로네를 얻습니다.</td></tr>
+          <tr><td>53</td><td>Flamenco Dancer</td><td>커피 1개를 얻고, 황제 트랙을 2칸 전진합니다.</td></tr>
+          <tr><td>54</td><td>Portrait Painter</td><td>원하는 요리/음료 1개와 2크로네를 얻습니다.</td></tr>
+          <tr><td>55</td><td>Photographer</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다.</td></tr>
+          <tr><td>56</td><td>Vocalist</td><td>케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>57</td><td>Architect</td><td>어떤 색이든 객실을 최대 2개까지 준비할 수 있습니다. 각 객실은 준비 비용을 각각 1크로네 덜 냅니다.</td></tr>
+          <tr><td>58</td><td>Actress</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(해당 객실을 점유 면으로 뒤집기).</td></tr>
+          <tr><td>59</td><td>Poet</td><td>케이크 1개를 얻습니다. 추가로, 손에서 직원 카드 1장을 고용하되 비용을 최대 2크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>60</td><td>Jewelry Designer</td><td>커피 1개와 3크로네를 얻습니다.</td></tr>
+          <tr><td>61</td><td>Painter</td><td>객실을 최대 2개까지 준비할 수 있습니다. 그중 1개는 준비 비용을 1크로네 덜 내고, 2번째를 준비한다면 2번째는 정상 비용을 냅니다.</td></tr>
+          <tr><td>62</td><td>Opera Singer</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.</td></tr>
+          <tr><td>63</td><td>Dame</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>64</td><td>Duchess</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>65</td><td>Knight of the Empire</td><td>효과 없음.</td></tr>
+          <tr><td>66</td><td>Landgrave</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로, 어떤 색이든 객실 1개를 정상 비용을 지불하고 준비할 수 있습니다.</td></tr>
+          <tr><td>67</td><td>Sovereign</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.</td></tr>
+          <tr><td>68</td><td>Princess</td><td>황제 트랙을 3칸 전진합니다.</td></tr>
+          <tr><td>69</td><td>Countess</td><td>3크로네를 얻습니다.</td></tr>
+          <tr><td>70</td><td>Elector</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다. 추가로 황제 트랙을 3칸 전진합니다.</td></tr>
+          <tr><td>71</td><td>Baron</td><td>어떤 색이든 객실 1개를 비용 없이 준비할 수 있습니다.</td></tr>
+          <tr><td>72</td><td>Prince</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
+          <tr><td>73</td><td>Count</td><td>손에서 직원 카드 최대 2장을 고용할 수 있습니다. 각 카드의 비용을 각각 1크로네 덜 냅니다.</td></tr>
+          <tr><td>74</td><td>Earl</td><td>1크로네를 얻습니다.</td></tr>
+          <tr><td>75</td><td>Baroness</td><td>직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다.
 
 (세 장 모두 너무 비싸서 고용 불가/고용하고 싶지 않다면, 3장 전부를 덱 맨 아래로 보냅니다.)</td></tr>
-          <tr><td>76</td><td>본판</td><td>Duke</td><td>직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 비용 없이 고용합니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다.</td></tr>
-          <tr><td>77</td><td>본판</td><td>Apothecary</td><td>1크로네를 얻습니다.</td></tr>
-          <tr><td>78</td><td>본판</td><td>Post Councillor</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>79</td><td>본판</td><td>Privy Councillor</td><td>1크로네를 얻고, 황제 트랙을 1칸 전진합니다.</td></tr>
-          <tr><td>80</td><td>본판</td><td>Professor Emeritus</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>81</td><td>본판</td><td>General</td><td>와인 1개와 3크로네를 얻습니다.</td></tr>
-          <tr><td>82</td><td>본판</td><td>Senior Councillor</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
-          <tr><td>83</td><td>본판</td><td>Councillor of Commerce</td><td>5크로네를 얻습니다.</td></tr>
-          <tr><td>84</td><td>본판</td><td>Court Councillor</td><td>3크로네를 얻습니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>85</td><td>본판</td><td>Major</td><td>3크로네를 얻습니다.</td></tr>
-          <tr><td>86</td><td>본판</td><td>Veterinary Councillor</td><td>손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>87</td><td>본판</td><td>Medicinal Councillor</td><td>3크로네를 얻습니다. 추가로 대기 줄에서 손님을 최대 2명까지 비용 없이 가져올 수 있습니다.
+          <tr><td>76</td><td>Duke</td><td>직원 카드 덱에서 3장을 뽑고, 그중 1장을 즉시 비용 없이 고용합니다. 나머지 2장은 원하는 순서로 덱 맨 아래에 넣습니다.</td></tr>
+          <tr><td>77</td><td>Apothecary</td><td>1크로네를 얻습니다.</td></tr>
+          <tr><td>78</td><td>Post Councillor</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>79</td><td>Privy Councillor</td><td>1크로네를 얻고, 황제 트랙을 1칸 전진합니다.</td></tr>
+          <tr><td>80</td><td>Professor Emeritus</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>81</td><td>General</td><td>와인 1개와 3크로네를 얻습니다.</td></tr>
+          <tr><td>82</td><td>Senior Councillor</td><td>어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
+          <tr><td>83</td><td>Councillor of Commerce</td><td>5크로네를 얻습니다.</td></tr>
+          <tr><td>84</td><td>Court Councillor</td><td>3크로네를 얻습니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>85</td><td>Major</td><td>3크로네를 얻습니다.</td></tr>
+          <tr><td>86</td><td>Veterinary Councillor</td><td>손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>87</td><td>Medicinal Councillor</td><td>3크로네를 얻습니다. 추가로 대기 줄에서 손님을 최대 2명까지 비용 없이 가져올 수 있습니다.
 
 단, 두 번째 손님을 가져오기 전에 대기 줄을 다시 채워야 합니다.</td></tr>
-          <tr><td>88</td><td>본판</td><td>Procurator</td><td>어떤 색이든 객실을 최대 2개까지, 둘 다 비용 없이 준비할 수 있습니다.</td></tr>
-          <tr><td>89</td><td>본판</td><td>Lord High Commissioner</td><td>4크로네를 얻습니다.</td></tr>
-          <tr><td>90</td><td>본판</td><td>Senior Legal Secretary</td><td>와인 1개와 3크로네를 얻습니다.</td></tr>
-          <tr><td>91</td><td>본판</td><td>Tezcatlipoca</td><td>직원 카드 덱에서 3장을 뽑아 손에 넣습니다.</td></tr>
-          <tr><td>92</td><td>본판</td><td>Capt. Goldhaken</td><td>1크로네를 얻습니다.</td></tr>
-          <tr><td>93</td><td>본판</td><td>Mr. Horsa</td><td>황제 트랙을 1칸 전진합니다.</td></tr>
-          <tr><td>94</td><td>본판</td><td>M. Ingalls</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>95</td><td>본판</td><td>Mr. Boydell</td><td>황제 트랙을 2칸 전진합니다.
+          <tr><td>88</td><td>Procurator</td><td>어떤 색이든 객실을 최대 2개까지, 둘 다 비용 없이 준비할 수 있습니다.</td></tr>
+          <tr><td>89</td><td>Lord High Commissioner</td><td>4크로네를 얻습니다.</td></tr>
+          <tr><td>90</td><td>Senior Legal Secretary</td><td>와인 1개와 3크로네를 얻습니다.</td></tr>
+          <tr><td>91</td><td>Tezcatlipoca</td><td>직원 카드 덱에서 3장을 뽑아 손에 넣습니다.</td></tr>
+          <tr><td>92</td><td>Capt. Goldhaken</td><td>1크로네를 얻습니다.</td></tr>
+          <tr><td>93</td><td>Mr. Horsa</td><td>황제 트랙을 1칸 전진합니다.</td></tr>
+          <tr><td>94</td><td>M. Ingalls</td><td>손에서 직원 카드 1장을 고용하되 비용을 1크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>95</td><td>Mr. Boydell</td><td>황제 트랙을 2칸 전진합니다.
 
 (주: 이 효과로 “트랙의 잔해/장애물 제거” 같은 건 하지 않습니다 — 직원들은 게임 내내 호텔에 남습니다.)</td></tr>
-          <tr><td>96</td><td>본판</td><td>Mr. Oundo</td><td>손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
-          <tr><td>97</td><td>본판</td><td>E. Gizia</td><td>주사위가 1개 이상 있는 행동 칸을 선택해, 그 행동을 정상적으로 수행합니다.
+          <tr><td>96</td><td>Mr. Oundo</td><td>손에서 직원 카드 1장을 고용하되 비용을 최대 3크로네 덜 내고 고용할 수 있습니다.</td></tr>
+          <tr><td>97</td><td>E. Gizia</td><td>주사위가 1개 이상 있는 행동 칸을 선택해, 그 행동을 정상적으로 수행합니다.
 
 단, 그 행동 칸에서 주사위를 가져오지 않습니다(즉, 주사위를 “가져간 것”이 아님).
 
 이 행동은 강화(Boost)할 수 없습니다.
 
 또한 “특정 눈금의 주사위를 가져갈 때 보너스를 주는 직원 카드”는 사용할 수 없습니다(주사위를 가져가지 않기 때문).</td></tr>
-          <tr><td>98</td><td>본판</td><td>M. Polo</td><td>4크로네를 얻습니다.</td></tr>
-          <tr><td>99</td><td>본판</td><td>Cramersopholus</td><td>직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.</td></tr>
-          <tr><td>100</td><td>본판</td><td>Farmer Franz</td><td>황제 트랙을 3칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
-          <tr><td>101</td><td>본판</td><td>Brother Uwe</td><td>황제 트랙을 3칸 전진합니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>102</td><td>본판</td><td>Conductor</td><td>황제 트랙을 1칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
-          <tr><td>103</td><td>본판</td><td>Durgoing</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다.</td></tr>
-          <tr><td>104</td><td>본판</td><td>MacLeod</td><td>손에서 직원 카드 1장을 비용 없이 고용할 수 있습니다.</td></tr>
-          <tr><td>117*</td><td>본판</td><td>Mag. Ferdinand</td><td>황제 트랙을 3칸 전진합니다.</td></tr>
-          <tr><td>118*</td><td>본판</td><td>Mr. Moras</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>134</td><td>왈츠</td><td>Debutante</td><td>샴페인 1개 획득.</td></tr>
-          <tr><td>135</td><td>왈츠</td><td>Lady Companion</td><td>황제 트랙 1칸 전진. 추가로 손패 직원 카드 1장을 비용 없이 고용.</td></tr>
-          <tr><td>136</td><td>왈츠</td><td>Governess</td><td>샴페인 1개 획득.</td></tr>
-          <tr><td>137</td><td>왈츠</td><td>Prima Ballerina</td><td>2크로네 획득. 추가로 정상 비용을 내고 무용수 최대 2개를 같은/다른 무도회장으로 보낼 수 있음.</td></tr>
-          <tr><td>138</td><td>왈츠</td><td>Mannequin</td><td>샴페인 1개 획득. 추가로 손패 직원 카드 1장을 최대 3크로네 할인하여 고용 가능.</td></tr>
-          <tr><td>139</td><td>왈츠</td><td>Diva</td><td>샴페인 2개 획득.</td></tr>
-          <tr><td>140</td><td>왈츠</td><td>Waltz Queen</td><td>효과 없음.</td></tr>
-          <tr><td>141</td><td>왈츠</td><td>Khan</td><td>샴페인 1개 획득.</td></tr>
-          <tr><td>142</td><td>왈츠</td><td>Tenno</td><td>샴페인 1개 획득. 추가로 객실 1개 준비 시 1크로네 할인.</td></tr>
-          <tr><td>143</td><td>왈츠</td><td>Laird</td><td>(샴페인 제외) 원하는 요리/음료 2개 획득. (섞어 선택 가능)</td></tr>
-          <tr><td>144</td><td>왈츠</td><td>Maharani</td><td>샴페인 1개 획득.</td></tr>
-          <tr><td>145</td><td>왈츠</td><td>Marquis</td><td>샴페인 2개 획득.</td></tr>
-          <tr><td>146</td><td>왈츠</td><td>Contessa</td><td>효과 없음.</td></tr>
-          <tr><td>147</td><td>왈츠</td><td>Tsarina</td><td>무용수 1개를 무도회장으로 보낼 때 샴페인 1개 할인.</td></tr>
-          <tr><td>148</td><td>왈츠</td><td>Ambassador</td><td>무용수 1개를 무도회장으로 보낼 수 있습니다(정상 비용).</td></tr>
-          <tr><td>149</td><td>왈츠</td><td>Abbess</td><td>5크로네 획득.</td></tr>
-          <tr><td>150</td><td>왈츠</td><td>Consigliere</td><td>샴페인 1개 + 2크로네 획득.</td></tr>
-          <tr><td>151</td><td>왈츠</td><td>Admiral Winterbottom</td><td>황제 트랙 2칸 전진. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.</td></tr>
-          <tr><td>152</td><td>왈츠</td><td>Impresario</td><td>샴페인 1개 획득.</td></tr>
-          <tr><td>153</td><td>왈츠</td><td>Cardinal</td><td>효과 없음.</td></tr>
-          <tr><td>154</td><td>왈츠</td><td>Mayor</td><td>샴페인 2개 획득. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.</td></tr>
-          <tr><td>155</td><td>왈츠</td><td>The Beast</td><td>샴페인 1개 획득. 추가로 객실 1개를 정상 비용으로 준비 가능. (주의: Beast는 VP -1)</td></tr>
-          <tr><td>156</td><td>왈츠</td><td>Kapellmeister Palfy</td><td>샴페인 2개 획득.</td></tr>
-          <tr><td>157</td><td>왈츠</td><td>C. Inderella</td><td>무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 객실 1개를 점유 면으로 뒤집어 점유 가능.</td></tr>
-          <tr><td>158</td><td>왈츠</td><td>Phantom</td><td>샴페인 1개 획득. 추가로 대기열에서 손님 1명을 비용 없이 가져옴. (주의: Phantom은 VP -2)</td></tr>
-          <tr><td>159</td><td>왈츠</td><td>The Beauty</td><td>무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 직원 카드 3장 뽑아 1장 즉시 고용(최대 -3크로네 할인), 나머지 2장은 원하는 순서로 덱 맨 아래로.</td></tr>
-          <tr><td>160</td><td>왈츠</td><td>Medium</td><td>(샴페인 제외) 원하는 요리/음료 2개 획득 + 추가로 샴페인 1개.</td></tr>
-          <tr><td>161</td><td>왈츠</td><td>Partyer</td><td>무용수 1개를 무도회장으로 보낼 때 샴페인 최대 2개 할인.</td></tr>
-          <tr><td>162</td><td>왈츠</td><td>Pope</td><td>교황은 무도회장으로 보낼 수 없고, 반드시 객실로 옮겨야 합니다. 그 대신 임의 색 객실 1개를 추가로 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
+          <tr><td>98</td><td>M. Polo</td><td>4크로네를 얻습니다.</td></tr>
+          <tr><td>99</td><td>Cramersopholus</td><td>직원 카드 덱에서 1장을 뽑아 손에 넣습니다. 추가로 황제 트랙을 2칸 전진합니다.</td></tr>
+          <tr><td>100</td><td>Farmer Franz</td><td>황제 트랙을 3칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
+          <tr><td>101</td><td>Brother Uwe</td><td>황제 트랙을 3칸 전진합니다. 추가로 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>102</td><td>Conductor</td><td>황제 트랙을 1칸 전진합니다. 추가로 어떤 색이든 추가로 객실 1개를 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
+          <tr><td>103</td><td>Durgoing</td><td>직원 카드 덱에서 2장을 뽑아 손에 넣습니다.</td></tr>
+          <tr><td>104</td><td>MacLeod</td><td>손에서 직원 카드 1장을 비용 없이 고용할 수 있습니다.</td></tr>
+          <tr><td>117*</td><td>Mag. Ferdinand</td><td>황제 트랙을 3칸 전진합니다.</td></tr>
+          <tr><td>118*</td><td>Mr. Moras</td><td>대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>134</td><td>Debutante</td><td>샴페인 1개 획득.</td></tr>
+          <tr><td>135</td><td>Lady Companion</td><td>황제 트랙 1칸 전진. 추가로 손패 직원 카드 1장을 비용 없이 고용.</td></tr>
+          <tr><td>136</td><td>Governess</td><td>샴페인 1개 획득.</td></tr>
+          <tr><td>137</td><td>Prima Ballerina</td><td>2크로네 획득. 추가로 정상 비용을 내고 무용수 최대 2개를 같은/다른 무도회장으로 보낼 수 있음.</td></tr>
+          <tr><td>138</td><td>Mannequin</td><td>샴페인 1개 획득. 추가로 손패 직원 카드 1장을 최대 3크로네 할인하여 고용 가능.</td></tr>
+          <tr><td>139</td><td>Diva</td><td>샴페인 2개 획득.</td></tr>
+          <tr><td>140</td><td>Waltz Queen</td><td>효과 없음.</td></tr>
+          <tr><td>141</td><td>Khan</td><td>샴페인 1개 획득.</td></tr>
+          <tr><td>142</td><td>Tenno</td><td>샴페인 1개 획득. 추가로 객실 1개 준비 시 1크로네 할인.</td></tr>
+          <tr><td>143</td><td>Laird</td><td>(샴페인 제외) 원하는 요리/음료 2개 획득. (섞어 선택 가능)</td></tr>
+          <tr><td>144</td><td>Maharani</td><td>샴페인 1개 획득.</td></tr>
+          <tr><td>145</td><td>Marquis</td><td>샴페인 2개 획득.</td></tr>
+          <tr><td>146</td><td>Contessa</td><td>효과 없음.</td></tr>
+          <tr><td>147</td><td>Tsarina</td><td>무용수 1개를 무도회장으로 보낼 때 샴페인 1개 할인.</td></tr>
+          <tr><td>148</td><td>Ambassador</td><td>무용수 1개를 무도회장으로 보낼 수 있습니다(정상 비용).</td></tr>
+          <tr><td>149</td><td>Abbess</td><td>5크로네 획득.</td></tr>
+          <tr><td>150</td><td>Consigliere</td><td>샴페인 1개 + 2크로네 획득.</td></tr>
+          <tr><td>151</td><td>Admiral Winterbottom</td><td>황제 트랙 2칸 전진. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.</td></tr>
+          <tr><td>152</td><td>Impresario</td><td>샴페인 1개 획득.</td></tr>
+          <tr><td>153</td><td>Cardinal</td><td>효과 없음.</td></tr>
+          <tr><td>154</td><td>Mayor</td><td>샴페인 2개 획득. 추가로 무용수 1개를 무도회장으로 정상 비용으로 보낼 수 있음.</td></tr>
+          <tr><td>155</td><td>The Beast</td><td>샴페인 1개 획득. 추가로 객실 1개를 정상 비용으로 준비 가능. (주의: Beast는 VP -1)</td></tr>
+          <tr><td>156</td><td>Kapellmeister Palfy</td><td>샴페인 2개 획득.</td></tr>
+          <tr><td>157</td><td>C. Inderella</td><td>무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 객실 1개를 점유 면으로 뒤집어 점유 가능.</td></tr>
+          <tr><td>158</td><td>Phantom</td><td>샴페인 1개 획득. 추가로 대기열에서 손님 1명을 비용 없이 가져옴. (주의: Phantom은 VP -2)</td></tr>
+          <tr><td>159</td><td>The Beauty</td><td>무용수 1개를 무도회장으로 정상 비용으로 보냄. 추가로 직원 카드 3장 뽑아 1장 즉시 고용(최대 -3크로네 할인), 나머지 2장은 원하는 순서로 덱 맨 아래로.</td></tr>
+          <tr><td>160</td><td>Medium</td><td>(샴페인 제외) 원하는 요리/음료 2개 획득 + 추가로 샴페인 1개.</td></tr>
+          <tr><td>161</td><td>Partyer</td><td>무용수 1개를 무도회장으로 보낼 때 샴페인 최대 2개 할인.</td></tr>
+          <tr><td>162</td><td>Pope</td><td>교황은 무도회장으로 보낼 수 없고, 반드시 객실로 옮겨야 합니다. 그 대신 임의 색 객실 1개를 추가로 점유할 수 있습니다(점유 면으로 뒤집기).</td></tr>
           
           
           
-          <tr><td>190**</td><td>왈츠</td><td>Mr. Schulze</td><td>무도회장/객실 불가, 테이블에 영구 잔류(비용 없음). 라운드당 1회, 아이템(요리/음료/샴페인) 1개를 소비하면 직원 카드 1장을 (고용 비용을 지불하고) 즉시 고용 + VP 1점 + 황제 트랙 1칸 전진. 최종 점수에서 테이블에 남아도 -5VP 페널티 없음.</td></tr>
-          <tr><td>191**</td><td>왈츠</td><td>J. Kesselhut</td><td>즉시, 카페에 남아 있는 모든 손님의 ‘와인’ 주문을 공용 공급처의 와인으로 전부 충족합니다.</td></tr>
-          <tr><td>192**</td><td>왈츠</td><td>Mrs. Kunkel</td><td>무도회장 불가. 맨 아래층 객실을 반드시 점유. 아래층에 빈 객실이 없으면, 남은 게임 동안 테이블을 1개 줄여야 하며, 최종 점수에서 -5VP를 받습니다.</td></tr>
+          <tr><td>190**</td><td>Mr. Schulze</td><td>무도회장/객실 불가, 테이블에 영구 잔류(비용 없음). 라운드당 1회, 아이템(요리/음료/샴페인) 1개를 소비하면 직원 카드 1장을 (고용 비용을 지불하고) 즉시 고용 + VP 1점 + 황제 트랙 1칸 전진. 최종 점수에서 테이블에 남아도 -5VP 페널티 없음.</td></tr>
+          <tr><td>191**</td><td>J. Kesselhut</td><td>즉시, 카페에 남아 있는 모든 손님의 ‘와인’ 주문을 공용 공급처의 와인으로 전부 충족합니다.</td></tr>
+          <tr><td>192**</td><td>Mrs. Kunkel</td><td>무도회장 불가. 맨 아래층 객실을 반드시 점유. 아래층에 빈 객실이 없으면, 남은 게임 동안 테이블을 1개 줄여야 하며, 최종 점수에서 -5VP를 받습니다.</td></tr>
         </tbody>
       </table>
       <div class="empty hide">검색 결과가 없습니다.</div>
@@ -335,91 +331,90 @@
       <div class="card-header"><h2>직원카드</h2><span class="count-tag">본판 48장 · 왈츠 30장 · 총 78장</span></div>
       <table class="data-table">
         <colgroup>
-          <col>
-          <col class="col-version">
-          <col>
-          <col>
+            <col>
+            <col>
+            <col>
         </colgroup>
-        <thead><tr><th>카드</th><th>버전</th><th>이름</th><th>내용</th></tr></thead>
+        <thead><tr><th>카드</th><th>이름</th><th>내용</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>본판</td><td>Breakfast Server</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개 또는 케이크 1개를 가져와 손님 1명 위에 놓을 수 있습니다.</td></tr>
-          <tr><td>2</td><td>본판</td><td>Dish Washer</td><td>라운드당 1번, 서빙 아이템 추가 행동을 비용 없이 사용할 수 있습니다.</td></tr>
-          <tr><td>3</td><td>본판</td><td>Head Chef</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개와 케이크 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>4</td><td>본판</td><td>Pastry Chef</td><td>라운드당 1번, 공용 공급처에서 케이크 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>5</td><td>본판</td><td>Candy Boy</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>6</td><td>본판</td><td>Wine Butler</td><td>라운드당 1번, 공용 공급처에서 와인 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>7</td><td>본판</td><td>Coffee Brewer</td><td>라운드당 1번, 공용 공급처에서 커피 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>8</td><td>본판</td><td>Barista</td><td>라운드당 1번, 공용 공급처에서 와인 1개와 커피 1개를 가져올 수 있습니다.</td></tr>
-          <tr><td>9</td><td>본판</td><td>Head Waiter</td><td>라운드당 1번, 공용 공급처에서 와인과 커피를 가져올 수 있습니다. 이때 가져오는 와인의 개수는 커피의 개수 이상이어야 합니다.</td></tr>
-          <tr><td>10</td><td>본판</td><td>Concierge</td><td>라운드당 1번, 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
-          <tr><td>11</td><td>본판</td><td>Porter</td><td>라운드당 1번, 2크로네를 얻습니다.</td></tr>
-          <tr><td>12</td><td>본판</td><td>Receptionist</td><td>라운드당 1번, 객실 1개를 비용 없이 준비할 수 있습니다.</td></tr>
-          <tr><td>13</td><td>본판</td><td>Chambermaid</td><td>라운드당 1번, 객실 1개를 준비할 때 비용이 1크로네 감소합니다.</td></tr>
-          <tr><td>14</td><td>본판</td><td>Salesman</td><td>라운드당 1번, 직원 카드 2장을 뽑습니다.</td></tr>
-          <tr><td>15</td><td>본판</td><td>Lobby Boy</td><td>라운드당 1번, 직원 카드 1장을 뽑습니다.</td></tr>
-          <tr><td>16</td><td>본판</td><td>Hotel Manager</td><td>라운드당 1번, 손에 있는 직원 카드 1장을 비용 없이 고용할 수 있습니다.</td></tr>
-          <tr><td>17</td><td>본판</td><td>Assistant Manager</td><td>이 카드가 활성화되어 있으면, 값이 6인 주사위를 가져갈 때마다 추가 비용 1크로네를 내지 않습니다.</td></tr>
-          <tr><td>18</td><td>본판</td><td>Head of Service</td><td>라운드당 1번, 행동을 강화(Boost)할 때 필요한 1크로네를 지불하지 않아도 됩니다.</td></tr>
-          <tr><td>19</td><td>본판</td><td>Sous Chef</td><td>라운드당 1번, 공용 공급처에서 요리(슈트루델/케이크) 최대 2개를 가져와 손님들에게 올려둘 수 있습니다.</td></tr>
-          <tr><td>20</td><td>본판</td><td>Dishwasher</td><td>라운드당 1번, 주방의 요리/음료 최대 3개를 손님들에게 비용 없이 옮길 수 있습니다.</td></tr>
-          <tr><td>21</td><td>본판</td><td>Bellboy</td><td>라운드당 1번, 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
-          <tr><td>22</td><td>본판</td><td>Waitress</td><td>라운드당 1번, 대기 줄에서 손님 1명을 가져올 때 비용이 1크로네 감소합니다.</td></tr>
-          <tr><td>23</td><td>본판</td><td>Room Service</td><td>라운드당 1번, 공용 공급처에서 필요한 아이템을 가져와 손님 1명의 주문을 완료할 수 있습니다.</td></tr>
-          <tr><td>24</td><td>본판</td><td>Musician</td><td>라운드당 1번, VP 3점을 얻습니다.</td></tr>
-          <tr><td>25</td><td>본판</td><td>Accountant</td><td>직원 카드를 고용할 때마다 1크로네를 얻습니다.</td></tr>
-          <tr><td>26</td><td>본판</td><td>Chef</td><td>요리 가져오기 행동을 할 때마다 슈트루델 1개를 추가로 가져올 수 있습니다.</td></tr>
-          <tr><td>27</td><td>본판</td><td>Sommelier</td><td>음료 가져오기 행동을 할 때마다 와인 1개를 추가로 가져올 수 있습니다.</td></tr>
-          <tr><td>28</td><td>본판</td><td>Maid</td><td>객실 준비 행동을 할 때마다 객실 1개를 추가로 준비할 수 있습니다.</td></tr>
-          <tr><td>29</td><td>본판</td><td>Clerk</td><td>호의/돈 얻기 행동을 할 때마다 추가로 1크로네를 얻습니다.</td></tr>
-          <tr><td>30</td><td>본판</td><td>Lobbyist</td><td>황제 트랙에서 전진할 때마다 VP 1점을 얻습니다.</td></tr>
-          <tr><td>31</td><td>본판</td><td>Architect</td><td>객실을 준비할 때마다 VP 1점을 얻습니다.</td></tr>
-          <tr><td>32</td><td>본판</td><td>Interior Designer</td><td>VP가 인쇄된 칸에 객실을 준비할 때마다 추가로 VP 2점을 얻습니다.</td></tr>
-          <tr><td>33</td><td>본판</td><td>Confectioner</td><td>손님 주문을 완료할 때마다 케이크 1개를 얻습니다.</td></tr>
-          <tr><td>34</td><td>본판</td><td>Bartender</td><td>손님 주문을 완료할 때마다 와인 1개를 얻습니다.</td></tr>
-          <tr><td>35</td><td>본판</td><td>Coffee Server</td><td>손님 주문을 완료할 때마다 커피 1개를 얻습니다.</td></tr>
-          <tr><td>36</td><td>본판</td><td>Chef de Partie</td><td>손님 주문을 완료할 때마다 슈트루델 1개를 얻습니다.</td></tr>
-          <tr><td>37</td><td>본판</td><td>Doorman</td><td>대기 줄에서 손님을 가져올 때마다 VP 1점을 얻습니다.</td></tr>
-          <tr><td>38</td><td>본판</td><td>Room Inspector</td><td>객실을 점유할 때마다 1크로네를 얻습니다.</td></tr>
-          <tr><td>39</td><td>본판</td><td>Bell Captain</td><td>객실을 점유할 때마다 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
-          <tr><td>40</td><td>본판</td><td>Marketing Director</td><td>객실을 점유할 때마다 VP 1점을 얻습니다.</td></tr>
-          <tr><td>41</td><td>본판</td><td>Diplomat</td><td>목표 카드에 마커를 놓을 때마다 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
-          <tr><td>42</td><td>본판</td><td>Politician</td><td>목표 카드에 마커를 놓을 때마다 VP 2점을 얻습니다.</td></tr>
-          <tr><td>43</td><td>본판</td><td>Investor</td><td>라운드 종료 시, 10크로네 이상이면 VP 3점을 얻습니다.</td></tr>
-          <tr><td>44</td><td>본판</td><td>Banker</td><td>라운드 종료 시, 3크로네 이하이면 2크로네를 얻습니다.</td></tr>
-          <tr><td>45</td><td>본판</td><td>Inspector</td><td>최종 점수 계산 시, 목표를 2개 이상 달성했다면 VP 5점을 얻습니다.</td></tr>
-          <tr><td>46</td><td>본판</td><td>Female Floor Housekeeper</td><td>최종 점수 계산 시, 최상층의 점유된 객실 1개당 VP 1점을 얻습니다.</td></tr>
-          <tr><td>47</td><td>본판</td><td>Butler</td><td>최종 점수 계산 시, 고용한 직원 카드 1장당 VP 2점을 얻습니다.</td></tr>
-          <tr><td>48</td><td>본판</td><td>Barkeeper</td><td>최종 점수 계산 시, 응대한 손님 1명당 VP 1점을 얻습니다.</td></tr>
-          <tr><td>119</td><td>왈츠</td><td>Dancing Master</td><td>주사위 눈 '3'을 가져갈 때마다(메인 행동 전/후), 정상 비용을 내고 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 추가로 1크로네 획득. (메인 행동과 무용수 보내기 사이에 다른 추가 행동 불가)</td></tr>
-          <tr><td>120</td><td>왈츠</td><td>Violinist</td><td>즉시(단 1회) 샴페인 3개 획득.</td></tr>
-          <tr><td>121</td><td>왈츠</td><td>Concertmaster</td><td>주사위 눈 '1'을 가져간 뒤 메인 행동을 정상 수행하면, 샴페인 1개 획득 + VP 1점. (추가 샴페인은 '슈트루델/케이크 최소 수량' 규칙에 영향 없음)</td></tr>
-          <tr><td>122</td><td>왈츠</td><td>Symphonist</td><td>라운드당 1회, 주방에서 샴페인 1개를 정확히 지불하고 VP 5점.</td></tr>
-          <tr><td>123</td><td>왈츠</td><td>Usherette</td><td>라운드당 1회, 2크로네를 정확히 지불하고 샴페인 1개 + VP 3점.</td></tr>
-          <tr><td>124</td><td>왈츠</td><td>Conductor</td><td>주사위 눈 '4'를 가져갈 때마다 샴페인 1개 + 1크로네 추가 획득.</td></tr>
-          <tr><td>125</td><td>왈츠</td><td>Choirmaster</td><td>주사위 눈 '5'를 가져갈 때마다(메인 행동 전/후), 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 이때 비용은 샴페인 1개 할인. (사이에 다른 추가 행동 불가)</td></tr>
-          <tr><td>126</td><td>왈츠</td><td>Leading Dancer</td><td>최종 점수 계산 시, (발코니 포함) 모든 무도회장에 있는 내 무용수 1개당 VP 2점.</td></tr>
-          <tr><td>127</td><td>왈츠</td><td>Harpist</td><td>즉시(단 1회), 무용수 최대 2개를 같은/다른 무도회장으로 보냄. 첫 번째는 샴페인 최대 2개 할인, 두 번째는 샴페인 1개 할인. (중간 추가 행동 불가)</td></tr>
-          <tr><td>128</td><td>왈츠</td><td>Cellist</td><td>라운드당 1회, 주방에서 요리/음료 1개를 정확히 지불하고 무용수 1개를 무도회장으로 보냄(비용 샴페인 1개 할인).</td></tr>
-          <tr><td>129</td><td>왈츠</td><td>Pianist</td><td>라운드당 1회, 이 카드로 샴페인 1개 획득.</td></tr>
-          <tr><td>130</td><td>왈츠</td><td>Ballet Master</td><td>무용수를 무도회장으로 보낼 때마다 1크로네 획득 + 직원 카드 1장 뽑기.</td></tr>
-          <tr><td>131</td><td>왈츠</td><td>Trumpeter</td><td>주사위 눈 '2'를 가져가 메인 행동을 정상 수행한 뒤, 샴페인 1개 획득 + 직원 카드 1장 뽑기. (추가 샴페인은 최소 수량 규칙에 영향 없음)</td></tr>
-          <tr><td>132</td><td>왈츠</td><td>Arranger</td><td>목표 카드에 마커를 놓을 때마다 샴페인 2개 획득.</td></tr>
-          <tr><td>133</td><td>왈츠</td><td>Danube Steamship Captain</td><td>라운드당 1회, (이 카드 제외) 직원 카드 1장을 고용한 후, 무용수 1개를 무도회장으로 보낼 수 있음(비용 샴페인 1개 할인). (직원 카드 고용과 무용수 보내기 사이 추가 행동 불가)</td></tr>
-          <tr><td>166</td><td>왈츠</td><td>Handmaid</td><td>행동 중 황제 트랙을 3칸 이상 전진했다면 이 카드를 뒤집을 수 있음. 그러면 즉시(1회) 객실 최대 2개를 무료로 준비하고 곧바로 점유 면으로 뒤집어 점유.</td></tr>
-          <tr><td>167</td><td>왈츠</td><td>Apprentice</td><td>파란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 슈트루델 3 + 케이크 3 획득.</td></tr>
-          <tr><td>168</td><td>왈츠</td><td>Dishwasher</td><td>빨간 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 와인 3 + 커피 3 획득.</td></tr>
-          <tr><td>169</td><td>왈츠</td><td>Tapster</td><td>노란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 6크로네 획득.</td></tr>
-          <tr><td>170</td><td>왈츠</td><td>Coachwoman</td><td>라운드당 1회, 주방에서 커피 1개를 정확히 지불하면 VP 3점 + 대기열 손님 1명 무료로 획득.</td></tr>
-          <tr><td>171</td><td>왈츠</td><td>Bookkeeper</td><td>라운드당 1회, 주방에서 케이크 1개를 정확히 지불하면 객실 1개 준비 시 최대 2크로네 할인.</td></tr>
-          <tr><td>172</td><td>왈츠</td><td>Chef de Rang</td><td>행동으로 음료(와인/커피) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 황제 트랙 5칸 전진.</td></tr>
-          <tr><td>173</td><td>왈츠</td><td>Interpreter</td><td>라운드당 1회, 주방에서 슈트루델 2개를 정확히 지불하면 2크로네 + VP 2점.</td></tr>
-          <tr><td>174</td><td>왈츠</td><td>Bartender</td><td>행동 중 요리(슈트루델/케이크) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 대기열 손님 1명 무료로 가져오고, 공용 공급처에서 필요한 아이템을 가져와 주문을 즉시 완성.</td></tr>
-          <tr><td>175</td><td>왈츠</td><td>Wagon Master</td><td>라운드당 1회, 주방에서 (샴페인 제외) 요리/음료 합 2개를 정확히 지불하면, 지불한 것과 다른 종류의 (샴페인 제외) 요리/음료 2개 획득 + VP 2점.</td></tr>
-          <tr><td>176</td><td>왈츠</td><td>Dog Walker</td><td>라운드당 1회, 주방에서 와인 2개를 정확히 지불하면 VP 2점 + 황제 트랙 2칸 전진.</td></tr>
-          <tr><td>177</td><td>왈츠</td><td>Hairdresser</td><td>라운드당 1회, 황제 트랙을 정확히 2칸 후퇴하면 손패 직원 카드 1장을 최대 3크로네 할인하여 고용 가능.</td></tr>
-          <tr><td>178</td><td>왈츠</td><td>Janitor</td><td>같은 색/다른 색 무관, 객실 3개 이상으로 이뤄진 한 그룹을 완전 점유하면 뒤집을 수 있음. 그러면 즉시(1회) 손패 직원 카드 최대 2장을 무료로 고용.</td></tr>
-          <tr><td>179</td><td>왈츠</td><td>Entertainer</td><td>목표 카드에 마커를 놓은 뒤 뒤집을 수 있음. 그러면 즉시(1회) 공용 공급처에서 필요한 아이템을 가져와 손님 최대 2명의 주문을 즉시 완성.</td></tr>
-          <tr><td>183*</td><td>왈츠</td><td>Manager's Son</td><td>행동 중 샴페인 1개 이상을 소비할 때마다 1크로네 획득.</td></tr>
+          <tr><td>1</td><td>Breakfast Server</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개 또는 케이크 1개를 가져와 손님 1명 위에 놓을 수 있습니다.</td></tr>
+          <tr><td>2</td><td>Dish Washer</td><td>라운드당 1번, 서빙 아이템 추가 행동을 비용 없이 사용할 수 있습니다.</td></tr>
+          <tr><td>3</td><td>Head Chef</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개와 케이크 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>4</td><td>Pastry Chef</td><td>라운드당 1번, 공용 공급처에서 케이크 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>5</td><td>Candy Boy</td><td>라운드당 1번, 공용 공급처에서 슈트루델 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>6</td><td>Wine Butler</td><td>라운드당 1번, 공용 공급처에서 와인 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>7</td><td>Coffee Brewer</td><td>라운드당 1번, 공용 공급처에서 커피 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>8</td><td>Barista</td><td>라운드당 1번, 공용 공급처에서 와인 1개와 커피 1개를 가져올 수 있습니다.</td></tr>
+          <tr><td>9</td><td>Head Waiter</td><td>라운드당 1번, 공용 공급처에서 와인과 커피를 가져올 수 있습니다. 이때 가져오는 와인의 개수는 커피의 개수 이상이어야 합니다.</td></tr>
+          <tr><td>10</td><td>Concierge</td><td>라운드당 1번, 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
+          <tr><td>11</td><td>Porter</td><td>라운드당 1번, 2크로네를 얻습니다.</td></tr>
+          <tr><td>12</td><td>Receptionist</td><td>라운드당 1번, 객실 1개를 비용 없이 준비할 수 있습니다.</td></tr>
+          <tr><td>13</td><td>Chambermaid</td><td>라운드당 1번, 객실 1개를 준비할 때 비용이 1크로네 감소합니다.</td></tr>
+          <tr><td>14</td><td>Salesman</td><td>라운드당 1번, 직원 카드 2장을 뽑습니다.</td></tr>
+          <tr><td>15</td><td>Lobby Boy</td><td>라운드당 1번, 직원 카드 1장을 뽑습니다.</td></tr>
+          <tr><td>16</td><td>Hotel Manager</td><td>라운드당 1번, 손에 있는 직원 카드 1장을 비용 없이 고용할 수 있습니다.</td></tr>
+          <tr><td>17</td><td>Assistant Manager</td><td>이 카드가 활성화되어 있으면, 값이 6인 주사위를 가져갈 때마다 추가 비용 1크로네를 내지 않습니다.</td></tr>
+          <tr><td>18</td><td>Head of Service</td><td>라운드당 1번, 행동을 강화(Boost)할 때 필요한 1크로네를 지불하지 않아도 됩니다.</td></tr>
+          <tr><td>19</td><td>Sous Chef</td><td>라운드당 1번, 공용 공급처에서 요리(슈트루델/케이크) 최대 2개를 가져와 손님들에게 올려둘 수 있습니다.</td></tr>
+          <tr><td>20</td><td>Dishwasher</td><td>라운드당 1번, 주방의 요리/음료 최대 3개를 손님들에게 비용 없이 옮길 수 있습니다.</td></tr>
+          <tr><td>21</td><td>Bellboy</td><td>라운드당 1번, 대기 줄에서 손님 1명을 비용 없이 가져올 수 있습니다.</td></tr>
+          <tr><td>22</td><td>Waitress</td><td>라운드당 1번, 대기 줄에서 손님 1명을 가져올 때 비용이 1크로네 감소합니다.</td></tr>
+          <tr><td>23</td><td>Room Service</td><td>라운드당 1번, 공용 공급처에서 필요한 아이템을 가져와 손님 1명의 주문을 완료할 수 있습니다.</td></tr>
+          <tr><td>24</td><td>Musician</td><td>라운드당 1번, VP 3점을 얻습니다.</td></tr>
+          <tr><td>25</td><td>Accountant</td><td>직원 카드를 고용할 때마다 1크로네를 얻습니다.</td></tr>
+          <tr><td>26</td><td>Chef</td><td>요리 가져오기 행동을 할 때마다 슈트루델 1개를 추가로 가져올 수 있습니다.</td></tr>
+          <tr><td>27</td><td>Sommelier</td><td>음료 가져오기 행동을 할 때마다 와인 1개를 추가로 가져올 수 있습니다.</td></tr>
+          <tr><td>28</td><td>Maid</td><td>객실 준비 행동을 할 때마다 객실 1개를 추가로 준비할 수 있습니다.</td></tr>
+          <tr><td>29</td><td>Clerk</td><td>호의/돈 얻기 행동을 할 때마다 추가로 1크로네를 얻습니다.</td></tr>
+          <tr><td>30</td><td>Lobbyist</td><td>황제 트랙에서 전진할 때마다 VP 1점을 얻습니다.</td></tr>
+          <tr><td>31</td><td>Architect</td><td>객실을 준비할 때마다 VP 1점을 얻습니다.</td></tr>
+          <tr><td>32</td><td>Interior Designer</td><td>VP가 인쇄된 칸에 객실을 준비할 때마다 추가로 VP 2점을 얻습니다.</td></tr>
+          <tr><td>33</td><td>Confectioner</td><td>손님 주문을 완료할 때마다 케이크 1개를 얻습니다.</td></tr>
+          <tr><td>34</td><td>Bartender</td><td>손님 주문을 완료할 때마다 와인 1개를 얻습니다.</td></tr>
+          <tr><td>35</td><td>Coffee Server</td><td>손님 주문을 완료할 때마다 커피 1개를 얻습니다.</td></tr>
+          <tr><td>36</td><td>Chef de Partie</td><td>손님 주문을 완료할 때마다 슈트루델 1개를 얻습니다.</td></tr>
+          <tr><td>37</td><td>Doorman</td><td>대기 줄에서 손님을 가져올 때마다 VP 1점을 얻습니다.</td></tr>
+          <tr><td>38</td><td>Room Inspector</td><td>객실을 점유할 때마다 1크로네를 얻습니다.</td></tr>
+          <tr><td>39</td><td>Bell Captain</td><td>객실을 점유할 때마다 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
+          <tr><td>40</td><td>Marketing Director</td><td>객실을 점유할 때마다 VP 1점을 얻습니다.</td></tr>
+          <tr><td>41</td><td>Diplomat</td><td>목표 카드에 마커를 놓을 때마다 황제 트랙을 1칸 전진할 수 있습니다.</td></tr>
+          <tr><td>42</td><td>Politician</td><td>목표 카드에 마커를 놓을 때마다 VP 2점을 얻습니다.</td></tr>
+          <tr><td>43</td><td>Investor</td><td>라운드 종료 시, 10크로네 이상이면 VP 3점을 얻습니다.</td></tr>
+          <tr><td>44</td><td>Banker</td><td>라운드 종료 시, 3크로네 이하이면 2크로네를 얻습니다.</td></tr>
+          <tr><td>45</td><td>Inspector</td><td>최종 점수 계산 시, 목표를 2개 이상 달성했다면 VP 5점을 얻습니다.</td></tr>
+          <tr><td>46</td><td>Female Floor Housekeeper</td><td>최종 점수 계산 시, 최상층의 점유된 객실 1개당 VP 1점을 얻습니다.</td></tr>
+          <tr><td>47</td><td>Butler</td><td>최종 점수 계산 시, 고용한 직원 카드 1장당 VP 2점을 얻습니다.</td></tr>
+          <tr><td>48</td><td>Barkeeper</td><td>최종 점수 계산 시, 응대한 손님 1명당 VP 1점을 얻습니다.</td></tr>
+          <tr><td>119</td><td>Dancing Master</td><td>주사위 눈 '3'을 가져갈 때마다(메인 행동 전/후), 정상 비용을 내고 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 추가로 1크로네 획득. (메인 행동과 무용수 보내기 사이에 다른 추가 행동 불가)</td></tr>
+          <tr><td>120</td><td>Violinist</td><td>즉시(단 1회) 샴페인 3개 획득.</td></tr>
+          <tr><td>121</td><td>Concertmaster</td><td>주사위 눈 '1'을 가져간 뒤 메인 행동을 정상 수행하면, 샴페인 1개 획득 + VP 1점. (추가 샴페인은 '슈트루델/케이크 최소 수량' 규칙에 영향 없음)</td></tr>
+          <tr><td>122</td><td>Symphonist</td><td>라운드당 1회, 주방에서 샴페인 1개를 정확히 지불하고 VP 5점.</td></tr>
+          <tr><td>123</td><td>Usherette</td><td>라운드당 1회, 2크로네를 정확히 지불하고 샴페인 1개 + VP 3점.</td></tr>
+          <tr><td>124</td><td>Conductor</td><td>주사위 눈 '4'를 가져갈 때마다 샴페인 1개 + 1크로네 추가 획득.</td></tr>
+          <tr><td>125</td><td>Choirmaster</td><td>주사위 눈 '5'를 가져갈 때마다(메인 행동 전/후), 무용수 1개를 무도회장으로 추가로 보낼 수 있음. 이때 비용은 샴페인 1개 할인. (사이에 다른 추가 행동 불가)</td></tr>
+          <tr><td>126</td><td>Leading Dancer</td><td>최종 점수 계산 시, (발코니 포함) 모든 무도회장에 있는 내 무용수 1개당 VP 2점.</td></tr>
+          <tr><td>127</td><td>Harpist</td><td>즉시(단 1회), 무용수 최대 2개를 같은/다른 무도회장으로 보냄. 첫 번째는 샴페인 최대 2개 할인, 두 번째는 샴페인 1개 할인. (중간 추가 행동 불가)</td></tr>
+          <tr><td>128</td><td>Cellist</td><td>라운드당 1회, 주방에서 요리/음료 1개를 정확히 지불하고 무용수 1개를 무도회장으로 보냄(비용 샴페인 1개 할인).</td></tr>
+          <tr><td>129</td><td>Pianist</td><td>라운드당 1회, 이 카드로 샴페인 1개 획득.</td></tr>
+          <tr><td>130</td><td>Ballet Master</td><td>무용수를 무도회장으로 보낼 때마다 1크로네 획득 + 직원 카드 1장 뽑기.</td></tr>
+          <tr><td>131</td><td>Trumpeter</td><td>주사위 눈 '2'를 가져가 메인 행동을 정상 수행한 뒤, 샴페인 1개 획득 + 직원 카드 1장 뽑기. (추가 샴페인은 최소 수량 규칙에 영향 없음)</td></tr>
+          <tr><td>132</td><td>Arranger</td><td>목표 카드에 마커를 놓을 때마다 샴페인 2개 획득.</td></tr>
+          <tr><td>133</td><td>Danube Steamship Captain</td><td>라운드당 1회, (이 카드 제외) 직원 카드 1장을 고용한 후, 무용수 1개를 무도회장으로 보낼 수 있음(비용 샴페인 1개 할인). (직원 카드 고용과 무용수 보내기 사이 추가 행동 불가)</td></tr>
+          <tr><td>166</td><td>Handmaid</td><td>행동 중 황제 트랙을 3칸 이상 전진했다면 이 카드를 뒤집을 수 있음. 그러면 즉시(1회) 객실 최대 2개를 무료로 준비하고 곧바로 점유 면으로 뒤집어 점유.</td></tr>
+          <tr><td>167</td><td>Apprentice</td><td>파란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 슈트루델 3 + 케이크 3 획득.</td></tr>
+          <tr><td>168</td><td>Dishwasher</td><td>빨간 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 와인 3 + 커피 3 획득.</td></tr>
+          <tr><td>169</td><td>Tapster</td><td>노란 손님 주문(아이템 3개 이상) 완료 후 뒤집을 수 있음. 그러면 즉시 6크로네 획득.</td></tr>
+          <tr><td>170</td><td>Coachwoman</td><td>라운드당 1회, 주방에서 커피 1개를 정확히 지불하면 VP 3점 + 대기열 손님 1명 무료로 획득.</td></tr>
+          <tr><td>171</td><td>Bookkeeper</td><td>라운드당 1회, 주방에서 케이크 1개를 정확히 지불하면 객실 1개 준비 시 최대 2크로네 할인.</td></tr>
+          <tr><td>172</td><td>Chef de Rang</td><td>행동으로 음료(와인/커피) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 황제 트랙 5칸 전진.</td></tr>
+          <tr><td>173</td><td>Interpreter</td><td>라운드당 1회, 주방에서 슈트루델 2개를 정확히 지불하면 2크로네 + VP 2점.</td></tr>
+          <tr><td>174</td><td>Bartender</td><td>행동 중 요리(슈트루델/케이크) 3개 이상을 얻었으면 뒤집을 수 있음. 그러면 즉시(1회) 대기열 손님 1명 무료로 가져오고, 공용 공급처에서 필요한 아이템을 가져와 주문을 즉시 완성.</td></tr>
+          <tr><td>175</td><td>Wagon Master</td><td>라운드당 1회, 주방에서 (샴페인 제외) 요리/음료 합 2개를 정확히 지불하면, 지불한 것과 다른 종류의 (샴페인 제외) 요리/음료 2개 획득 + VP 2점.</td></tr>
+          <tr><td>176</td><td>Dog Walker</td><td>라운드당 1회, 주방에서 와인 2개를 정확히 지불하면 VP 2점 + 황제 트랙 2칸 전진.</td></tr>
+          <tr><td>177</td><td>Hairdresser</td><td>라운드당 1회, 황제 트랙을 정확히 2칸 후퇴하면 손패 직원 카드 1장을 최대 3크로네 할인하여 고용 가능.</td></tr>
+          <tr><td>178</td><td>Janitor</td><td>같은 색/다른 색 무관, 객실 3개 이상으로 이뤄진 한 그룹을 완전 점유하면 뒤집을 수 있음. 그러면 즉시(1회) 손패 직원 카드 최대 2장을 무료로 고용.</td></tr>
+          <tr><td>179</td><td>Entertainer</td><td>목표 카드에 마커를 놓은 뒤 뒤집을 수 있음. 그러면 즉시(1회) 공용 공급처에서 필요한 아이템을 가져와 손님 최대 2명의 주문을 즉시 완성.</td></tr>
+          <tr><td>183*</td><td>Manager's Son</td><td>행동 중 샴페인 1개 이상을 소비할 때마다 1크로네 획득.</td></tr>
         </tbody>
       </table>
       <div class="empty hide">검색 결과가 없습니다.</div>
@@ -2924,8 +2919,8 @@
         const key = guestTexts[num] ? num : num.replace(/\D/g,''); // fallback remove non-digits
         const data = guestTexts[key];
         if (!data) return;
-        row.cells[2].textContent = langValue(data, 'name', lang);
-        row.cells[3].textContent = bodyLangValue('guestTexts', key, 'text', data, 'text', lang);
+        row.cells[1].textContent = langValue(data, 'name', lang);
+        row.cells[2].textContent = bodyLangValue('guestTexts', key, 'text', data, 'text', lang);
       });
     };
     const applyStaffLanguage = (lang) => {
@@ -2936,8 +2931,8 @@
         const key = staffTexts[num] ? num : num.replace(/\D/g,'');
         const data = staffTexts[key];
         if (!data) return;
-        row.cells[2].textContent = langValue(data, 'name', lang);
-        row.cells[3].textContent = bodyLangValue('staffTexts', key, 'text', data, 'text', lang);
+        row.cells[1].textContent = langValue(data, 'name', lang);
+        row.cells[2].textContent = bodyLangValue('staffTexts', key, 'text', data, 'text', lang);
       });
     };
     const applyObjectiveLanguage = (lang) => {
@@ -2996,8 +2991,8 @@
     };
 
     const headerTranslations = {
-      guest:{title:{ko:'손님카드',en:'Guest Cards',de:'Gästekarten',fr:'Cartes Client',ja:'ゲストカード',es:'Cartas de huéspedes'}, cols:{ko:['카드','버전','이름','내용'], en:['Card','Version','Name','Text'], de:['Karte','Version','Name','Text'], fr:['Carte','Version','Nom','Texte'], ja:['カード','版','名前','テキスト'], es:['Carta','Versión','Nombre','Texto']}, count:{ko:'본판 58장 · 왈츠 35장 · 총 93장', en:'Base 58 · Waltz 35 · Total 93', de:'Grundspiel 58 · Walzer 35 · Gesamt 93', fr:'Base 58 · Valse 35 · Total 93', ja:'基本 58 · ワルツ 35 · 合計 93', es:'Base 58 · Vals 35 · Total 93'}},
-      staff:{title:{ko:'직원카드',en:'Staff Cards',de:'Personalkarten',fr:'Cartes Personnel',ja:'スタッフカード',es:'Cartas de personal'}, cols:{ko:['카드','버전','이름','내용'], en:['Card','Version','Name','Text'], de:['Karte','Version','Name','Text'], fr:['Carte','Version','Nom','Texte'], ja:['カード','版','名前','テキスト'], es:['Carta','Versión','Nombre','Texto']}, count:{ko:'본판 48장 · 왈츠 30장 · 총 78장', en:'Base 48 · Waltz 30 · Total 78', de:'Grundspiel 48 · Walzer 30 · Gesamt 78', fr:'Base 48 · Valse 30 · Total 78', ja:'基本 48 · ワルツ 30 · 合計 78', es:'Base 48 · Vals 30 · Total 78'}},
+      guest:{title:{ko:'손님카드',en:'Guest Cards',de:'Gästekarten',fr:'Cartes Client',ja:'ゲストカード',es:'Cartas de huéspedes'}, cols:{ko:['카드','이름','내용'], en:['Card','Name','Text'], de:['Karte','Name','Text'], fr:['Carte','Nom','Texte'], ja:['カード','名前','テキスト'], es:['Carta','Nombre','Texto']}, count:{ko:'본판 58장 · 왈츠 35장 · 총 93장', en:'Base 58 · Waltz 35 · Total 93', de:'Grundspiel 58 · Walzer 35 · Gesamt 93', fr:'Base 58 · Valse 35 · Total 93', ja:'基本 58 · ワルツ 35 · 合計 93', es:'Base 58 · Vals 35 · Total 93'}},
+      staff:{title:{ko:'직원카드',en:'Staff Cards',de:'Personalkarten',fr:'Cartes Personnel',ja:'スタッフカード',es:'Cartas de personal'}, cols:{ko:['카드','이름','내용'], en:['Card','Name','Text'], de:['Karte','Name','Text'], fr:['Carte','Nom','Texte'], ja:['カード','名前','テキスト'], es:['Carta','Nombre','Texto']}, count:{ko:'본판 48장 · 왈츠 30장 · 총 78장', en:'Base 48 · Waltz 30 · Total 78', de:'Grundspiel 48 · Walzer 30 · Gesamt 78', fr:'Base 48 · Valse 30 · Total 78', ja:'基本 48 · ワルツ 30 · 合計 78', es:'Base 48 · Vals 30 · Total 78'}},
       objective:{title:{ko:'목표카드',en:'Objectives',de:'Ziele',fr:'Objectifs',ja:'目標',es:'Objetivos'}, cols:{ko:['이미지','내용'], en:['Image','Text'], de:['Bild','Text'], fr:['Image','Texte'], ja:['画像','テキスト'], es:['Imagen','Texto']}, count:{ko:'본판 12장 · 왈츠 6장 · 총 18장', en:'Base 12 · Waltz 6 · Total 18', de:'Grundspiel 12 · Walzer 6 · Gesamt 18', fr:'Base 12 · Valse 6 · Total 18', ja:'基本 12 · ワルツ 6 · 合計 18', es:'Base 12 · Vals 6 · Total 18'}},
       emperor:{title:{ko:'황제 타일',en:'Emperor Tiles',de:'Kaiserplättchen',fr:'Tuiles Empereur',ja:'皇帝タイル',es:'Losetas de Emperador'}, cols:{ko:['버전','이미지','내용'], en:['Version','Image','Text'], de:['Version','Bild','Text'], fr:['Version','Image','Texte'], ja:['版','画像','テキスト'], es:['Versión','Imagen','Texto']}, count:{ko:'본판 12장 · 왈츠 6장 · 총 18장', en:'Base 12 · Waltz 6 · Total 18', de:'Grundspiel 12 · Walzer 6 · Gesamt 18', fr:'Base 12 · Valse 6 · Total 18', ja:'基本 12 · ワルツ 6 · 合計 18', es:'Base 12 · Vals 6 · Total 18'}},
       tile:{title:{ko:'유명인사 타일(왈츠)',en:'Celebrities (Waltz)',de:'Berühmtheiten (Walzer)',fr:'Célébrités (Valse)',ja:'著名人タイル（ワルツ）',es:'Celebridades (Vals)'}, cols:{ko:['이미지','내용'], en:['Image','Text'], de:['Bild','Text'], fr:['Image','Texte'], ja:['画像','テキスト'], es:['Imagen','Texto']}, count:{ko:'총 12장', en:'Total 12', de:'Gesamt 12', fr:'Total 12', ja:'合計 12', es:'Total 12'}},
@@ -3011,17 +3006,7 @@
       ja:{base:'基本', waltz:'ワルツ', promo:'プロモ', plus:'プラス'},
       es:{base:'Base', waltz:'Vals', promo:'Promo', plus:'Plus'}
     };
-    const versionKeyFromText = (value) => {
-      const text = value.trim();
-      for (const versions of Object.values(versionMap)) {
-        for (const [key, label] of Object.entries(versions)) {
-          if (text.includes(label)) return key;
-        }
-      }
-      return '';
-    };
     const applyHeadersLanguage = (lang) => {
-      const versions = versionMap[lang] || versionMap.en;
       const sectionsToUpdate = ['guest','staff','objective','emperor','tile','entrance'];
       sectionsToUpdate.forEach(key => {
         const section = document.querySelector(`[data-section=\"${key}\"]`);
@@ -3039,15 +3024,6 @@
         if (ths.length) {
           const labels = keyedLangValue(trans.cols, lang, trans.cols.en);
           ths.forEach((th, i) => { if (labels[i]) th.textContent = labels[i]; });
-        }
-        // version column for guest/staff tables (index 1)
-        if (key === 'guest' || key === 'staff') {
-          section.querySelectorAll('tbody tr').forEach(row => {
-            const cell = row.cells[1];
-            if (!cell) return;
-            const versionKey = versionKeyFromText(cell.textContent);
-            if (versionKey && versions[versionKey]) cell.textContent = versions[versionKey];
-          });
         }
       });
     };
