@@ -47,6 +47,18 @@
     .home-link svg { width: 16px; height: 16px; flex: 0 0 auto; }
     .page-top-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:nowrap; }
     .page-title { margin: 0 0 10px; font-size: 26px; font-weight: 600; letter-spacing: -0.3px; flex:1 1 auto; min-width:0; }
+    .top-actions { display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+    .support-link {
+      display:inline-flex; align-items:center; justify-content:center; gap:6px;
+      min-height: 36px; padding: 8px 12px;
+      border: 1px solid rgba(251, 191, 36, 0.42);
+      border-radius: 10px;
+      background: rgba(251, 191, 36, 0.14);
+      color: #fde68a; text-decoration:none;
+      font-size: 13px; font-weight: 700; white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+    }
+    .support-link:hover { border-color: rgba(251, 191, 36, 0.72); background: rgba(251, 191, 36, 0.2); color: #fff7cc; }
     .lang-switch { position: relative; z-index: 120; flex-shrink:0; }
     .lang-switch button {
       border: 1px solid var(--border); background: rgba(255,255,255,0.06);
@@ -164,6 +176,10 @@
     }
     @media (max-width: 720px) {
       .layout { gap: 12px; }
+      .page-top-row { align-items:flex-start; flex-wrap:wrap; }
+      .page-title { flex-basis:100%; margin-bottom:0; }
+      .top-actions { margin-left:auto; }
+      .support-link { min-height:34px; padding:7px 10px; font-size:12px; }
       .card { padding: 12px 10px; }
       /* 손님/직원카드: 이름 숨김 (카드번호·내용 표시) */
       [data-section="guest"] col:nth-child(2), [data-section="guest"] col:nth-child(2),
@@ -191,18 +207,21 @@
       </a>
       <div class="page-top-row">
         <h1 class="page-title" id="page-title">GAH 카드/타일 설명</h1>
-        <div class="lang-switch" id="lang-switch">
-          <button type="button" aria-haspopup="listbox" aria-expanded="false" id="lang-button">
-            <span class="lang-label"><img class="lang-icon" data-lang="en" src="img/flag-us.svg" alt="US flag" aria-hidden="true"><span class="lang-code">EN</span></span>
-            <span class="lang-caret">▾</span>
-          </button>
-          <div class="lang-menu" role="listbox" aria-label="Language">
-            <button type="button" data-lang="en"><span class="lang-label"><img class="lang-icon" data-lang="en" src="img/flag-us.svg" alt="US flag" aria-hidden="true"><span class="lang-code">EN</span></span></button>
-            <button type="button" data-lang="ko"><span class="lang-label"><img class="lang-icon" data-lang="ko" src="img/flag-kr.svg" alt="Korea flag" aria-hidden="true"><span class="lang-code">KR</span></span></button>
-            <button type="button" data-lang="de"><span class="lang-label"><img class="lang-icon" data-lang="de" src="img/flag-de.svg" alt="Germany flag" aria-hidden="true"><span class="lang-code">DE</span></span></button>
-            <button type="button" data-lang="fr"><span class="lang-label"><img class="lang-icon" data-lang="fr" src="img/flag-fr.svg" alt="France flag" aria-hidden="true"><span class="lang-code">FR</span></span></button>
-            <button type="button" data-lang="ja"><span class="lang-label"><img class="lang-icon" data-lang="ja" src="img/flag-jp.svg" alt="Japan flag" aria-hidden="true"><span class="lang-code">JP</span></span></button>
-            <button type="button" data-lang="es"><span class="lang-label"><img class="lang-icon" data-lang="es" src="img/flag-es.svg" alt="Spain flag" aria-hidden="true"><span class="lang-code">ES</span></span></button>
+        <div class="top-actions">
+          <a class="support-link" id="support-link" href="https://github.com/sponsors/ossonida" target="_blank" rel="noopener noreferrer">☕Coffee</a>
+          <div class="lang-switch" id="lang-switch">
+            <button type="button" aria-haspopup="listbox" aria-expanded="false" id="lang-button">
+              <span class="lang-label"><img class="lang-icon" data-lang="en" src="img/flag-us.svg" alt="US flag" aria-hidden="true"><span class="lang-code">EN</span></span>
+              <span class="lang-caret">▾</span>
+            </button>
+            <div class="lang-menu" role="listbox" aria-label="Language">
+              <button type="button" data-lang="en"><span class="lang-label"><img class="lang-icon" data-lang="en" src="img/flag-us.svg" alt="US flag" aria-hidden="true"><span class="lang-code">EN</span></span></button>
+              <button type="button" data-lang="ko"><span class="lang-label"><img class="lang-icon" data-lang="ko" src="img/flag-kr.svg" alt="Korea flag" aria-hidden="true"><span class="lang-code">KR</span></span></button>
+              <button type="button" data-lang="de"><span class="lang-label"><img class="lang-icon" data-lang="de" src="img/flag-de.svg" alt="Germany flag" aria-hidden="true"><span class="lang-code">DE</span></span></button>
+              <button type="button" data-lang="fr"><span class="lang-label"><img class="lang-icon" data-lang="fr" src="img/flag-fr.svg" alt="France flag" aria-hidden="true"><span class="lang-code">FR</span></span></button>
+              <button type="button" data-lang="ja"><span class="lang-label"><img class="lang-icon" data-lang="ja" src="img/flag-jp.svg" alt="Japan flag" aria-hidden="true"><span class="lang-code">JP</span></span></button>
+              <button type="button" data-lang="es"><span class="lang-label"><img class="lang-icon" data-lang="es" src="img/flag-es.svg" alt="Spain flag" aria-hidden="true"><span class="lang-code">ES</span></span></button>
+            </div>
           </div>
         </div>
       </div>
@@ -614,6 +633,7 @@
     const langSwitch = document.getElementById('lang-switch');
     const langButton = document.getElementById('lang-button');
     const langMenu = langSwitch?.querySelector('.lang-menu');
+    const supportLink = document.getElementById('support-link');
     const langLabels = {
       en: { flag: 'img/flag-us.svg', code: 'EN' },
       ko: { flag: 'img/flag-kr.svg', code: 'KR' },
@@ -628,6 +648,7 @@
     const translations = {
       ko: {
         pageTitle: 'GAH 카드/타일 설명',
+        support: '커피한잔 선물',
         tabs: ['전체','손님카드','직원카드','목표카드','황제 타일','유명인사(왈츠)','호텔입구(왈츠)'],
         search: '카드번호·이름·내용을 입력하세요',
         globalEmpty: '검색 결과가 없습니다.',
@@ -636,6 +657,7 @@
       },
       en: {
         pageTitle: 'GAH Cards / Tiles Reference',
+        support: 'Buy me a Coffee',
         tabs: ['All','Guests','Staff','Objectives','Emperor Tiles','Celebrities (Waltz)','Hotel Entrances (Waltz)'],
         search: 'Search by number, name, or text',
         globalEmpty: 'No results found.',
@@ -644,6 +666,7 @@
       },
       de: {
         pageTitle: 'GAH Karten-/Plättchenreferenz',
+        support: 'Buy me a Coffee',
         tabs: ['Alle','Gäste','Personal','Ziele','Kaiserplättchen','Berühmtheiten (Walzer)','Hoteleingänge (Walzer)'],
         search: 'Nach Nummer, Name oder Text suchen',
         globalEmpty: 'Keine Ergebnisse gefunden.',
@@ -652,6 +675,7 @@
       },
       fr: {
         pageTitle: 'Référence GAH cartes / tuiles',
+        support: 'Buy me a Coffee',
         tabs: ['Tout','Clients','Personnel','Objectifs','Tuiles Empereur','Célébrités (Valse)','Entrées d’hôtel (Valse)'],
         search: 'Rechercher par numéro, nom ou texte',
         globalEmpty: 'Aucun résultat.',
@@ -660,6 +684,7 @@
       },
       ja: {
         pageTitle: 'GAH カード / タイルリファレンス',
+        support: 'Buy me a Coffee',
         tabs: ['すべて','ゲスト','スタッフ','目標','皇帝タイル','著名人（ワルツ）','ホテル入口（ワルツ）'],
         search: '番号・名前・テキストで検索',
         globalEmpty: '検索結果がありません。',
@@ -668,6 +693,7 @@
       },
       es: {
         pageTitle: 'Referencia GAH de cartas / losetas',
+        support: 'Buy me a Coffee',
         tabs: ['Todo','Huéspedes','Personal','Objetivos','Losetas de Emperador','Celebridades (Vals)','Entradas de hotel (Vals)'],
         search: 'Buscar por número, nombre o texto',
         globalEmpty: 'No se encontraron resultados.',
@@ -3047,6 +3073,11 @@
       document.documentElement.lang = activeLang;
       document.documentElement.setAttribute('data-lang', activeLang);
       document.getElementById('page-title').textContent = t.pageTitle;
+      if (supportLink) {
+        const supportText = t.support || translations.en.support;
+        supportLink.textContent = supportText;
+        supportLink.setAttribute('aria-label', supportText);
+      }
       tabs.forEach((btn, i) => { if (t.tabs[i]) btn.textContent = t.tabs[i]; });
       input.placeholder = t.search;
       if (globalEmpty) globalEmpty.textContent = t.globalEmpty;
